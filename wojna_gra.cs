@@ -18,9 +18,11 @@ namespace Kasyno
         int ilosc_graczy = 0;
         List<int> gracz_1 = new List<int> ();
         List<int> gracz_2 = new List<int> ();
-        public wojna_gra(int opcja)
+        bool tryb=true;
+        public wojna_gra(int opcja, bool tryb)
         {
             InitializeComponent();
+            this.tryb = tryb;
             ilosc_graczy = opcja;
             Random rand = new Random();
 
@@ -42,13 +44,32 @@ namespace Kasyno
                     gracz_2.Add(talia[i]);
                 }
             }
-
-
+            if(tryb == true)
+            {
+                karty_gracza_1.Visible = true;
+                karty_gracza1.Visible = true;
+                talia_gracza_2.Visible = false;
+                karty_gracza2.Visible = false;
+            }
+            else
+            {
+                karty_gracza_1.Visible = true;
+                karty_gracza1.Visible = true;
+                talia_gracza_2.Visible = true;
+                karty_gracza2.Visible = true;
+            }
         }
 
         private void karty_gracza_1_TextChanged(object sender, EventArgs e)
         {
-            gracz_1
+            if (gracz_1.Count > 0)
+            {
+                karty_gracza_1.AppendText(gracz_1[0].ToString());
+            }
+            else
+            {
+                karty_gracza_1.AppendText("Gracz 1 nie ma więcej kart.");
+            }
         }
     }
 }

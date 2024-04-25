@@ -30,11 +30,13 @@
         {
             this.karty_gracza_1 = new System.Windows.Forms.TextBox();
             this.talia_gracza_2 = new System.Windows.Forms.TextBox();
+            this.karty_gracza1 = new System.Windows.Forms.Label();
+            this.karty_gracza2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // karty_gracza_1
             // 
-            this.karty_gracza_1.Location = new System.Drawing.Point(23, 111);
+            this.karty_gracza_1.Location = new System.Drawing.Point(48, 236);
             this.karty_gracza_1.Name = "karty_gracza_1";
             this.karty_gracza_1.Size = new System.Drawing.Size(100, 31);
             this.karty_gracza_1.TabIndex = 0;
@@ -42,16 +44,36 @@
             // 
             // talia_gracza_2
             // 
-            this.talia_gracza_2.Location = new System.Drawing.Point(581, 111);
+            this.talia_gracza_2.Location = new System.Drawing.Point(571, 236);
             this.talia_gracza_2.Name = "talia_gracza_2";
             this.talia_gracza_2.Size = new System.Drawing.Size(100, 31);
             this.talia_gracza_2.TabIndex = 1;
+            // 
+            // karty_gracza1
+            // 
+            this.karty_gracza1.AutoSize = true;
+            this.karty_gracza1.Location = new System.Drawing.Point(48, 184);
+            this.karty_gracza1.Name = "karty_gracza1";
+            this.karty_gracza1.Size = new System.Drawing.Size(77, 25);
+            this.karty_gracza1.TabIndex = 2;
+            this.karty_gracza1.Text = "gracz1";
+            // 
+            // karty_gracza2
+            // 
+            this.karty_gracza2.AutoSize = true;
+            this.karty_gracza2.Location = new System.Drawing.Point(581, 194);
+            this.karty_gracza2.Name = "karty_gracza2";
+            this.karty_gracza2.Size = new System.Drawing.Size(77, 25);
+            this.karty_gracza2.TabIndex = 3;
+            this.karty_gracza2.Text = "gracz2";
             // 
             // wojna_gra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.karty_gracza2);
+            this.Controls.Add(this.karty_gracza1);
             this.Controls.Add(this.talia_gracza_2);
             this.Controls.Add(this.karty_gracza_1);
             this.Name = "wojna_gra";
@@ -65,5 +87,7 @@
 
         private System.Windows.Forms.TextBox karty_gracza_1;
         private System.Windows.Forms.TextBox talia_gracza_2;
+        private System.Windows.Forms.Label karty_gracza1;
+        private System.Windows.Forms.Label karty_gracza2;
     }
 }
