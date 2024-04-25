@@ -1,6 +1,6 @@
 ﻿namespace Kasyno
 {
-    partial class Form1
+    partial class Blackjack
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Blackjack
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = Properties.Resources.Blackjack_background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "Blackjack";
+            this.Text = "Blackjack";
+            this.Load += new System.EventHandler(this.Blackjack_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-
