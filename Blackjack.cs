@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Kasyno
 {
-    public partial class Form1 : Form
+    public partial class Blackjack : Form
     {
-        public Form1()
+        public Blackjack()
         {
             InitializeComponent();
         }
 
-        private void wojna_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void blackjack_button_Click(object sender, EventArgs e)
+        private void Blackjack_Load(object sender, EventArgs e)
         {
 
         }
