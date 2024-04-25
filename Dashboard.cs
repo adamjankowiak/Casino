@@ -26,5 +26,11 @@ namespace Kasyno
         {
 
         }
+
+        private void gapa_button_Click(object sender, EventArgs e)
+        {
+            Gapa gapa = new Gapa();
+            gapa.Show();
+        }
     }
 }
