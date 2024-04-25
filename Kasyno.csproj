@@ -52,6 +52,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gapa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gapa.Designer.cs">
+      <DependentUpon>Gapa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logon.cs">
       <SubType>Form</SubType>
     </Compile>
