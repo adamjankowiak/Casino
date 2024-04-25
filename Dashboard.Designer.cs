@@ -57,25 +57,25 @@
             // kasyno_label
             // 
             this.kasyno_label.AutoSize = true;
-            this.kasyno_label.Font = new System.Drawing.Font("Stencil", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kasyno_label.Location = new System.Drawing.Point(171, 74);
+            this.kasyno_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kasyno_label.Location = new System.Drawing.Point(195, 65);
             this.kasyno_label.Name = "kasyno_label";
-            this.kasyno_label.Size = new System.Drawing.Size(490, 56);
+            this.kasyno_label.Size = new System.Drawing.Size(426, 54);
             this.kasyno_label.TabIndex = 2;
-            this.kasyno_label.Text = "Grube Inc. Kasyno";
+            this.kasyno_label.Text = "Tłuste Inc. Kasyno";
             // 
             // kasyno2_label
             // 
             this.kasyno2_label.AutoSize = true;
-            this.kasyno2_label.Font = new System.Drawing.Font("Stencil", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kasyno2_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kasyno2_label.ForeColor = System.Drawing.Color.Firebrick;
-            this.kasyno2_label.Location = new System.Drawing.Point(455, 130);
+            this.kasyno2_label.Location = new System.Drawing.Point(398, 119);
             this.kasyno2_label.Name = "kasyno2_label";
-            this.kasyno2_label.Size = new System.Drawing.Size(172, 21);
+            this.kasyno2_label.Size = new System.Drawing.Size(183, 22);
             this.kasyno2_label.TabIndex = 3;
             this.kasyno2_label.Text = "SAME GRUBE RYBY";
             // 
-            // Form1
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -85,8 +85,9 @@
             this.Controls.Add(this.blackjack_button);
             this.Controls.Add(this.wojna_button);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Dashboard";
+            this.Text = "Dashboard";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dashboard_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

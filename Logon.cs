@@ -19,11 +19,6 @@ namespace Kasyno
             InitializeComponent();
         }
 
-        private void exit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void login_Click(object sender, EventArgs e)
         {
             string[] data = File.ReadAllLines("..\\..\\userdata\\logon.csv");
@@ -44,9 +39,9 @@ namespace Kasyno
                 MessageBox.Show("password does not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Form1 form = new Form1();
-            form.Show();
+            Dashboard dashboard = new Dashboard(this, username.Text.ToLower());
             this.Hide();
+            dashboard.Show();
         }
 
         private void create_Click(object sender, EventArgs e)
@@ -61,8 +56,14 @@ namespace Kasyno
                 MessageBox.Show("password cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            File.AppendAllText("..\\..\\userdata\\logon.csv", username.Text.ToLower() + ',' + password.Text);
-            MessageBox.Show("user added", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            File.AppendAllText("..\\..\\userdata\\logon.csv", username.Text.ToLower() + ',' + password.Text + Environment.NewLine);
+            // MessageBox.Show("user added", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            login_Click(sender, e);
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

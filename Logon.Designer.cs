@@ -53,7 +53,7 @@
             this.username_label.Location = new System.Drawing.Point(158, 96);
             this.username_label.Name = "username_label";
             this.username_label.Size = new System.Drawing.Size(102, 25);
-            this.username_label.TabIndex = 1;
+            this.username_label.TabIndex = 5;
             this.username_label.Text = "Username";
             // 
             // login
@@ -73,7 +73,7 @@
             this.password.Location = new System.Drawing.Point(314, 160);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(233, 30);
-            this.password.TabIndex = 3;
+            this.password.TabIndex = 1;
             this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.password.UseSystemPasswordChar = true;
             // 
@@ -84,7 +84,7 @@
             this.password_label.Location = new System.Drawing.Point(158, 163);
             this.password_label.Name = "password_label";
             this.password_label.Size = new System.Drawing.Size(98, 25);
-            this.password_label.TabIndex = 4;
+            this.password_label.TabIndex = 6;
             this.password_label.Text = "Password";
             // 
             // exit
@@ -93,7 +93,7 @@
             this.exit.Location = new System.Drawing.Point(426, 264);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(130, 46);
-            this.exit.TabIndex = 5;
+            this.exit.TabIndex = 4;
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.exit_Click);
@@ -104,7 +104,7 @@
             this.create.Location = new System.Drawing.Point(290, 264);
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(130, 46);
-            this.create.TabIndex = 6;
+            this.create.TabIndex = 3;
             this.create.Text = "Create";
             this.create.UseVisualStyleBackColor = true;
             this.create.Click += new System.EventHandler(this.create_Click);
