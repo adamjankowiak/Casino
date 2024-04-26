@@ -35,7 +35,7 @@ namespace Kasyno
         {
 
             List<string> suits = new List<string> { "♣", "♦", "♥", "♠" };
-            List<string> values = new List<string> { "2", "3", "4", "5", "6", "7", "8", "9", "10", "W", "D", "K", "A" };
+            List<string> values = new List<string> {"W", "D", "K", "A" };
             foreach (string suit in suits)
             {
                 foreach (string value in values)
