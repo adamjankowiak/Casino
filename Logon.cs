@@ -44,7 +44,7 @@ namespace Kasyno
                 MessageBox.Show("password does not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Form1 form = new Form1();
+            Dashboard form = new Dashboard();
             form.Show();
             this.Hide();
         }
