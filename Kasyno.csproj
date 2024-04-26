@@ -72,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Gapa.resx">
+      <DependentUpon>Gapa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logon.resx">
       <DependentUpon>Logon.cs</DependentUpon>
     </EmbeddedResource>
