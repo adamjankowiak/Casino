@@ -93,6 +93,7 @@ namespace Kasyno
             string cards = "";
             if (playerNumber == 1)
             {
+                player1.Sort();
                 foreach(string card in player1)
                 {
                     cards += card +" , ";
@@ -106,6 +107,7 @@ namespace Kasyno
             }
             else if (playerNumber == 2)
             {
+                player2.Sort();
                 foreach (string card in player2)
                 {
                     cards += card + " , ";
@@ -118,6 +120,7 @@ namespace Kasyno
             }
             else if(playerNumber == 3)
             {
+                player3.Sort();
                 foreach (string card in player3)
                 {
                     cards += card + " , ";
@@ -130,6 +133,7 @@ namespace Kasyno
             }
             else if (playerNumber == 4)
             {
+                player4.Sort();
                 foreach (string card in player4)
                 {
                     cards += card + " , ";
