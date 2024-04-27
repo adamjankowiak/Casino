@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Web;
+using System.Windows;
 
 namespace Kasyno
 {
     public partial class Gapa : Form
     {
-
         private List<string> deck = new List<string>();
         private List<string> player1 = new List<string>();
         private List<string> player2 = new List<string>();
@@ -44,6 +44,7 @@ namespace Kasyno
         {
             if(win)
             {
+                axWindowsMediaPlayer1_Enter(this, EventArgs.Empty);
                 MessageBox.Show(playerName + " Win!");
                 this.Close();
             }
@@ -113,32 +114,60 @@ namespace Kasyno
         void showDeck()
         {
             string cards = "";
-                player1.Sort();
-                foreach(string card in player1)
+            player1.Sort();
+            foreach(string card in player1)
+            {
+                if(card == player1.Last())
                 {
-                    cards += card +" , ";
+                    cards += card;
                 }
+                else
+                {
+                    cards += card + " , ";
+                }      
+            }
             current_deck.Text = cards;
             current_deck.Location = new Point((this.ClientSize.Width - current_deck.Width) / 2-15, 382 - current_deck.Height / 2);
             cards = "";
             player2.Sort();
             foreach (string card in player2)
             {
-                cards += card + " , ";
+                if (card == player2.Last())
+                {
+                    cards += card;
+                }
+                else
+                {
+                    cards += card + " , ";
+                }
             }
             player2_Deck.Text = cards;
             cards = "";
             player3.Sort();
             foreach (string card in player3)
             {
-                cards += card + " , ";
+                if (card == player3.Last())
+                {
+                    cards += card;
+                }
+                else
+                {
+                    cards += card + " , ";
+                }
             }
             player3_deck.Text = cards;
             cards = "";
             player4.Sort();
             foreach (string card in player4)
             {
-                cards += card + " , ";
+                if (card == player4.Last())
+                {
+                    cards += card;
+                }
+                else
+                {
+                    cards += card + " , ";
+                }
             }
             player4_deck.Text = cards;
 
@@ -165,6 +194,11 @@ namespace Kasyno
         private void acceptButton_Click(object sender, EventArgs e)
         {
             string selectedCardFromDeck = selected_card.Text.ToUpper();
+            if(selectedCardFromDeck == "WIN")
+            {
+                win = true;
+                EndGame("Test");
+            }
             if (radioPikButton.Checked && selectedCardFromDeck!="")
             {
                 selectedCardFromDeck += "♠";
@@ -291,6 +325,15 @@ namespace Kasyno
                 return;
             }
             selected_card.Text = "";
-        }      
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Visible = true;
+            string filepath = "C:\\Users\\mjwoj\\Desktop\\FIlm.mp4";
+            axWindowsMediaPlayer1.URL=filepath;
+            axWindowsMediaPlayer1.Size = new System.Drawing.Size(853, 521);
+            axWindowsMediaPlayer1.Location = new System.Drawing.Point(-16, -1);
+        }
     }
 }

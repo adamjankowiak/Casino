@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gapa));
             this.current_player = new System.Windows.Forms.Label();
             this.current_deck = new System.Windows.Forms.Label();
             this.playerLeft = new System.Windows.Forms.Label();
@@ -44,6 +45,8 @@
             this.player4_deck = new System.Windows.Forms.Label();
             this.player3_deck = new System.Windows.Forms.Label();
             this.player2_Deck = new System.Windows.Forms.Label();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // current_player
@@ -219,12 +222,24 @@
             this.player2_Deck.Size = new System.Drawing.Size(0, 13);
             this.player2_Deck.TabIndex = 15;
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(701, -1);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(136, 97);
+            this.axWindowsMediaPlayer1.TabIndex = 16;
+            this.axWindowsMediaPlayer1.Visible = false;
+            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
+            // 
             // Gapa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.player2_Deck);
             this.Controls.Add(this.player3_deck);
             this.Controls.Add(this.player4_deck);
@@ -243,6 +258,7 @@
             this.Controls.Add(this.current_player);
             this.Name = "Gapa";
             this.Text = "Game";
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +282,6 @@
         private System.Windows.Forms.Label player4_deck;
         private System.Windows.Forms.Label player3_deck;
         private System.Windows.Forms.Label player2_Deck;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
