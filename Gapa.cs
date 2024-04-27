@@ -10,6 +10,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.Web;
 
 namespace Kasyno
 {
@@ -22,13 +24,33 @@ namespace Kasyno
         private List<string> player3 = new List<string>();
         private List<string> player4 = new List<string>();
         private int round = 1;
+        Dictionary<string, string> winningLine = new Dictionary<string, string>()
+        {
+            {"A","AAAA"},
+            {"K","KKKK"},
+            {"D","DDDD"},
+            {"W","WWWW"}
+        };
+        bool win = false;
         public Gapa()
         {
             InitializeComponent();
             createDeck();
             shuffleDeck();
             division_players();
-            gameplay();
+        }
+
+        private void EndGame(string playerName)
+        {
+            if(win)
+            {
+                MessageBox.Show(playerName + " Win!");
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void createDeck()
@@ -88,77 +110,187 @@ namespace Kasyno
             }
         }
 
-        void showDeck(int playerNumber)
+        void showDeck()
         {
             string cards = "";
-            if (playerNumber == 1)
-            {
                 player1.Sort();
                 foreach(string card in player1)
                 {
                     cards += card +" , ";
                 }
-                playerLeft.Text = "Player 4";
-                playerRight.Text = "Player 2";
-                playerTop.Text = "Player 3";
-                current_player.Text = "Player " + playerNumber;
-                current_deck.Text = cards;
-                current_deck.Location = new Point((this.ClientSize.Width - current_deck.Width) / 2, 382 - current_deck.Height / 2);
-            }
-            else if (playerNumber == 2)
+            current_deck.Text = cards;
+            current_deck.Location = new Point((this.ClientSize.Width - current_deck.Width) / 2-15, 382 - current_deck.Height / 2);
+            cards = "";
+            player2.Sort();
+            foreach (string card in player2)
             {
-                player2.Sort();
-                foreach (string card in player2)
-                {
-                    cards += card + " , ";
-                }
-                playerLeft.Text = "Player 1";
-                playerRight.Text = "Player 3";
-                playerTop.Text = "Player 4";
-                current_player.Text = "Player " + playerNumber;
-                current_deck.Text = cards;
+                cards += card + " , ";
             }
-            else if(playerNumber == 3)
+            player2_Deck.Text = cards;
+            cards = "";
+            player3.Sort();
+            foreach (string card in player3)
             {
-                player3.Sort();
-                foreach (string card in player3)
-                {
-                    cards += card + " , ";
-                }
-                playerLeft.Text = "Player 2";
-                playerRight.Text = "Player 4";
-                playerTop.Text = "Player 1";
-                current_player.Text = "Player " + playerNumber;
-                current_deck.Text = cards;
+                cards += card + " , ";
             }
-            else if (playerNumber == 4)
+            player3_deck.Text = cards;
+            cards = "";
+            player4.Sort();
+            foreach (string card in player4)
             {
-                player4.Sort();
-                foreach (string card in player4)
-                {
-                    cards += card + " , ";
-                }
-                playerLeft.Text = "Player 3";
-                playerRight.Text = "Player 1";
-                playerTop.Text = "Player 2";
-                current_player.Text = "Player " + playerNumber;
-                current_deck.Text = cards;
-            }       
+                cards += card + " , ";
+            }
+            player4_deck.Text = cards;
+
         }
 
         void gameplay()
         {
-            showDeck(round);
-            round++;
-            if(round == 5)
-            {
-                round = 1;
-            }
+            showDeck();
+            Select_card_text.Visible=true;
+            selected_card.Visible = true;
+            radioPikButton.Visible = true;
+            radioKierButton.Visible = true;
+            radioKaroButton.Visible=true;
+            radioTreflButton.Visible = true;
+            button_Start.Visible = false;
+            acceptButton.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             gameplay();
         }
+
+        private void acceptButton_Click(object sender, EventArgs e)
+        {
+            string selectedCardFromDeck = selected_card.Text.ToUpper();
+            if (radioPikButton.Checked && selectedCardFromDeck!="")
+            {
+                selectedCardFromDeck += "♠";
+            }
+            else if (radioKierButton.Checked && selectedCardFromDeck != "")
+            {
+                selectedCardFromDeck += "♥";
+            }
+            else if (radioKaroButton.Checked && selectedCardFromDeck != "")
+            {
+                selectedCardFromDeck += "♦";
+            }
+            else if (radioTreflButton.Checked && selectedCardFromDeck != "")
+            {
+                selectedCardFromDeck += "♣";
+                
+            }
+            else if(radioPikButton.Checked == false && radioKierButton.Checked==false && radioKaroButton.Checked==false && radioTreflButton.Checked==false)
+            {
+                MessageBox.Show("Nie wybrano koloru");
+                return;
+            }
+            else if(selectedCardFromDeck == "")
+            {
+                MessageBox.Show("Nie wybrano karty");
+                return;
+            }
+            selected_card.Text = selectedCardFromDeck;
+            if (selected_card.Text != "")
+            {
+                MessageBox.Show("Wybrano " + selected_card.Text);
+                if(player1.Contains(selected_card.Text))
+                {
+                    string currplayerCard = selected_card.Text;
+                    player1.Remove(currplayerCard);
+                    string player2Card = "";
+                    string player3Card = "";
+                    string player4Card = "";
+                    Random random = new Random();
+                    int card_chosen = random.Next(0,player2.Count);
+                    player2Card = player2[card_chosen];
+                    player2.Remove(player2Card);
+                    card_chosen = random.Next(0, player3.Count);
+                    player3Card = player3[card_chosen];
+                    player3.Remove(player3Card);
+                    card_chosen = random.Next(0, player4.Count);
+                    player4Card = player4[card_chosen];
+                    player4.Remove(player4Card);
+                    player1.Add(player2Card);
+                    player2.Add(player3Card);
+                    player3.Add(player4Card);
+                    player4.Add(currplayerCard);
+                    showDeck();
+                    string playerCards = "";
+                    string combination = "";
+                    for (int i = 0;i<player1.Count;i++)
+                    {
+                        playerCards += player1[i].Substring(0, 1);
+                        if(playerCards.Length == 1)
+                        {
+                            combination = winningLine[playerCards];
+                        }
+                    }
+                    if(playerCards == combination)
+                    {
+                        win = true;
+                        EndGame(current_player.Text);
+                    }
+                    playerCards = "";
+                    combination = "";
+                    for (int i = 0; i < player2.Count; i++)
+                    {
+                        playerCards += player2[i].Substring(0, 1);
+                        if (playerCards.Length == 1)
+                        {
+                            combination = winningLine[playerCards];
+                        }
+                    }
+                    if (playerCards == combination)
+                    {
+                        win = true;
+                        EndGame(playerRight.Text);
+                    }
+                    playerCards = "";
+                    combination = "";
+                    for (int i = 0; i < player3.Count; i++)
+                    {
+                        playerCards += player3[i].Substring(0, 1);
+                        if (playerCards.Length == 1)
+                        {
+                            combination = winningLine[playerCards];
+                        }
+                    }
+                    if (playerCards == combination)
+                    {
+                        win = true;
+                        EndGame(playerTop.Text);
+                    }
+                    playerCards = "";
+                    combination = "";
+                    for (int i = 0; i < player4.Count; i++)
+                    {
+                        playerCards += player4[i].Substring(0, 1);
+                        if (playerCards.Length == 1)
+                        {
+                            combination = winningLine[playerCards];
+                        }
+                    }
+                    if (playerCards == combination)
+                    {
+                        win = true;
+                        EndGame(playerLeft.Text);
+                    }
+                    selected_card.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Nie ma takiej karty w twojej talii");
+                    selected_card.Text = "";
+                }
+            }
+            else
+            {
+                return;
+            }
+            selected_card.Text = "";
+        }      
     }
 }
