@@ -35,6 +35,13 @@ namespace Kasyno
         public Gapa()
         {
             InitializeComponent();
+            Image image = Image.FromFile("C:\\Users\\mjwoj\\Desktop\\Table.jpg");
+            this.BackgroundImage = image;
+            playerTop.Location = new Point(365, 26);
+            radioPikButton.BackColor= SystemColors.Control;
+            radioKierButton.BackColor = SystemColors.Control;
+            radioKaroButton.BackColor = SystemColors.Control;
+            radioTreflButton.BackColor = SystemColors.Control;
             createDeck();
             shuffleDeck();
             division_players();
@@ -329,11 +336,11 @@ namespace Kasyno
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
         {
-            axWindowsMediaPlayer1.Visible = true;
+            VideoWin.Visible = true;
             string filepath = "C:\\Users\\mjwoj\\Desktop\\FIlm.mp4";
-            axWindowsMediaPlayer1.URL=filepath;
-            axWindowsMediaPlayer1.Size = new System.Drawing.Size(853, 521);
-            axWindowsMediaPlayer1.Location = new System.Drawing.Point(-16, -1);
+            VideoWin.URL=filepath;
+            VideoWin.Size = new System.Drawing.Size(853, 521);
+            VideoWin.Location = new System.Drawing.Point(-16, -1);
         }
     }
 }

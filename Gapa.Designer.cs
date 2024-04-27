@@ -45,8 +45,8 @@
             this.player4_deck = new System.Windows.Forms.Label();
             this.player3_deck = new System.Windows.Forms.Label();
             this.player2_Deck = new System.Windows.Forms.Label();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            this.VideoWin = new AxWMPLib.AxWindowsMediaPlayer();
+            ((System.ComponentModel.ISupportInitialize)(this.VideoWin)).BeginInit();
             this.SuspendLayout();
             // 
             // current_player
@@ -133,6 +133,7 @@
             // radioPikButton
             // 
             this.radioPikButton.AutoSize = true;
+            this.radioPikButton.BackColor = System.Drawing.SystemColors.Control;
             this.radioPikButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioPikButton.Location = new System.Drawing.Point(553, 233);
             this.radioPikButton.Name = "radioPikButton";
@@ -140,7 +141,7 @@
             this.radioPikButton.TabIndex = 8;
             this.radioPikButton.TabStop = true;
             this.radioPikButton.Text = "♠";
-            this.radioPikButton.UseVisualStyleBackColor = true;
+            this.radioPikButton.UseVisualStyleBackColor = false;
             this.radioPikButton.Visible = false;
             // 
             // radioKierButton
@@ -222,16 +223,16 @@
             this.player2_Deck.Size = new System.Drawing.Size(0, 13);
             this.player2_Deck.TabIndex = 15;
             // 
-            // axWindowsMediaPlayer1
+            // VideoWin
             // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(701, -1);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(136, 97);
-            this.axWindowsMediaPlayer1.TabIndex = 16;
-            this.axWindowsMediaPlayer1.Visible = false;
-            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
+            this.VideoWin.Enabled = true;
+            this.VideoWin.Location = new System.Drawing.Point(701, -1);
+            this.VideoWin.Name = "VideoWin";
+            this.VideoWin.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("VideoWin.OcxState")));
+            this.VideoWin.Size = new System.Drawing.Size(136, 112);
+            this.VideoWin.TabIndex = 16;
+            this.VideoWin.Visible = false;
+            this.VideoWin.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // Gapa
             // 
@@ -239,7 +240,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(834, 461);
-            this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.Controls.Add(this.VideoWin);
             this.Controls.Add(this.player2_Deck);
             this.Controls.Add(this.player3_deck);
             this.Controls.Add(this.player4_deck);
@@ -258,7 +259,7 @@
             this.Controls.Add(this.current_player);
             this.Name = "Gapa";
             this.Text = "Game";
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VideoWin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,6 +283,6 @@
         private System.Windows.Forms.Label player4_deck;
         private System.Windows.Forms.Label player3_deck;
         private System.Windows.Forms.Label player2_Deck;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private AxWMPLib.AxWindowsMediaPlayer VideoWin;
     }
 }
