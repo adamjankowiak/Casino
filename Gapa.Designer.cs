@@ -107,7 +107,7 @@
             this.button_Start.TabIndex = 5;
             this.button_Start.Text = "Start";
             this.button_Start.UseVisualStyleBackColor = true;
-            this.button_Start.Click += new System.EventHandler(this.button1_Click);
+            this.button_Start.Click += new System.EventHandler(this.button_Start_Click);
             // 
             // selected_card
             // 
@@ -232,7 +232,7 @@
             this.VideoWin.Size = new System.Drawing.Size(136, 112);
             this.VideoWin.TabIndex = 16;
             this.VideoWin.Visible = false;
-            this.VideoWin.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
+            //this.VideoWin.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // Gapa
             // 

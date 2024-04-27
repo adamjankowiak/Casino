@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
-using System.Web;
-using System.Windows;
 
 namespace Kasyno
 {
@@ -23,7 +13,6 @@ namespace Kasyno
         private List<string> player2 = new List<string>();
         private List<string> player3 = new List<string>();
         private List<string> player4 = new List<string>();
-        private int round = 1;
         Dictionary<string, string> winningLine = new Dictionary<string, string>()
         {
             {"A","AAAA"},
@@ -35,7 +24,7 @@ namespace Kasyno
         public Gapa()
         {
             InitializeComponent();
-            Image image = Image.FromFile("C:\\Users\\mjwoj\\Desktop\\Table.jpg");
+            Image image = Image.FromFile("..\\..\\Resources\\Table.jpg");
             this.BackgroundImage = image;
             playerTop.Location = new Point(365, 26);
             radioPikButton.BackColor= SystemColors.Control;
@@ -51,7 +40,7 @@ namespace Kasyno
         {
             if(win)
             {
-                axWindowsMediaPlayer1_Enter(this, EventArgs.Empty);
+                //axWindowsMediaPlayer1_Enter(this, EventArgs.Empty);
                 MessageBox.Show(playerName + " Win!");
                 this.Close();
             }
@@ -193,7 +182,7 @@ namespace Kasyno
             acceptButton.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_Start_Click(object sender, EventArgs e)
         {
             gameplay();
         }
@@ -333,6 +322,7 @@ namespace Kasyno
             }
             selected_card.Text = "";
         }
+        /*
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
         {
@@ -342,5 +332,6 @@ namespace Kasyno
             VideoWin.Size = new System.Drawing.Size(853, 521);
             VideoWin.Location = new System.Drawing.Point(-16, -1);
         }
+        */
     }
 }
