@@ -14,11 +14,26 @@ namespace Kasyno
     {
         string user = "";
         Logon logon = new Logon();
+        public List<string>deck = new List<string>();
         public Dashboard(Logon log, string username)
         {
             InitializeComponent();
+            createDeck();
             logon = log;
             user = username;
+        }
+        private void createDeck()
+        {
+            List<string> suits = new List<string> { "♣", "♦", "♥", "♠" };
+            List<string> values = new List<string> { "2", "3", "4", "5", "6", "7", "8", "9", "10","J", "Q", "K", "A" };
+            foreach (string suit in suits)
+            {
+                foreach (string value in values)
+                {
+                    string curr = value + suit;
+                    deck.Add(curr);
+                }
+            }
         }
 
         public void SetUser(string username)
@@ -44,7 +59,7 @@ namespace Kasyno
 
         private void gapa_button_Click(object sender, EventArgs e)
         {
-            Gapa gapa = new Gapa();
+            Gapa gapa = new Gapa(this);
             gapa.Show();
         }
     }

@@ -17,11 +17,11 @@ namespace Kasyno
         {
             {"A","AAAA"},
             {"K","KKKK"},
-            {"D","DDDD"},
-            {"W","WWWW"}
+            {"Q","QQQQ"},
+            {"J","JJJJ"}
         };
         bool win = false;
-        public Gapa()
+        public Gapa(Dashboard dashboard)
         {
             InitializeComponent();
             Image image = Image.FromFile("..\\..\\Resources\\Table.jpg");
@@ -31,9 +31,23 @@ namespace Kasyno
             radioKierButton.BackColor = SystemColors.Control;
             radioKaroButton.BackColor = SystemColors.Control;
             radioTreflButton.BackColor = SystemColors.Control;
-            createDeck();
+            this.deck = dashboard.deck;
+            modifyDeck();
             shuffleDeck();
             division_players();
+        }
+
+        private void modifyDeck()
+        {
+            List<string>tempdeck = new List<string>();
+            for(int i = 0;i<this.deck.Count;i++)
+            {
+                if (this.deck[i].Substring(0,1)=="A" || this.deck[i].Substring(0, 1) == "K" || this.deck[i].Substring(0, 1) == "Q" || this.deck[i].Substring(0, 1) == "J")
+                {
+                    tempdeck.Add(this.deck[i]);
+                }
+            }
+            this.deck=tempdeck;
         }
 
         private void EndGame(string playerName)
@@ -50,58 +64,44 @@ namespace Kasyno
             }
         }
 
-        private void createDeck()
-        {
-
-            List<string> suits = new List<string> { "♣", "♦", "♥", "♠" };
-            List<string> values = new List<string> {"W", "D", "K", "A" };
-            foreach (string suit in suits)
-            {
-                foreach (string value in values)
-                {
-                    string curr = value + suit;
-                    deck.Add(curr);
-                }
-            }
-        }
         private void shuffleDeck()
         {
             Random rnd = new Random();
 
-            int n = deck.Count;
+            int n = this.deck.Count;
             while (n > 1)
             {
                 n--;
                 int k = rnd.Next(n + 1);
                 string value = deck[k];
-                deck[k] = deck[n];
-                deck[n] = value;
+                this.deck[k] = deck[n];
+                this.deck[n] = value;
             }
         }
 
         private void division_players()
         {
-            for (int i = 0; i < deck.Count; i++)
+            for (int i = 0; i < this.deck.Count; i++)
             {
                 int num = i % 4;
                 if (num == 0)
                 {
-                    player1.Add(deck[i]);
+                    player1.Add(this.deck[i]);
                     continue;
                 }
                 if (num == 1)
                 {
-                    player2.Add(deck[i]);
+                    player2.Add(this.deck[i]);
                     continue;
                 }
                 if (num == 2)
                 {
-                    player3.Add(deck[i]);
+                    player3.Add(this.deck[i]);
                     continue;
                 }
                 if (num == 3)
                 {
-                    player4.Add(deck[i]);
+                    player4.Add(this.deck[i]);
                     continue;
                 }
             }

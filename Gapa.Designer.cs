@@ -232,13 +232,13 @@
             this.VideoWin.Size = new System.Drawing.Size(136, 112);
             this.VideoWin.TabIndex = 16;
             this.VideoWin.Visible = false;
-            //this.VideoWin.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // Gapa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(834, 461);
             this.Controls.Add(this.VideoWin);
             this.Controls.Add(this.player2_Deck);
