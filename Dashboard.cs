@@ -62,5 +62,11 @@ namespace Kasyno
             Gapa gapa = new Gapa(this);
             gapa.Show();
         }
+
+        private void pokerButton_Click(object sender, EventArgs e)
+        {
+            Poker poker = new Poker(this);
+            poker.Show();
+        }
     }
 }

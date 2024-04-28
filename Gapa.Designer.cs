@@ -133,7 +133,7 @@
             // radioPikButton
             // 
             this.radioPikButton.AutoSize = true;
-            this.radioPikButton.BackColor = System.Drawing.SystemColors.Control;
+            this.radioPikButton.BackColor = System.Drawing.Color.Teal;
             this.radioPikButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioPikButton.Location = new System.Drawing.Point(553, 233);
             this.radioPikButton.Name = "radioPikButton";
@@ -147,6 +147,7 @@
             // radioKierButton
             // 
             this.radioKierButton.AutoSize = true;
+            this.radioKierButton.BackColor = System.Drawing.Color.Teal;
             this.radioKierButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioKierButton.ForeColor = System.Drawing.Color.Red;
             this.radioKierButton.Location = new System.Drawing.Point(553, 256);
@@ -155,12 +156,13 @@
             this.radioKierButton.TabIndex = 9;
             this.radioKierButton.TabStop = true;
             this.radioKierButton.Text = "♥";
-            this.radioKierButton.UseVisualStyleBackColor = true;
+            this.radioKierButton.UseVisualStyleBackColor = false;
             this.radioKierButton.Visible = false;
             // 
             // radioKaroButton
             // 
             this.radioKaroButton.AutoSize = true;
+            this.radioKaroButton.BackColor = System.Drawing.Color.Teal;
             this.radioKaroButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioKaroButton.ForeColor = System.Drawing.Color.Red;
             this.radioKaroButton.Location = new System.Drawing.Point(553, 279);
@@ -169,12 +171,13 @@
             this.radioKaroButton.TabIndex = 10;
             this.radioKaroButton.TabStop = true;
             this.radioKaroButton.Text = "♦";
-            this.radioKaroButton.UseVisualStyleBackColor = true;
+            this.radioKaroButton.UseVisualStyleBackColor = false;
             this.radioKaroButton.Visible = false;
             // 
             // radioTreflButton
             // 
             this.radioTreflButton.AutoSize = true;
+            this.radioTreflButton.BackColor = System.Drawing.Color.Teal;
             this.radioTreflButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioTreflButton.Location = new System.Drawing.Point(553, 302);
             this.radioTreflButton.Name = "radioTreflButton";
@@ -182,7 +185,7 @@
             this.radioTreflButton.TabIndex = 11;
             this.radioTreflButton.TabStop = true;
             this.radioTreflButton.Text = "♣";
-            this.radioTreflButton.UseVisualStyleBackColor = true;
+            this.radioTreflButton.UseVisualStyleBackColor = false;
             this.radioTreflButton.Visible = false;
             // 
             // acceptButton
