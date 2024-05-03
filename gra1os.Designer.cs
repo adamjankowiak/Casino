@@ -38,7 +38,6 @@
             // 
             this.karty_gracza_1.Location = new System.Drawing.Point(66, 321);
             this.karty_gracza_1.Name = "karty_gracza_1";
-            this.karty_gracza_1.ReadOnly = true;
             this.karty_gracza_1.Size = new System.Drawing.Size(100, 31);
             this.karty_gracza_1.TabIndex = 0;
             this.karty_gracza_1.TextChanged += new System.EventHandler(this.karty_gracza_1_TextChanged);

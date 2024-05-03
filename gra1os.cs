@@ -12,8 +12,8 @@ namespace Kasyno
 {
     public partial class gra1os : Form
     {
-        List<int> gracz_1 = new List<int> ();
-        List<int> komputer = new List<int> ();
+        List<int> gracz_1 = new List<int>();
+        List<int> komputer = new List<int>();
         public List<Karta> karty = new List<Karta>();
 
         public class Karta
@@ -59,7 +59,7 @@ namespace Kasyno
             Talia talia = new Talia();
             karty = talia.karty;
             Tasowanie();
-            for (int i=0;i<talia.karty.Count;i++)
+            for (int i = 0; i < talia.karty.Count; i++)
             {
                 if (i % 2 == 0)
                 {
@@ -74,12 +74,12 @@ namespace Kasyno
 
         private void karty_gracza_1_TextChanged(object sender, EventArgs e)
         {
-            karty_gracza_1.Text = "gracz_1.Count";
+            karty_gracza_1.Text = gracz_1.Count.ToString();
         }
 
         private void talia_gracza_2_TextChanged(object sender, EventArgs e)
         {
-            talia_gracza_2.Text = "komputer.Count";
+            talia_gracza_2.Text = komputer.Count.ToString();
         }
     }
 }
