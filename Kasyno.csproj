@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="gra2os.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="gra2os.Designer.cs">
+      <DependentUpon>gra2os.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,14 +60,14 @@
     <Compile Include="Wojna.Designer.cs">
       <DependentUpon>Wojna.cs</DependentUpon>
     </Compile>
-    <Compile Include="wojna_gra.cs">
+    <Compile Include="gra1os.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="wojna_gra.Designer.cs">
-      <DependentUpon>wojna_gra.cs</DependentUpon>
+    <Compile Include="gra1os.Designer.cs">
+      <DependentUpon>gra1os.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="gra2os.resx">
+      <DependentUpon>gra2os.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="Wojna.resx">
       <DependentUpon>Wojna.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="wojna_gra.resx">
-      <DependentUpon>wojna_gra.cs</DependentUpon>
+    <EmbeddedResource Include="gra1os.resx">
+      <DependentUpon>gra1os.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

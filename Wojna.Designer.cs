@@ -73,6 +73,7 @@
             this.Controls.Add(this.Ilosc_graczy);
             this.Name = "Wojna";
             this.Text = "Wojna";
+            this.Load += new System.EventHandler(this.Wojna_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

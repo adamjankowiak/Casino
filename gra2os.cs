@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Kasyno
 {
-    public partial class Form1 : Form
+    public partial class gra2os : Form
     {
-        public Form1()
+        public gra2os()
         {
             InitializeComponent();
         }

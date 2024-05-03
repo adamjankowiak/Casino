@@ -19,16 +19,21 @@ namespace Kasyno
 
         private void battle1_Click(object sender, EventArgs e)
         {
-            wojna_gra wojna1 = new wojna_gra(1,true);
+            gra1os wojna1 = new gra1os();
             wojna1.Show();
             this.Hide();
         }
 
         private void battle2_Click(object sender, EventArgs e)
         {
-            wojna_gra wojna1 = new wojna_gra(1, false);
-            wojna1.Show();
+            gra2os wojna2 = new gra2os();
+            wojna2.Show();
             this.Hide();
+        }
+
+        private void Wojna_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
