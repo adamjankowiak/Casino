@@ -12,9 +12,11 @@ namespace Kasyno
 {
     public partial class Blackjack : Form
     {
-        public Blackjack()
+        Dashboard dashboard;
+        public Blackjack(Dashboard dash)
         {
             InitializeComponent();
+            dashboard = dash;
         }
 
         private void Blackjack_Load(object sender, EventArgs e)
