@@ -32,6 +32,9 @@
             this.talia_gracza_2 = new System.Windows.Forms.TextBox();
             this.karty_gracza1 = new System.Windows.Forms.Label();
             this.karty_gracza2 = new System.Windows.Forms.Label();
+            this.START = new System.Windows.Forms.Button();
+            this.aktualna_karta_gracza = new System.Windows.Forms.TextBox();
+            this.aktualna_karta_komputera = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // karty_gracza_1
@@ -68,11 +71,40 @@
             this.karty_gracza2.TabIndex = 3;
             this.karty_gracza2.Text = "Pozostałe karty komputera";
             // 
+            // START
+            // 
+            this.START.Location = new System.Drawing.Point(454, 452);
+            this.START.Name = "START";
+            this.START.Size = new System.Drawing.Size(257, 89);
+            this.START.TabIndex = 4;
+            this.START.Text = "Rozpocznij grę";
+            this.START.UseVisualStyleBackColor = true;
+            this.START.Click += new System.EventHandler(this.START_Click);
+            // 
+            // aktualna_karta_gracza
+            // 
+            this.aktualna_karta_gracza.Location = new System.Drawing.Point(355, 320);
+            this.aktualna_karta_gracza.Name = "aktualna_karta_gracza";
+            this.aktualna_karta_gracza.Size = new System.Drawing.Size(100, 31);
+            this.aktualna_karta_gracza.TabIndex = 5;
+            this.aktualna_karta_gracza.TextChanged += new System.EventHandler(this.aktualna_karta_gracza_TextChanged);
+            // 
+            // aktualna_karta_komputera
+            // 
+            this.aktualna_karta_komputera.Location = new System.Drawing.Point(723, 321);
+            this.aktualna_karta_komputera.Name = "aktualna_karta_komputera";
+            this.aktualna_karta_komputera.Size = new System.Drawing.Size(100, 31);
+            this.aktualna_karta_komputera.TabIndex = 6;
+            this.aktualna_karta_komputera.TextChanged += new System.EventHandler(this.aktualna_karta_komputera_TextChanged);
+            // 
             // gra1os
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1241, 712);
+            this.Controls.Add(this.aktualna_karta_komputera);
+            this.Controls.Add(this.aktualna_karta_gracza);
+            this.Controls.Add(this.START);
             this.Controls.Add(this.karty_gracza2);
             this.Controls.Add(this.karty_gracza1);
             this.Controls.Add(this.talia_gracza_2);
@@ -90,5 +122,8 @@
         private System.Windows.Forms.TextBox talia_gracza_2;
         private System.Windows.Forms.Label karty_gracza1;
         private System.Windows.Forms.Label karty_gracza2;
+        private System.Windows.Forms.Button START;
+        private System.Windows.Forms.TextBox aktualna_karta_gracza;
+        private System.Windows.Forms.TextBox aktualna_karta_komputera;
     }
 }

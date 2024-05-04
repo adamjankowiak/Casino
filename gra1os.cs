@@ -31,7 +31,7 @@ namespace Kasyno
             public List<Karta> karty = new List<Karta>();
             public Talia()
             {
-                for (int i = 2; i < 15; i++)
+                for (int i = 2; i < 16; i++)
                 {
                     karty.Add(new Karta(i, "Kier"));
                     karty.Add(new Karta(i, "Karo"));
@@ -80,6 +80,83 @@ namespace Kasyno
         private void talia_gracza_2_TextChanged(object sender, EventArgs e)
         {
             talia_gracza_2.Text = komputer.Count.ToString();
+        }
+
+        private void START_Click(object sender, EventArgs e)
+        {
+            int karta_gracza = gracz_1[0];
+            int karta_komputera = komputer[0];
+            if (karta_gracza > karta_komputera)
+            {
+                gracz_1.Add(karta_komputera);
+                gracz_1.Add(karta_gracza);
+                gracz_1.RemoveAt(0);
+                komputer.RemoveAt(0);
+            }
+            else if (karta_gracza < karta_komputera)
+            {
+                komputer.Add(karta_gracza);
+                komputer.Add(karta_komputera);
+                gracz_1.RemoveAt(0);
+                komputer.RemoveAt(0);
+            }
+            else if (karta_gracza == karta_komputera)
+            {
+                if(gracz_1.Count >= 2 && komputer.Count >= 2)
+                {
+                    int karta_gracza2 = gracz_1[1];
+                    int karta_komputera2 = komputer[1];
+                    if (karta_gracza2 > karta_komputera2)
+                    {
+                        gracz_1.Add(karta_komputera);
+                        gracz_1.Add(karta_gracza);
+                        gracz_1.Add(karta_komputera2);
+                        gracz_1.Add(karta_gracza2);
+                        gracz_1.RemoveAt(0);
+                        gracz_1.RemoveAt(0);
+                        komputer.RemoveAt(0);
+                        komputer.RemoveAt(0);
+                    }
+                    else if (karta_gracza2 < karta_komputera2)
+                    {
+                        komputer.Add(karta_gracza);
+                        komputer.Add(karta_komputera);
+                        komputer.Add(karta_gracza2);
+                        komputer.Add(karta_komputera2);
+                        gracz_1.RemoveAt(0);
+                        gracz_1.RemoveAt(0);
+                        komputer.RemoveAt(0);
+                        komputer.RemoveAt(0);
+                    }
+                    
+                }
+                
+            }
+            
+        }
+
+        private void aktualna_karta_gracza_TextChanged(object sender, EventArgs e)
+        {
+            if (gracz_1.Count > 0)
+            {
+                aktualna_karta_gracza.Text = gracz_1[0].ToString();
+            }
+            else
+            {
+                aktualna_karta_gracza.Text = "Brak kart";
+            }
+        }
+
+        private void aktualna_karta_komputera_TextChanged(object sender, EventArgs e)
+        {
+            if (komputer.Count > 0)
+            {
+                aktualna_karta_komputera.Text = komputer[0].ToString();
+            }
+            else
+            {
+                aktualna_karta_komputera.Text = "Brak kart";
+            }
         }
     }
 }
