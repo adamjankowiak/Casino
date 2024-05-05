@@ -54,6 +54,14 @@
             this.player1_deck_right = new System.Windows.Forms.Label();
             this.betPrice = new System.Windows.Forms.TextBox();
             this.acceptButton = new System.Windows.Forms.Button();
+            this.player2_bet_label = new System.Windows.Forms.Label();
+            this.player3_bet_label = new System.Windows.Forms.Label();
+            this.player4_bet_label = new System.Windows.Forms.Label();
+            this.player1_bet_label = new System.Windows.Forms.Label();
+            this.pass_player1_label = new System.Windows.Forms.Label();
+            this.pass_player2_label = new System.Windows.Forms.Label();
+            this.pass_player3_label = new System.Windows.Forms.Label();
+            this.pass_player4_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pokerStartButton
@@ -340,6 +348,86 @@
             this.acceptButton.Visible = false;
             this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
+            // player2_bet_label
+            // 
+            this.player2_bet_label.AutoSize = true;
+            this.player2_bet_label.Location = new System.Drawing.Point(54, 283);
+            this.player2_bet_label.Name = "player2_bet_label";
+            this.player2_bet_label.Size = new System.Drawing.Size(25, 13);
+            this.player2_bet_label.TabIndex = 27;
+            this.player2_bet_label.Text = "300";
+            this.player2_bet_label.Visible = false;
+            // 
+            // player3_bet_label
+            // 
+            this.player3_bet_label.AutoSize = true;
+            this.player3_bet_label.Location = new System.Drawing.Point(360, 93);
+            this.player3_bet_label.Name = "player3_bet_label";
+            this.player3_bet_label.Size = new System.Drawing.Size(25, 13);
+            this.player3_bet_label.TabIndex = 28;
+            this.player3_bet_label.Text = "300";
+            this.player3_bet_label.Visible = false;
+            // 
+            // player4_bet_label
+            // 
+            this.player4_bet_label.AutoSize = true;
+            this.player4_bet_label.Location = new System.Drawing.Point(675, 283);
+            this.player4_bet_label.Name = "player4_bet_label";
+            this.player4_bet_label.Size = new System.Drawing.Size(25, 13);
+            this.player4_bet_label.TabIndex = 29;
+            this.player4_bet_label.Text = "300";
+            this.player4_bet_label.Visible = false;
+            // 
+            // player1_bet_label
+            // 
+            this.player1_bet_label.AutoSize = true;
+            this.player1_bet_label.Location = new System.Drawing.Point(360, 307);
+            this.player1_bet_label.Name = "player1_bet_label";
+            this.player1_bet_label.Size = new System.Drawing.Size(25, 13);
+            this.player1_bet_label.TabIndex = 30;
+            this.player1_bet_label.Text = "300";
+            this.player1_bet_label.Visible = false;
+            // 
+            // pass_player1_label
+            // 
+            this.pass_player1_label.AutoSize = true;
+            this.pass_player1_label.Location = new System.Drawing.Point(360, 428);
+            this.pass_player1_label.Name = "pass_player1_label";
+            this.pass_player1_label.Size = new System.Drawing.Size(35, 13);
+            this.pass_player1_label.TabIndex = 35;
+            this.pass_player1_label.Text = "PASS";
+            this.pass_player1_label.Visible = false;
+            // 
+            // pass_player2_label
+            // 
+            this.pass_player2_label.AutoSize = true;
+            this.pass_player2_label.Location = new System.Drawing.Point(111, 245);
+            this.pass_player2_label.Name = "pass_player2_label";
+            this.pass_player2_label.Size = new System.Drawing.Size(35, 13);
+            this.pass_player2_label.TabIndex = 36;
+            this.pass_player2_label.Text = "PASS";
+            this.pass_player2_label.Visible = false;
+            // 
+            // pass_player3_label
+            // 
+            this.pass_player3_label.AutoSize = true;
+            this.pass_player3_label.Location = new System.Drawing.Point(360, 109);
+            this.pass_player3_label.Name = "pass_player3_label";
+            this.pass_player3_label.Size = new System.Drawing.Size(35, 13);
+            this.pass_player3_label.TabIndex = 37;
+            this.pass_player3_label.Text = "PASS";
+            this.pass_player3_label.Visible = false;
+            // 
+            // pass_player4_label
+            // 
+            this.pass_player4_label.AutoSize = true;
+            this.pass_player4_label.Location = new System.Drawing.Point(590, 242);
+            this.pass_player4_label.Name = "pass_player4_label";
+            this.pass_player4_label.Size = new System.Drawing.Size(35, 13);
+            this.pass_player4_label.TabIndex = 38;
+            this.pass_player4_label.Text = "PASS";
+            this.pass_player4_label.Visible = false;
+            // 
             // Poker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,6 +435,14 @@
             this.BackgroundImage = global::Kasyno.Properties.Resources.Blackjack_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pass_player4_label);
+            this.Controls.Add(this.pass_player3_label);
+            this.Controls.Add(this.pass_player2_label);
+            this.Controls.Add(this.pass_player1_label);
+            this.Controls.Add(this.player1_bet_label);
+            this.Controls.Add(this.player4_bet_label);
+            this.Controls.Add(this.player3_bet_label);
+            this.Controls.Add(this.player2_bet_label);
             this.Controls.Add(this.acceptButton);
             this.Controls.Add(this.betPrice);
             this.Controls.Add(this.player1_deck_right);
@@ -408,5 +504,13 @@
         private System.Windows.Forms.Label player1_deck_right;
         private System.Windows.Forms.TextBox betPrice;
         private System.Windows.Forms.Button acceptButton;
+        private System.Windows.Forms.Label player2_bet_label;
+        private System.Windows.Forms.Label player3_bet_label;
+        private System.Windows.Forms.Label player4_bet_label;
+        private System.Windows.Forms.Label player1_bet_label;
+        private System.Windows.Forms.Label pass_player1_label;
+        private System.Windows.Forms.Label pass_player2_label;
+        private System.Windows.Forms.Label pass_player3_label;
+        private System.Windows.Forms.Label pass_player4_label;
     }
 }

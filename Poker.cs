@@ -41,6 +41,8 @@ namespace Kasyno
             {"K",13},
             {"A",14}
         };
+        private int[] allMoney = { 0, 0, 0, 0 };
+        int maxBet;
         public Poker(Dashboard dashboard)
         {
             InitializeComponent();
@@ -213,29 +215,36 @@ namespace Kasyno
         private void acceptButton_Click(object sender, EventArgs e)
         {
             int betMoney;
-            int []allMoney = {0,0,0,0};
             if (betButton.Checked && betPrice.Text != null)
             {
-                try
+                if(inGame[0])
                 {
-                    betMoney = int.Parse(betPrice.Text);
+                    try
+                    {
+                        betMoney = int.Parse(betPrice.Text);
 
-                }catch (Exception ex) {
-                    MessageBox.Show("zla cena");
-                    return;
-                }
-                if (betMoney >= int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1)))
-                {
-                    betMoney = int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
-                    MessageBox.Show("All in");
-                    allMoney[0] += int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
-                    player1_money_label.Text = "0$";
-                }
-                else
-                {
-                    int currMoney = int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
-                    allMoney[0] += betMoney;
-                    player1_money_label.Text = (currMoney-betMoney).ToString()+"$";
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("zla cena");
+                        return;
+                    }
+                    betPrice.Text = "";
+                    if (betMoney >= int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1)))
+                    {
+                        betMoney = int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
+                        MessageBox.Show("All in");
+                        allMoney[0] += int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
+                        player1_money_label.Text = "0$";
+                    }
+                    else
+                    {
+                        int currMoney = int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
+                        allMoney[0] += betMoney;
+                        player1_bet_label.Visible = true;
+                        player1_bet_label.Text = betMoney.ToString() + "$";
+                        player1_money_label.Text = (currMoney - betMoney).ToString() + "$";
+                    }
                 }
                 if (inGame[1])
                 {
@@ -251,18 +260,22 @@ namespace Kasyno
                             int delMoney;
                             Random randomBet = new Random();
                             delMoney = randomBet.Next(allMoney[0], currPlayerMoney + 1);
+                            player2_bet_label.Text = delMoney.ToString() + "$";
+                            player2_bet_label.Visible= true;
                             allMoney[1] += delMoney;
                             player2_money_label.Text = (currPlayerMoney - delMoney).ToString() + "$";
                         }
                         else
                         {
                             inGame[1] = false;
+                            pass_player2_label.Visible = true;
                         }
                         
                     }
                     else if (chooseBot == 3)
                     {
                         inGame[1] = false;
+                        pass_player2_label.Visible = true;
                     }
                 }
                 if (inGame[2])
@@ -279,18 +292,22 @@ namespace Kasyno
                             int delMoney;
                             Random randomBet = new Random();
                             delMoney = randomBet.Next(allMoney[1], currPlayerMoney+1);
+                            player3_bet_label.Text = delMoney.ToString() + "$";
+                            player3_bet_label.Visible = true;
                             allMoney[2] += delMoney;
                             player3_money_label.Text = (currPlayerMoney - delMoney).ToString() + "$";
                         }
                         else
                         {
                             inGame[2] = false;
+                            pass_player3_label.Visible = true;
                         }
                         
                     }
                     else if (chooseBot == 3)
                     {
                         inGame[2] = false;
+                        pass_player3_label.Visible = true;
                     }
                 }
                 if (inGame[3])
@@ -308,27 +325,98 @@ namespace Kasyno
                             int delMoney;
                             Random randomBet = new Random();
                             delMoney = randomBet.Next(allMoney[2], currPlayerMoney+1);
+                            player4_bet_label.Text = delMoney.ToString() + "$";
+                            player4_bet_label.Visible = true;
                             allMoney[3] += delMoney;
                             player4_money_label.Text = (currPlayerMoney - delMoney).ToString() + "$";
                         }
                         else
                         {
                             inGame[3]=false;
+                            pass_player4_label.Visible = true;
                         } 
                     }
                     else if (chooseBot == 3)
                     {
                         inGame[3] = false;
+                        pass_player4_label.Visible = true;
                     }
                 }
+            }
+            else if(passButton.Checked)
+            {
+                inGame[0] = false;
+                pass_player1_label.Visible = true;
             }
             else
             {
                 MessageBox.Show("Niepoprawne dane");
                 return;
             }
-            int maxBet = allMoney.Max();
-            
+            maxBet = allMoney.Max();
+            betButton.Checked = false;
+            if(maxBet > allMoney[0])
+            {
+                    
+            }
+            if (maxBet > allMoney[1])
+            {
+                Random rand = new Random();
+                int choose = rand.Next(0, 2);
+                if(choose == 0)
+                {
+                    int price = int.Parse(player2_money_label.Text.Substring(0, player2_money_label.Text.Length - 1));
+                    int diff = maxBet - allMoney[1];
+                    price = price - diff;
+                    player2_money_label.Text = price.ToString()+"$";
+                    player2_bet_label.Text = maxBet.ToString() + "$";
+                    allMoney[1] += diff;
+                }
+                else
+                {
+                    inGame[1] = false;
+                    pass_player2_label.Visible = true;
+                }
+            }
+            if (maxBet > allMoney[2])
+            {
+                Random rand = new Random();
+                int choose = rand.Next(0, 2);
+                if (choose == 0)
+                {
+                    int price = int.Parse(player3_money_label.Text.Substring(0, player3_money_label.Text.Length - 1));
+                    int diff = maxBet - allMoney[2];
+                    price = price - diff;
+                    player3_money_label.Text = price.ToString() + "$";
+                    player3_bet_label.Text = maxBet.ToString() + "$";
+                    allMoney[2] += diff;
+                }
+                else
+                {
+                    inGame[2] = false;
+                    pass_player3_label.Visible = true;
+                }
+            }
+            if (maxBet > allMoney[3])
+            {
+                Random rand = new Random();
+                int choose = rand.Next(0, 2);
+                if (choose == 0)
+                {
+                    int price = int.Parse(player4_money_label.Text.Substring(0, player4_money_label.Text.Length - 1));
+                    int diff = maxBet - allMoney[3];
+                    price = price - diff;
+                    player4_money_label.Text = price.ToString() + "$";
+                    player4_bet_label.Text = maxBet.ToString() + "$";
+                    allMoney[3] += diff;
+                }
+                else
+                {
+                    inGame[3] = false;
+                    pass_player4_label.Visible = true;
+                }
+            }
+
             string pulla="";
             for(int i = 0;i<4;i++)
             {
@@ -336,5 +424,7 @@ namespace Kasyno
             }
             MessageBox.Show(pulla);
         }
+
     }
+
 }
