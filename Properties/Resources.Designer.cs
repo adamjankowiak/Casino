@@ -63,9 +63,19 @@ namespace Kasyno.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Blackjack_background {
+        internal static System.Drawing.Bitmap bj_backgroud1 {
             get {
-                object obj = ResourceManager.GetObject("Blackjack_background", resourceCulture);
+                object obj = ResourceManager.GetObject("bj_backgroud1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login_backgroud2 {
+            get {
+                object obj = ResourceManager.GetObject("login_backgroud2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
