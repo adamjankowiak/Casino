@@ -52,6 +52,8 @@
             this.card4Label = new System.Windows.Forms.Label();
             this.card5Label = new System.Windows.Forms.Label();
             this.player1_deck_right = new System.Windows.Forms.Label();
+            this.betPrice = new System.Windows.Forms.TextBox();
+            this.acceptButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pokerStartButton
@@ -319,6 +321,25 @@
             this.player1_deck_right.Text = "A#";
             this.player1_deck_right.Visible = false;
             // 
+            // betPrice
+            // 
+            this.betPrice.Location = new System.Drawing.Point(546, 305);
+            this.betPrice.Name = "betPrice";
+            this.betPrice.Size = new System.Drawing.Size(60, 20);
+            this.betPrice.TabIndex = 25;
+            this.betPrice.Visible = false;
+            // 
+            // acceptButton
+            // 
+            this.acceptButton.Location = new System.Drawing.Point(488, 394);
+            this.acceptButton.Name = "acceptButton";
+            this.acceptButton.Size = new System.Drawing.Size(82, 31);
+            this.acceptButton.TabIndex = 26;
+            this.acceptButton.Text = "Akceptuj";
+            this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Visible = false;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
+            // 
             // Poker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,6 +347,8 @@
             this.BackgroundImage = global::Kasyno.Properties.Resources.Blackjack_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.acceptButton);
+            this.Controls.Add(this.betPrice);
             this.Controls.Add(this.player1_deck_right);
             this.Controls.Add(this.card5Label);
             this.Controls.Add(this.card4Label);
@@ -383,5 +406,7 @@
         private System.Windows.Forms.Label card4Label;
         private System.Windows.Forms.Label card5Label;
         private System.Windows.Forms.Label player1_deck_right;
+        private System.Windows.Forms.TextBox betPrice;
+        private System.Windows.Forms.Button acceptButton;
     }
 }
