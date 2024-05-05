@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gapa));
             this.current_player = new System.Windows.Forms.Label();
             this.current_deck = new System.Windows.Forms.Label();
             this.playerLeft = new System.Windows.Forms.Label();
@@ -45,8 +44,6 @@
             this.player4_deck = new System.Windows.Forms.Label();
             this.player3_deck = new System.Windows.Forms.Label();
             this.player2_Deck = new System.Windows.Forms.Label();
-            this.VideoWin = new AxWMPLib.AxWindowsMediaPlayer();
-            ((System.ComponentModel.ISupportInitialize)(this.VideoWin)).BeginInit();
             this.SuspendLayout();
             // 
             // current_player
@@ -223,16 +220,6 @@
             this.player2_Deck.Size = new System.Drawing.Size(0, 13);
             this.player2_Deck.TabIndex = 15;
             // 
-            // VideoWin
-            // 
-            this.VideoWin.Enabled = true;
-            this.VideoWin.Location = new System.Drawing.Point(701, -1);
-            this.VideoWin.Name = "VideoWin";
-            this.VideoWin.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("VideoWin.OcxState")));
-            this.VideoWin.Size = new System.Drawing.Size(136, 112);
-            this.VideoWin.TabIndex = 16;
-            this.VideoWin.Visible = false;
-            // 
             // Gapa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,7 +227,6 @@
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(834, 461);
-            this.Controls.Add(this.VideoWin);
             this.Controls.Add(this.player2_Deck);
             this.Controls.Add(this.player3_deck);
             this.Controls.Add(this.player4_deck);
@@ -260,7 +246,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Gapa";
             this.Text = "Game";
-            ((System.ComponentModel.ISupportInitialize)(this.VideoWin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,6 +269,5 @@
         private System.Windows.Forms.Label player4_deck;
         private System.Windows.Forms.Label player3_deck;
         private System.Windows.Forms.Label player2_Deck;
-        private AxWMPLib.AxWindowsMediaPlayer VideoWin;
     }
 }
