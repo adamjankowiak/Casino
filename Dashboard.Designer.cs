@@ -102,6 +102,7 @@
             this.Controls.Add(this.blackjack_button);
             this.Controls.Add(this.wojna_button);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.Text = "Dashboard";

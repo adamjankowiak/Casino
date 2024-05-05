@@ -257,6 +257,7 @@
             this.Controls.Add(this.playerLeft);
             this.Controls.Add(this.current_deck);
             this.Controls.Add(this.current_player);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Gapa";
             this.Text = "Game";
             ((System.ComponentModel.ISupportInitialize)(this.VideoWin)).EndInit();

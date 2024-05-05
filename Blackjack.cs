@@ -161,7 +161,6 @@ namespace Kasyno
             } while (dealercardSum<21);
         }
 
-
     }
 }
 
