@@ -45,7 +45,13 @@
             this.player4_money_label = new System.Windows.Forms.Label();
             this.player3_money_text = new System.Windows.Forms.Label();
             this.player4_money_text = new System.Windows.Forms.Label();
-            this.player1_deck = new System.Windows.Forms.Label();
+            this.player1_deck_left = new System.Windows.Forms.Label();
+            this.card1Label = new System.Windows.Forms.Label();
+            this.card2Label = new System.Windows.Forms.Label();
+            this.card3Label = new System.Windows.Forms.Label();
+            this.card4Label = new System.Windows.Forms.Label();
+            this.card5Label = new System.Windows.Forms.Label();
+            this.player1_deck_right = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pokerStartButton
@@ -196,7 +202,7 @@
             // 
             this.player3_money_label.AutoSize = true;
             this.player3_money_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.player3_money_label.Location = new System.Drawing.Point(362, 62);
+            this.player3_money_label.Location = new System.Drawing.Point(360, 62);
             this.player3_money_label.Name = "player3_money_label";
             this.player3_money_label.Size = new System.Drawing.Size(35, 16);
             this.player3_money_label.TabIndex = 13;
@@ -218,7 +224,7 @@
             // 
             this.player3_money_text.AutoSize = true;
             this.player3_money_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.player3_money_text.Location = new System.Drawing.Point(337, 46);
+            this.player3_money_text.Location = new System.Drawing.Point(332, 46);
             this.player3_money_text.Name = "player3_money_text";
             this.player3_money_text.Size = new System.Drawing.Size(90, 16);
             this.player3_money_text.TabIndex = 15;
@@ -236,16 +242,82 @@
             this.player4_money_text.Text = "Player money";
             this.player4_money_text.Visible = false;
             // 
-            // player1_deck
+            // player1_deck_left
             // 
-            this.player1_deck.AutoSize = true;
-            this.player1_deck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.player1_deck.Location = new System.Drawing.Point(335, 387);
-            this.player1_deck.Name = "player1_deck";
-            this.player1_deck.Size = new System.Drawing.Size(87, 25);
-            this.player1_deck.TabIndex = 17;
-            this.player1_deck.Text = "AS , AD";
-            this.player1_deck.Visible = false;
+            this.player1_deck_left.AutoSize = true;
+            this.player1_deck_left.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.player1_deck_left.Location = new System.Drawing.Point(335, 387);
+            this.player1_deck_left.Name = "player1_deck_left";
+            this.player1_deck_left.Size = new System.Drawing.Size(38, 25);
+            this.player1_deck_left.TabIndex = 17;
+            this.player1_deck_left.Text = "A#";
+            this.player1_deck_left.Visible = false;
+            // 
+            // card1Label
+            // 
+            this.card1Label.AutoSize = true;
+            this.card1Label.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.card1Label.Location = new System.Drawing.Point(170, 186);
+            this.card1Label.Name = "card1Label";
+            this.card1Label.Size = new System.Drawing.Size(61, 39);
+            this.card1Label.TabIndex = 18;
+            this.card1Label.Text = "A#";
+            this.card1Label.Visible = false;
+            // 
+            // card2Label
+            // 
+            this.card2Label.AutoSize = true;
+            this.card2Label.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.card2Label.Location = new System.Drawing.Point(277, 186);
+            this.card2Label.Name = "card2Label";
+            this.card2Label.Size = new System.Drawing.Size(61, 39);
+            this.card2Label.TabIndex = 19;
+            this.card2Label.Text = "A#";
+            this.card2Label.Visible = false;
+            // 
+            // card3Label
+            // 
+            this.card3Label.AutoSize = true;
+            this.card3Label.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.card3Label.Location = new System.Drawing.Point(367, 186);
+            this.card3Label.Name = "card3Label";
+            this.card3Label.Size = new System.Drawing.Size(61, 39);
+            this.card3Label.TabIndex = 20;
+            this.card3Label.Text = "A#";
+            this.card3Label.Visible = false;
+            // 
+            // card4Label
+            // 
+            this.card4Label.AutoSize = true;
+            this.card4Label.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.card4Label.Location = new System.Drawing.Point(462, 186);
+            this.card4Label.Name = "card4Label";
+            this.card4Label.Size = new System.Drawing.Size(61, 39);
+            this.card4Label.TabIndex = 21;
+            this.card4Label.Text = "A#";
+            this.card4Label.Visible = false;
+            // 
+            // card5Label
+            // 
+            this.card5Label.AutoSize = true;
+            this.card5Label.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.card5Label.Location = new System.Drawing.Point(563, 186);
+            this.card5Label.Name = "card5Label";
+            this.card5Label.Size = new System.Drawing.Size(61, 39);
+            this.card5Label.TabIndex = 22;
+            this.card5Label.Text = "A#";
+            this.card5Label.Visible = false;
+            // 
+            // player1_deck_right
+            // 
+            this.player1_deck_right.AutoSize = true;
+            this.player1_deck_right.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.player1_deck_right.Location = new System.Drawing.Point(384, 387);
+            this.player1_deck_right.Name = "player1_deck_right";
+            this.player1_deck_right.Size = new System.Drawing.Size(38, 25);
+            this.player1_deck_right.TabIndex = 23;
+            this.player1_deck_right.Text = "A#";
+            this.player1_deck_right.Visible = false;
             // 
             // Poker
             // 
@@ -254,7 +326,13 @@
             this.BackgroundImage = global::Kasyno.Properties.Resources.Blackjack_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.player1_deck);
+            this.Controls.Add(this.player1_deck_right);
+            this.Controls.Add(this.card5Label);
+            this.Controls.Add(this.card4Label);
+            this.Controls.Add(this.card3Label);
+            this.Controls.Add(this.card2Label);
+            this.Controls.Add(this.card1Label);
+            this.Controls.Add(this.player1_deck_left);
             this.Controls.Add(this.player4_money_text);
             this.Controls.Add(this.player3_money_text);
             this.Controls.Add(this.player4_money_label);
@@ -298,6 +376,12 @@
         private System.Windows.Forms.Label player4_money_label;
         private System.Windows.Forms.Label player3_money_text;
         private System.Windows.Forms.Label player4_money_text;
-        private System.Windows.Forms.Label player1_deck;
+        private System.Windows.Forms.Label player1_deck_left;
+        private System.Windows.Forms.Label card1Label;
+        private System.Windows.Forms.Label card2Label;
+        private System.Windows.Forms.Label card3Label;
+        private System.Windows.Forms.Label card4Label;
+        private System.Windows.Forms.Label card5Label;
+        private System.Windows.Forms.Label player1_deck_right;
     }
 }

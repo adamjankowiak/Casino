@@ -12,8 +12,13 @@ namespace Kasyno
 {
     public partial class Poker : Form
     {
-        List<string>deck = new List<string>();
+        List<string> deck = new List<string>();
         List<string> player1Deck = new List<string>();
+        List<string> player2Deck = new List<string>();
+        List<string> player3Deck = new List<string>();
+        List<string> player4Deck = new List<string>();
+        List<bool>   allChoose = new List<bool> {false,false,false,false};
+        int current_players = 4;
         string startingMoney = "500$";
         Dictionary<string, int> CardsValue = new Dictionary<string, int>()
         {
@@ -37,6 +42,7 @@ namespace Kasyno
             deck=dashboard.deck;
             shuffleDeck();
             GetCards();
+            CardOnTable();
         }
 
         private void pokerStartButton_Click(object sender, EventArgs e)
@@ -47,7 +53,8 @@ namespace Kasyno
             player2_label.Visible = true;
             player3_label.Visible = true;
             player4_label.Visible = true;
-            player1_deck.Visible = true;
+            player1_deck_left.Visible = true;
+            player1_deck_right.Visible = true;
             player1_money_text.Visible = true;
             player1_money_label.Visible = true;
             player1_money_label.Text = startingMoney;
@@ -86,9 +93,111 @@ namespace Kasyno
         }
         private void GetCards()
         {
-            player1Deck.Add(deck[0]);
-            player1Deck.Add(deck[1]);
-            player1_deck.Text = player1Deck[0] + "," + player1Deck[1];
+            for (int i = 0; i < 2*current_players; i++)
+            {
+                int num = i % 4;
+                if (num == 0)
+                {
+                    player1Deck.Add(this.deck[0]);
+                    deck.Remove(player1Deck[player1Deck.Count - 1]);
+                    continue;
+                }
+                if (num == 1)
+                {
+                    player2Deck.Add(this.deck[0]);
+                    deck.Remove(player2Deck[player2Deck.Count - 1]);
+                    continue;
+                }
+                if (num == 2)
+                {
+                    player3Deck.Add(this.deck[0]);
+                    deck.Remove(player3Deck[player3Deck.Count - 1]);
+                    continue;
+                }
+                if (num == 3)
+                {
+                    player4Deck.Add(this.deck[0]);
+                    deck.Remove(player4Deck[player4Deck.Count - 1]);
+                    continue;
+                }
+            }
+            player1_deck_left.Text = player1Deck[0];
+            if (player1Deck[0].Contains("♣") || player1Deck[0].Contains("♠"))
+            {
+                player1_deck_left.ForeColor = Color.Black;
+            }
+            else
+            {
+                player1_deck_left.ForeColor = Color.Red;
+            }
+            player1_deck_right.Text = player1Deck[1];
+            if (player1Deck[0].Contains("♣") || player1Deck[0].Contains("♠"))
+            {
+                player1_deck_right.ForeColor = Color.Black;
+            }
+            else
+            {
+                player1_deck_right.ForeColor = Color.Red;
+            }
+        }
+
+        private void CardOnTable()
+        {
+            card1Label.Text = deck[0];
+            if (deck[0].Contains("♣") || deck[0].Contains("♠"))
+            {
+                card1Label.ForeColor = Color.Black;
+            }
+            else
+            {
+                card1Label.ForeColor = Color.Red;
+            }
+            card2Label.Text = deck[1];
+            if (deck[1].Contains("♣") || deck[1].Contains("♠"))
+            {
+                card2Label.ForeColor = Color.Black;
+            }
+            else
+            {
+                card2Label.ForeColor = Color.Red;
+            }
+            card3Label.Text = deck[2];
+            if (deck[2].Contains("♣") || deck[2].Contains("♠"))
+            {
+                card3Label.ForeColor = Color.Black;
+            }
+            else
+            {
+                card3Label.ForeColor = Color.Red;
+            }
+            card4Label.Text = deck[3];
+            if (deck[3].Contains("♣") || deck[3].Contains("♠"))
+            {
+                card3Label.ForeColor = Color.Black;
+            }
+            else
+            {
+                card3Label.ForeColor = Color.Red;
+            }
+            card5Label.Text = deck[4];
+            if (deck[4].Contains("♣") || deck[4].Contains("♠"))
+            {
+                card4Label.ForeColor = Color.Black;
+            }
+            else
+            {
+                card4Label.ForeColor = Color.Red;
+            }
+            deck.Remove(deck[0]);
+            deck.Remove(deck[1]);
+            deck.Remove(deck[2]);
+            deck.Remove(deck[3]);
+            deck.Remove(deck[4]);
+            card1Label.Visible = true;
+            card2Label.Visible = true;
+            card3Label.Visible = true;
+            card4Label.Visible = true;
+            card5Label.Visible = true;
         }
 
 
