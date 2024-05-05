@@ -16,7 +16,7 @@ namespace Kasyno
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Logon());
+            Application.Run(new Dashboard(new Logon(),"aaa"));
         }
     }
 }

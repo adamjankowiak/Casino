@@ -31,7 +31,7 @@ namespace Kasyno
             radioKierButton.BackColor = SystemColors.Control;
             radioKaroButton.BackColor = SystemColors.Control;
             radioTreflButton.BackColor = SystemColors.Control;
-            this.deck = dashboard.deck;
+            this.deck = dashboard.getDeck();
             modifyDeck();
             shuffleDeck();
             division_players();
