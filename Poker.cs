@@ -13,6 +13,7 @@ namespace Kasyno
     public partial class Poker : Form
     {
         List<string>deck = new List<string>();
+        List<string> player1Deck = new List<string>();
         string startingMoney = "500$";
         Dictionary<string, int> CardsValue = new Dictionary<string, int>()
         {
@@ -33,8 +34,9 @@ namespace Kasyno
         public Poker(Dashboard dashboard)
         {
             InitializeComponent();
-            dashboard.deck = deck;
+            deck=dashboard.deck;
             shuffleDeck();
+            GetCards();
         }
 
         private void pokerStartButton_Click(object sender, EventArgs e)
@@ -58,6 +60,9 @@ namespace Kasyno
             player4_money_text.Visible = true;
             player4_money_label.Visible = true;
             player4_money_label.Text = startingMoney;
+            betButton.Visible = true;
+            checkButton.Visible = true;
+            passButton.Visible = true;
         }
 
         private void poker_info_button_Click(object sender, EventArgs e)
@@ -78,6 +83,12 @@ namespace Kasyno
                 deck[k] = deck[n];
                 deck[n] = value;
             }
+        }
+        private void GetCards()
+        {
+            player1Deck.Add(deck[0]);
+            player1Deck.Add(deck[1]);
+            player1_deck.Text = player1Deck[0] + "," + player1Deck[1];
         }
 
 
