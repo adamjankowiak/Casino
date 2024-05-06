@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Security.Policy;
+using System.Web;
 
 namespace Kasyno
 {
@@ -27,21 +29,34 @@ namespace Kasyno
         string player3Money;
         string player4Money;
         int round = 0;
-        Dictionary<string, int> CardsValue = new Dictionary<string, int>()
+        Dictionary<string, int> handsValue = new Dictionary<string, int>()
         {
-            {"2",2},
-            {"3",3},
-            {"4",4},
-            {"5",5},
-            {"6",6},
-            {"7",7},
-            {"8",8},
-            {"9",9},
-            {"10",10},
-            {"J",11},
-            {"Q",12},
-            {"K",13},
-            {"A",14}
+            {"High Card",1},
+            {"Pair",2},
+            {"Two Pair",3},
+            {"Three of a Kind",4},
+            {"Straight",5},
+            {"Flush",6},
+            {"Full House",7},
+            {"Four of a Kind",8},
+            {"Straight Flush",9},
+            {"Royal Flush",10}
+        };
+        Dictionary<string, int> cardsValue = new Dictionary<string, int>()
+        {
+            {"2",0},
+            {"3",1},
+            {"4",2},
+            {"5",3},
+            {"6",4},
+            {"7",5},
+            {"8",6},
+            {"9",7},
+            {"10",8},
+            {"J",9},
+            {"Q",10},
+            {"K",11},
+            {"A",12}
         };
         private int[] allPlayersMoney = { 0, 0, 0, 0 };
         private int pot = 0;
@@ -561,20 +576,252 @@ namespace Kasyno
             }
             if(round==3)
             {
-                //sprawdzanie kto wygrał
+                List<string> tableCards = new List<string>();
+                tableCards.Add(card1Label.Text);
+                tableCards.Add(card2Label.Text);
+                tableCards.Add(card3Label.Text);
+                tableCards.Add(card4Label.Text);
+                tableCards.Add(card5Label.Text);
+                List<string> currentDeck = new List<string>(tableCards);
+                int max = 0;
+                int playerIndex = 0;
+                for (int i=0;i<4;i++)
+                {
+                    if (inGame[i])
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                currentDeck.Add(player1Deck[0]);
+                                currentDeck.Add(player1Deck[1]);
+                                break;
+                            case 1:
+                                currentDeck.Add(player2Deck[0]);
+                                currentDeck.Add(player2Deck[1]);
+                                break;
+                            case 2:
+                                currentDeck.Add(player3Deck[0]);
+                                currentDeck.Add(player3Deck[1]);
+                                break;
+                            case 3:
+                                currentDeck.Add(player4Deck[0]);
+                                currentDeck.Add(player4Deck[1]);
+                                break;
+                        }
+                        //w currentDeck mamy karty ze stołu oraz karty gracza który nie spasował                       
+                        string tmp = pokerHands(currentDeck);
+                        int value = handsValue[tmp];
+                        if (value>max)
+                        {
+                            max = value;
+                            playerIndex = i;
+                        }
+                    }
+                    
+                }
             }
             for(int i=0;i<allPlayersMoney.Length;i++)
             {
                 pot += allPlayersMoney[i];
             }
             MessageBox.Show(allPlayersMoney[0].ToString()+"\n" + allPlayersMoney[1].ToString()+"\n" + allPlayersMoney[2].ToString()+"\n" + allPlayersMoney[3].ToString()+"\n" + pot.ToString());
-            for(int i=0;i<allPlayersMoney.Length;i++)
+            for (int i = 0; i < allPlayersMoney.Length; i++)
             {
                 allPlayersMoney[i] = 0;
             }
             round++;
         }
 
-    }
+        private string pokerHands(List<string>deck)
+        {
+            List<string> playerHand = new List<string>(deck);
+            playerHand.Sort();
+            if(high_Card(playerHand))
+            {
+                return "High Card";
+            }
+            else if(pair(playerHand))
+            {
+                return "Pair";
+            }
+            else if(twoPair(playerHand))
+            {
+                return "Two Pair";
+            }
+            else if(threeOfaKind(playerHand))
+            {
+                return "Three of a Kind";
+            }
+            else if(straight(playerHand))
+            {
+                return "Straight";
+            }
+            else if(flush(playerHand))
+            {
+                return "Flush";
+            }
+            else if(fullHouse(playerHand))
+            {
+                return "Full House";
+            }
+            else if(fourOfaKind(playerHand))
+            {
+                return "Four of a Kind";
+            }
+            else if(straightFlush(playerHand))
+            {
+                return "Straight Flush";
+            }
+            else
+            {
+                return "Royal Flush";
+            }
+            
+        }
+        private bool high_Card(List<string>hand)
+        {
+            for(int i=0;i<hand.Count;i++)
+            {
+                for(int j=0;j<hand.Count;j++)
+                {
+                    if(i==j)
+                    {
+                        continue;
+                    }
+                }
+            }
+            
+        }
+        private bool pair(List<string> hand)
+        {
 
+        }
+        private bool twoPair(List<string> hand)
+        {
+
+        }
+        private bool threeOfaKind(List<string> hand)
+        {
+            Dictionary<char, int> cardCounts = new Dictionary<char, int>();
+            foreach (var card in hand)
+            {
+                char value = card[0];
+
+                if (cardCounts.ContainsKey(value))
+                {
+                    cardCounts[value]++;
+                }
+                else
+                {
+                    cardCounts[value] = 1;
+                }
+            }
+            foreach (var count in cardCounts.Values)
+            {
+                if (count == 3)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool straight(List<string> hand)
+        {
+            int[] cardsNumber = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; 
+            for(int i=0;i<hand.Count;i++)
+            {
+                string card = hand[i].Substring(0, hand[i].Length-1);
+                int value = cardsValue[card];
+                cardsNumber[value] +=1;
+            }
+            for(int i=0;i<9;i++)
+            {
+                if (cardsNumber[i]==1 && cardsNumber[i+1] == 1 && cardsNumber[i+2] == 1 && cardsNumber[i+3] == 1 && cardsNumber[i+4] == 1 && cardsNumber[i+5] == 1)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool flush(List<string> hand)
+        {
+            string color = hand[0].Substring(hand[0].Length-1);
+            for(int i=0;i<hand.Count;i++)
+            {
+                if(color != hand[i].Substring(hand[i].Length-1))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private bool fullHouse(List<string> hand)
+        {
+            Dictionary<char, int> cardCounts = new Dictionary<char, int>();
+            foreach (var card in hand)
+            {
+                char value = card[0];
+
+                if (cardCounts.ContainsKey(value))
+                {
+                    cardCounts[value]++;
+                }
+                else
+                {
+                    cardCounts[value] = 1;
+                }
+            }
+            bool hasThreeOfAKind = false;
+            bool hasPair = false;
+            foreach (var count in cardCounts.Values)
+            {
+                if (count == 3)
+                {
+                    hasThreeOfAKind = true;
+                }
+                else if (count == 2)
+                {
+                    hasPair = true;
+                }
+            }
+            return hasThreeOfAKind && hasPair;
+        }
+        private bool fourOfaKind(List<string> hand)
+        {
+            int counter = 1;
+            for(int i=0; i<hand.Count; i++)
+            {
+                for(int j=0; j < hand.Count;j++)
+                {
+                    if(i==j)
+                    {
+                        continue;
+                    }
+                    if (hand[i].Substring(0,1) == hand[j].Substring(0,1))
+                    {
+                        counter++;
+                    }
+                }
+                if(counter==4)
+                {
+                    return true;
+                }
+                counter = 1;
+            }
+            return false;
+        }
+        private bool straightFlush(List<string> hand)
+        {
+            string[] tab = { "10", "7", "8", "9", "J"};
+            string color = hand[0].Substring(hand[0].Length - 1);
+            for (int i = 0; i < hand.Count; i++)
+            {
+                if (!hand[i].Contains(tab[i]) || hand[i].Substring(hand[i].Length - 1) != color)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
 }
