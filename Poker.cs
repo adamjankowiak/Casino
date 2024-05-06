@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Security.Policy;
 using System.Web;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Kasyno
 {
@@ -607,14 +608,17 @@ namespace Kasyno
                                 currentDeck.Add(player4Deck[0]);
                                 currentDeck.Add(player4Deck[1]);
                                 break;
-                        }
-                        //w currentDeck mamy karty ze stołu oraz karty gracza który nie spasował                       
+                        }                     
                         string tmp = pokerHands(currentDeck);
                         int value = handsValue[tmp];
                         if (value>max)
                         {
                             max = value;
                             playerIndex = i;
+                        }
+                        else if(value == max)
+                        {
+                            //dsjnandjasadsjnsajdnasdjndjnasdjnsadjnjndasasd
                         }
                     }
                     
@@ -636,69 +640,73 @@ namespace Kasyno
         {
             List<string> playerHand = new List<string>(deck);
             playerHand.Sort();
-            if(high_Card(playerHand))
+            if(royalFlush(playerHand))
             {
-                return "High Card";
-            }
-            else if(pair(playerHand))
-            {
-                return "Pair";
-            }
-            else if(twoPair(playerHand))
-            {
-                return "Two Pair";
-            }
-            else if(threeOfaKind(playerHand))
-            {
-                return "Three of a Kind";
-            }
-            else if(straight(playerHand))
-            {
-                return "Straight";
-            }
-            else if(flush(playerHand))
-            {
-                return "Flush";
-            }
-            else if(fullHouse(playerHand))
-            {
-                return "Full House";
-            }
-            else if(fourOfaKind(playerHand))
-            {
-                return "Four of a Kind";
+                return "Royal Flush";
             }
             else if(straightFlush(playerHand))
             {
                 return "Straight Flush";
             }
+            else if(fourOfaKind(playerHand))
+            {
+                return "Four of a Kind";
+            }
+            else if(fullHouse(playerHand))
+            {
+                return "Full House";
+            }
+            else if(flush(playerHand))
+            {
+                return "Flush";
+            }
+            else if(straight(playerHand))
+            {
+                return "Straight";
+            }
+            else if(threeOfaKind(playerHand))
+            {
+                return "Three of a Kind";
+            }
+            else if(twoPair(playerHand))
+            {
+                return "Two Pair";
+            }
+            else if(pair(playerHand))
+            {
+                return "Pair";
+            }
             else
             {
-                return "Royal Flush";
-            }
-            
-        }
-        private bool high_Card(List<string>hand)
-        {
-            for(int i=0;i<hand.Count;i++)
-            {
-                for(int j=0;j<hand.Count;j++)
-                {
-                    if(i==j)
-                    {
-                        continue;
-                    }
-                }
-            }
-            
+                return "High Card";
+            }   
         }
         private bool pair(List<string> hand)
         {
-
+            for (int i = 0; i < hand.Count - 1; i++)
+            {
+                string firstCard = hand[i].Substring(0, hand[i].Length - 1);
+                string secoundCard = hand[i + 1].Substring(0, hand[i + 1].Length - 1);
+                if (firstCard == secoundCard)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         private bool twoPair(List<string> hand)
         {
-
+            int pairCounter = 0;
+            for(int i=0;i<hand.Count-1;i++)
+            {
+                string firstCard = hand[i].Substring(0, hand[i].Length-1);
+                string secoundCard = hand[i + 1].Substring(0, hand[i + 1].Length - 1);
+                if (firstCard == secoundCard)
+                {
+                    pairCounter++;
+                }
+            }
+            return pairCounter == 2;
         }
         private bool threeOfaKind(List<string> hand)
         {
@@ -813,6 +821,19 @@ namespace Kasyno
         private bool straightFlush(List<string> hand)
         {
             string[] tab = { "10", "7", "8", "9", "J"};
+            string color = hand[0].Substring(hand[0].Length - 1);
+            for (int i = 0; i < hand.Count; i++)
+            {
+                if (!hand[i].Contains(tab[i]) || hand[i].Substring(hand[i].Length - 1) != color)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private bool royalFlush(List<string> hand)
+        {
+            string[] tab = { "10", "A", "J", "K", "Q" };
             string color = hand[0].Substring(hand[0].Length - 1);
             for (int i = 0; i < hand.Count; i++)
             {
