@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Kasyno
 {
@@ -354,10 +356,25 @@ namespace Kasyno
                 return;
             }
             maxBet = allMoney.Max();
+            checkButton.Checked = false;
             betButton.Checked = false;
+            passButton.Checked = false;
             if(maxBet > allMoney[0])
             {
-                    
+                DialogResult result = MessageBox.Show("Czy Dobijasz do stawki?", "Wybór", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    int price = int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
+                    price += allMoney[0];
+                    player1_money_label.Text = (price - maxBet).ToString() + "$";
+                    player1_bet_label.Text = maxBet.ToString();
+                    allMoney[0] = maxBet;
+                }
+                else if (result == DialogResult.No)
+                {
+                    inGame[0] = false;
+                    pass_player1_label.Visible = true;
+                }
             }
             if (maxBet > allMoney[1])
             {
@@ -366,11 +383,10 @@ namespace Kasyno
                 if(choose == 0)
                 {
                     int price = int.Parse(player2_money_label.Text.Substring(0, player2_money_label.Text.Length - 1));
-                    int diff = maxBet - allMoney[1];
-                    price = price - diff;
-                    player2_money_label.Text = price.ToString()+"$";
-                    player2_bet_label.Text = maxBet.ToString() + "$";
-                    allMoney[1] += diff;
+                    price += allMoney[1];
+                    player2_money_label.Text = (price - maxBet).ToString() + "$";
+                    player2_bet_label.Text = maxBet.ToString();
+                    allMoney[1] = maxBet;
                 }
                 else
                 {
@@ -385,11 +401,10 @@ namespace Kasyno
                 if (choose == 0)
                 {
                     int price = int.Parse(player3_money_label.Text.Substring(0, player3_money_label.Text.Length - 1));
-                    int diff = maxBet - allMoney[2];
-                    price = price - diff;
-                    player3_money_label.Text = price.ToString() + "$";
-                    player3_bet_label.Text = maxBet.ToString() + "$";
-                    allMoney[2] += diff;
+                    price += allMoney[2];
+                    player3_money_label.Text = (price - maxBet).ToString() + "$";
+                    player3_bet_label.Text = maxBet.ToString();
+                    allMoney[2] = maxBet;
                 }
                 else
                 {
@@ -404,11 +419,10 @@ namespace Kasyno
                 if (choose == 0)
                 {
                     int price = int.Parse(player4_money_label.Text.Substring(0, player4_money_label.Text.Length - 1));
-                    int diff = maxBet - allMoney[3];
-                    price = price - diff;
-                    player4_money_label.Text = price.ToString() + "$";
-                    player4_bet_label.Text = maxBet.ToString() + "$";
-                    allMoney[3] += diff;
+                    price += allMoney[3];
+                    player4_money_label.Text = (price - maxBet).ToString() + "$";
+                    player4_bet_label.Text = maxBet.ToString();
+                    allMoney[3] = maxBet;
                 }
                 else
                 {
@@ -416,7 +430,6 @@ namespace Kasyno
                     pass_player4_label.Visible = true;
                 }
             }
-
             string pulla="";
             for(int i = 0;i<4;i++)
             {
