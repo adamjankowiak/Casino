@@ -267,7 +267,7 @@
             // 
             this.card1Label.AutoSize = true;
             this.card1Label.Font = new System.Drawing.Font("Lucida Sans Unicode", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.card1Label.Location = new System.Drawing.Point(170, 186);
+            this.card1Label.Location = new System.Drawing.Point(183, 186);
             this.card1Label.Name = "card1Label";
             this.card1Label.Size = new System.Drawing.Size(61, 39);
             this.card1Label.TabIndex = 18;
@@ -401,7 +401,7 @@
             // pass_player2_label
             // 
             this.pass_player2_label.AutoSize = true;
-            this.pass_player2_label.Location = new System.Drawing.Point(111, 245);
+            this.pass_player2_label.Location = new System.Drawing.Point(121, 263);
             this.pass_player2_label.Name = "pass_player2_label";
             this.pass_player2_label.Size = new System.Drawing.Size(35, 13);
             this.pass_player2_label.TabIndex = 36;
