@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Poker));
             this.pokerStartButton = new System.Windows.Forms.Button();
             this.poker_info_button = new System.Windows.Forms.Button();
             this.player3_label = new System.Windows.Forms.Label();
@@ -469,6 +470,9 @@
             this.Controls.Add(this.player3_label);
             this.Controls.Add(this.poker_info_button);
             this.Controls.Add(this.pokerStartButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Poker";
             this.Text = "Poker";
             this.ResumeLayout(false);

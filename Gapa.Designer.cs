@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gapa));
             this.current_player = new System.Windows.Forms.Label();
             this.current_deck = new System.Windows.Forms.Label();
             this.playerLeft = new System.Windows.Forms.Label();
@@ -247,7 +248,11 @@
             this.Controls.Add(this.current_deck);
             this.Controls.Add(this.current_player);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Gapa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
             this.ResumeLayout(false);
             this.PerformLayout();

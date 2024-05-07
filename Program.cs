@@ -16,7 +16,7 @@ namespace Kasyno
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard(new Logon(), "pimpek"));
+            Application.Run(new Logon());
         }
     }
 }
