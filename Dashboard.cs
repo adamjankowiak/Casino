@@ -14,13 +14,15 @@ namespace Kasyno
     {
         string user = "";
         Logon logon = new Logon();
+        int balance;
         private List<string>deck = new List<string>();
-        public Dashboard(Logon log, string username)
+        public Dashboard(Logon log, string username, int money)
         {
             InitializeComponent();
             createDeck();
             logon = log;
             user = username;
+            balance = money;
         }
         private void createDeck()
         {
