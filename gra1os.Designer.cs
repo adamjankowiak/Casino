@@ -35,11 +35,14 @@
             this.START = new System.Windows.Forms.Button();
             this.aktualna_karta_gracza = new System.Windows.Forms.TextBox();
             this.aktualna_karta_komputera = new System.Windows.Forms.TextBox();
+            this.aktualna_gracz1 = new System.Windows.Forms.Label();
+            this.aktualna_komputer = new System.Windows.Forms.Label();
+            this.bitwa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // karty_gracza_1
             // 
-            this.karty_gracza_1.Location = new System.Drawing.Point(66, 321);
+            this.karty_gracza_1.Location = new System.Drawing.Point(63, 220);
             this.karty_gracza_1.Name = "karty_gracza_1";
             this.karty_gracza_1.Size = new System.Drawing.Size(100, 31);
             this.karty_gracza_1.TabIndex = 0;
@@ -47,7 +50,7 @@
             // 
             // talia_gracza_2
             // 
-            this.talia_gracza_2.Location = new System.Drawing.Point(1008, 321);
+            this.talia_gracza_2.Location = new System.Drawing.Point(1017, 220);
             this.talia_gracza_2.Name = "talia_gracza_2";
             this.talia_gracza_2.Size = new System.Drawing.Size(100, 31);
             this.talia_gracza_2.TabIndex = 1;
@@ -56,7 +59,7 @@
             // karty_gracza1
             // 
             this.karty_gracza1.AutoSize = true;
-            this.karty_gracza1.Location = new System.Drawing.Point(12, 251);
+            this.karty_gracza1.Location = new System.Drawing.Point(23, 158);
             this.karty_gracza1.Name = "karty_gracza1";
             this.karty_gracza1.Size = new System.Drawing.Size(216, 25);
             this.karty_gracza1.TabIndex = 2;
@@ -65,7 +68,7 @@
             // karty_gracza2
             // 
             this.karty_gracza2.AutoSize = true;
-            this.karty_gracza2.Location = new System.Drawing.Point(926, 251);
+            this.karty_gracza2.Location = new System.Drawing.Point(923, 170);
             this.karty_gracza2.Name = "karty_gracza2";
             this.karty_gracza2.Size = new System.Drawing.Size(267, 25);
             this.karty_gracza2.TabIndex = 3;
@@ -73,11 +76,11 @@
             // 
             // START
             // 
-            this.START.Location = new System.Drawing.Point(454, 452);
+            this.START.Location = new System.Drawing.Point(454, 36);
             this.START.Name = "START";
             this.START.Size = new System.Drawing.Size(257, 89);
             this.START.TabIndex = 4;
-            this.START.Text = "Rozpocznij grę";
+            this.START.Text = "Rozdaj karty";
             this.START.UseVisualStyleBackColor = true;
             this.START.Click += new System.EventHandler(this.START_Click);
             // 
@@ -97,11 +100,42 @@
             this.aktualna_karta_komputera.TabIndex = 6;
             this.aktualna_karta_komputera.TextChanged += new System.EventHandler(this.aktualna_karta_komputera_TextChanged);
             // 
+            // aktualna_gracz1
+            // 
+            this.aktualna_gracz1.AutoSize = true;
+            this.aktualna_gracz1.Location = new System.Drawing.Point(355, 250);
+            this.aktualna_gracz1.Name = "aktualna_gracz1";
+            this.aktualna_gracz1.Size = new System.Drawing.Size(150, 25);
+            this.aktualna_gracz1.TabIndex = 7;
+            this.aktualna_gracz1.Text = "Aktualna karta";
+            // 
+            // aktualna_komputer
+            // 
+            this.aktualna_komputer.AutoSize = true;
+            this.aktualna_komputer.Location = new System.Drawing.Point(694, 251);
+            this.aktualna_komputer.Name = "aktualna_komputer";
+            this.aktualna_komputer.Size = new System.Drawing.Size(150, 25);
+            this.aktualna_komputer.TabIndex = 8;
+            this.aktualna_komputer.Text = "Aktualna karta";
+            // 
+            // bitwa
+            // 
+            this.bitwa.Location = new System.Drawing.Point(12, 527);
+            this.bitwa.Name = "bitwa";
+            this.bitwa.Size = new System.Drawing.Size(1217, 84);
+            this.bitwa.TabIndex = 9;
+            this.bitwa.Text = "BITWA!";
+            this.bitwa.UseVisualStyleBackColor = true;
+            this.bitwa.Click += new System.EventHandler(this.bitwa_Click);
+            // 
             // gra1os
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1241, 712);
+            this.Controls.Add(this.bitwa);
+            this.Controls.Add(this.aktualna_komputer);
+            this.Controls.Add(this.aktualna_gracz1);
             this.Controls.Add(this.aktualna_karta_komputera);
             this.Controls.Add(this.aktualna_karta_gracza);
             this.Controls.Add(this.START);
@@ -125,5 +159,8 @@
         private System.Windows.Forms.Button START;
         private System.Windows.Forms.TextBox aktualna_karta_gracza;
         private System.Windows.Forms.TextBox aktualna_karta_komputera;
+        private System.Windows.Forms.Label aktualna_gracz1;
+        private System.Windows.Forms.Label aktualna_komputer;
+        private System.Windows.Forms.Button bitwa;
     }
 }
