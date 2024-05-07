@@ -80,6 +80,8 @@ namespace Kasyno
             shuffleDeck();
             playercardSum = 0;
             dealercardSum = 0;
+            player_points_value_label.Text = "0";
+            dealer_points_value_label.Text = "0";
             playercards_label.Text = null;
             dealercards_label.Text = null;
             playerHand.Clear();
