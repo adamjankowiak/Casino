@@ -93,6 +93,7 @@ namespace Kasyno
             playerHand.Add(deck[0]);
             deck.Remove(deck[0]);
             playercardSum += cardsValue[playerHand[playerHand.Count-1].Substring(0, playerHand[playerHand.Count-1].Length - 1)];
+            player_points_value_label.Text = playercardSum.ToString();
             playercards_label.Text += " " + playerHand[playerHand.Count - 1];
             if (playercardSum > 21)
             {
@@ -126,6 +127,7 @@ namespace Kasyno
                 dealersHand.Add(deck[0]);
                 deck.Remove(deck[0]);
                 dealercardSum += cardsValue[dealersHand[dealersHand.Count - 1].Substring(0, dealersHand[dealersHand.Count - 1].Length - 1)];
+                dealer_points_value_label.Text = dealercardSum.ToString();
                 dealercards_label.Text += " " + dealersHand[dealersHand.Count - 1];
                 if (dealercardSum > 21)
                 {

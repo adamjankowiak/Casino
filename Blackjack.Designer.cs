@@ -36,6 +36,10 @@
             this.playercards_label = new System.Windows.Forms.Label();
             this.hit_button = new System.Windows.Forms.Button();
             this.stand_button = new System.Windows.Forms.Button();
+            this.player_points_label = new System.Windows.Forms.Label();
+            this.dealer_points_label = new System.Windows.Forms.Label();
+            this.player_points_value_label = new System.Windows.Forms.Label();
+            this.dealer_points_value_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // start_button
@@ -131,6 +135,56 @@
             this.stand_button.Visible = false;
             this.stand_button.Click += new System.EventHandler(this.stand_button_Click);
             // 
+            // player_points_label
+            // 
+            this.player_points_label.AutoSize = true;
+            this.player_points_label.BackColor = System.Drawing.Color.Transparent;
+            this.player_points_label.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player_points_label.ForeColor = System.Drawing.Color.White;
+            this.player_points_label.Location = new System.Drawing.Point(12, 478);
+            this.player_points_label.Name = "player_points_label";
+            this.player_points_label.Size = new System.Drawing.Size(121, 29);
+            this.player_points_label.TabIndex = 7;
+            this.player_points_label.Text = "Punkty:";
+            // 
+            // dealer_points_label
+            // 
+            this.dealer_points_label.AutoSize = true;
+            this.dealer_points_label.BackColor = System.Drawing.Color.Transparent;
+            this.dealer_points_label.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealer_points_label.ForeColor = System.Drawing.Color.Black;
+            this.dealer_points_label.Location = new System.Drawing.Point(12, 16);
+            this.dealer_points_label.Name = "dealer_points_label";
+            this.dealer_points_label.Size = new System.Drawing.Size(121, 29);
+            this.dealer_points_label.TabIndex = 8;
+            this.dealer_points_label.Text = "punkty:";
+            // 
+            // player_points_value_label
+            // 
+            this.player_points_value_label.AutoSize = true;
+            this.player_points_value_label.BackColor = System.Drawing.Color.Transparent;
+            this.player_points_value_label.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player_points_value_label.ForeColor = System.Drawing.Color.White;
+            this.player_points_value_label.Location = new System.Drawing.Point(139, 478);
+            this.player_points_value_label.Name = "player_points_value_label";
+            this.player_points_value_label.Size = new System.Drawing.Size(28, 29);
+            this.player_points_value_label.TabIndex = 9;
+            this.player_points_value_label.Text = "0";
+            this.player_points_value_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dealer_points_value_label
+            // 
+            this.dealer_points_value_label.AutoSize = true;
+            this.dealer_points_value_label.BackColor = System.Drawing.Color.Transparent;
+            this.dealer_points_value_label.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealer_points_value_label.ForeColor = System.Drawing.Color.Black;
+            this.dealer_points_value_label.Location = new System.Drawing.Point(139, 16);
+            this.dealer_points_value_label.Name = "dealer_points_value_label";
+            this.dealer_points_value_label.Size = new System.Drawing.Size(28, 29);
+            this.dealer_points_value_label.TabIndex = 10;
+            this.dealer_points_value_label.Text = "0";
+            this.dealer_points_value_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Blackjack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,6 +192,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(862, 525);
+            this.Controls.Add(this.dealer_points_value_label);
+            this.Controls.Add(this.player_points_value_label);
+            this.Controls.Add(this.dealer_points_label);
+            this.Controls.Add(this.player_points_label);
             this.Controls.Add(this.stand_button);
             this.Controls.Add(this.hit_button);
             this.Controls.Add(this.playercards_label);
@@ -168,5 +226,9 @@
         private System.Windows.Forms.Label playercards_label;
         private System.Windows.Forms.Button hit_button;
         private System.Windows.Forms.Button stand_button;
+        private System.Windows.Forms.Label player_points_label;
+        private System.Windows.Forms.Label dealer_points_label;
+        private System.Windows.Forms.Label player_points_value_label;
+        private System.Windows.Forms.Label dealer_points_value_label;
     }
 }
