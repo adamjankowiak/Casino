@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gapa));
             this.current_player = new System.Windows.Forms.Label();
             this.current_deck = new System.Windows.Forms.Label();
             this.playerLeft = new System.Windows.Forms.Label();
@@ -45,8 +44,6 @@
             this.player4_deck = new System.Windows.Forms.Label();
             this.player3_deck = new System.Windows.Forms.Label();
             this.player2_Deck = new System.Windows.Forms.Label();
-            this.VideoWin = new AxWMPLib.AxWindowsMediaPlayer();
-            ((System.ComponentModel.ISupportInitialize)(this.VideoWin)).BeginInit();
             this.SuspendLayout();
             // 
             // current_player
@@ -133,7 +130,7 @@
             // radioPikButton
             // 
             this.radioPikButton.AutoSize = true;
-            this.radioPikButton.BackColor = System.Drawing.SystemColors.Control;
+            this.radioPikButton.BackColor = System.Drawing.Color.Teal;
             this.radioPikButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioPikButton.Location = new System.Drawing.Point(553, 233);
             this.radioPikButton.Name = "radioPikButton";
@@ -147,6 +144,7 @@
             // radioKierButton
             // 
             this.radioKierButton.AutoSize = true;
+            this.radioKierButton.BackColor = System.Drawing.Color.Teal;
             this.radioKierButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioKierButton.ForeColor = System.Drawing.Color.Red;
             this.radioKierButton.Location = new System.Drawing.Point(553, 256);
@@ -155,12 +153,13 @@
             this.radioKierButton.TabIndex = 9;
             this.radioKierButton.TabStop = true;
             this.radioKierButton.Text = "♥";
-            this.radioKierButton.UseVisualStyleBackColor = true;
+            this.radioKierButton.UseVisualStyleBackColor = false;
             this.radioKierButton.Visible = false;
             // 
             // radioKaroButton
             // 
             this.radioKaroButton.AutoSize = true;
+            this.radioKaroButton.BackColor = System.Drawing.Color.Teal;
             this.radioKaroButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioKaroButton.ForeColor = System.Drawing.Color.Red;
             this.radioKaroButton.Location = new System.Drawing.Point(553, 279);
@@ -169,12 +168,13 @@
             this.radioKaroButton.TabIndex = 10;
             this.radioKaroButton.TabStop = true;
             this.radioKaroButton.Text = "♦";
-            this.radioKaroButton.UseVisualStyleBackColor = true;
+            this.radioKaroButton.UseVisualStyleBackColor = false;
             this.radioKaroButton.Visible = false;
             // 
             // radioTreflButton
             // 
             this.radioTreflButton.AutoSize = true;
+            this.radioTreflButton.BackColor = System.Drawing.Color.Teal;
             this.radioTreflButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioTreflButton.Location = new System.Drawing.Point(553, 302);
             this.radioTreflButton.Name = "radioTreflButton";
@@ -182,7 +182,7 @@
             this.radioTreflButton.TabIndex = 11;
             this.radioTreflButton.TabStop = true;
             this.radioTreflButton.Text = "♣";
-            this.radioTreflButton.UseVisualStyleBackColor = true;
+            this.radioTreflButton.UseVisualStyleBackColor = false;
             this.radioTreflButton.Visible = false;
             // 
             // acceptButton
@@ -223,16 +223,6 @@
             this.player2_Deck.Size = new System.Drawing.Size(0, 13);
             this.player2_Deck.TabIndex = 15;
             // 
-            // VideoWin
-            // 
-            this.VideoWin.Enabled = true;
-            this.VideoWin.Location = new System.Drawing.Point(701, -1);
-            this.VideoWin.Name = "VideoWin";
-            this.VideoWin.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("VideoWin.OcxState")));
-            this.VideoWin.Size = new System.Drawing.Size(136, 112);
-            this.VideoWin.TabIndex = 16;
-            this.VideoWin.Visible = false;
-            // 
             // Gapa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,7 +230,6 @@
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(834, 461);
-            this.Controls.Add(this.VideoWin);
             this.Controls.Add(this.player2_Deck);
             this.Controls.Add(this.player3_deck);
             this.Controls.Add(this.player4_deck);
@@ -257,9 +246,9 @@
             this.Controls.Add(this.playerLeft);
             this.Controls.Add(this.current_deck);
             this.Controls.Add(this.current_player);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Gapa";
             this.Text = "Game";
-            ((System.ComponentModel.ISupportInitialize)(this.VideoWin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,6 +272,5 @@
         private System.Windows.Forms.Label player4_deck;
         private System.Windows.Forms.Label player3_deck;
         private System.Windows.Forms.Label player2_Deck;
-        private AxWMPLib.AxWindowsMediaPlayer VideoWin;
     }
 }

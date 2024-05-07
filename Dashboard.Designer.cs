@@ -33,15 +33,16 @@
             this.kasyno_label = new System.Windows.Forms.Label();
             this.kasyno2_label = new System.Windows.Forms.Label();
             this.gapa_button = new System.Windows.Forms.Button();
+            this.pokerButton = new System.Windows.Forms.Button();
             this.roulette_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // wojna_button
             // 
-            this.wojna_button.Location = new System.Drawing.Point(221, 307);
+            this.wojna_button.Location = new System.Drawing.Point(221, 157);
             this.wojna_button.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.wojna_button.Name = "wojna_button";
-            this.wojna_button.Size = new System.Drawing.Size(169, 21);
+            this.wojna_button.Size = new System.Drawing.Size(169, 49);
             this.wojna_button.TabIndex = 0;
             this.wojna_button.Text = "Wojna";
             this.wojna_button.UseVisualStyleBackColor = true;
@@ -49,10 +50,10 @@
             // 
             // blackjack_button
             // 
-            this.blackjack_button.Location = new System.Drawing.Point(221, 334);
+            this.blackjack_button.Location = new System.Drawing.Point(221, 225);
             this.blackjack_button.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.blackjack_button.Name = "blackjack_button";
-            this.blackjack_button.Size = new System.Drawing.Size(169, 22);
+            this.blackjack_button.Size = new System.Drawing.Size(169, 49);
             this.blackjack_button.TabIndex = 1;
             this.blackjack_button.Text = "Blackjack";
             this.blackjack_button.UseVisualStyleBackColor = true;
@@ -61,11 +62,11 @@
             // kasyno_label
             // 
             this.kasyno_label.AutoSize = true;
-            this.kasyno_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kasyno_label.Font = new System.Drawing.Font("Stencil", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kasyno_label.Location = new System.Drawing.Point(128, 60);
             this.kasyno_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kasyno_label.Name = "kasyno_label";
-            this.kasyno_label.Size = new System.Drawing.Size(348, 44);
+            this.kasyno_label.Size = new System.Drawing.Size(403, 46);
             this.kasyno_label.TabIndex = 2;
             this.kasyno_label.Text = "Tłuste Inc. Kasyno";
             // 
@@ -83,14 +84,25 @@
             // 
             // gapa_button
             // 
-            this.gapa_button.Location = new System.Drawing.Point(221, 362);
+            this.gapa_button.Location = new System.Drawing.Point(221, 285);
             this.gapa_button.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.gapa_button.Name = "gapa_button";
-            this.gapa_button.Size = new System.Drawing.Size(169, 23);
+            this.gapa_button.Size = new System.Drawing.Size(169, 49);
             this.gapa_button.TabIndex = 4;
             this.gapa_button.Text = "Gapa";
             this.gapa_button.UseVisualStyleBackColor = true;
             this.gapa_button.Click += new System.EventHandler(this.gapa_button_Click);
+            // 
+            // pokerButton
+            // 
+            this.pokerButton.Location = new System.Drawing.Point(221, 353);
+            this.pokerButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pokerButton.Name = "pokerButton";
+            this.pokerButton.Size = new System.Drawing.Size(169, 49);
+            this.pokerButton.TabIndex = 5;
+            this.pokerButton.Text = "Poker";
+            this.pokerButton.UseVisualStyleBackColor = true;
+            this.pokerButton.Click += new System.EventHandler(this.pokerButton_Click);
             // 
             // roulette_button
             // 
@@ -108,6 +120,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 443);
+            this.Controls.Add(this.pokerButton);
+            this.ClientSize = new System.Drawing.Size(625, 443);
             this.Controls.Add(this.roulette_button);
             this.Controls.Add(this.gapa_button);
             this.Controls.Add(this.kasyno2_label);
@@ -115,6 +129,7 @@
             this.Controls.Add(this.blackjack_button);
             this.Controls.Add(this.wojna_button);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -131,6 +146,7 @@
         private System.Windows.Forms.Label kasyno_label;
         private System.Windows.Forms.Label kasyno2_label;
         private System.Windows.Forms.Button gapa_button;
+        private System.Windows.Forms.Button pokerButton;
         private System.Windows.Forms.Button roulette_button;
     }
 }

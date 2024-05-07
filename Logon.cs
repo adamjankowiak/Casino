@@ -17,6 +17,7 @@ namespace Kasyno
         public Logon()
         {
             InitializeComponent();
+            this.password_label.BringToFront();
         }
 
         private void login_Click(object sender, EventArgs e)

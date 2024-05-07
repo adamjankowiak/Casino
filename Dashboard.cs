@@ -14,7 +14,7 @@ namespace Kasyno
     {
         string user = "";
         Logon logon = new Logon();
-        public List<string>deck = new List<string>();
+        private List<string>deck = new List<string>();
         public Dashboard(Logon log, string username)
         {
             InitializeComponent();
@@ -34,6 +34,15 @@ namespace Kasyno
                     deck.Add(curr);
                 }
             }
+        }
+        public List<string> getDeck()
+        {
+            List<string> tempDeck = new List<string>();
+            for (int i = 0; i < this.deck.Count; i++)
+            {
+                tempDeck.Add(this.deck[i]);
+            }
+            return tempDeck;
         }
 
         public void SetUser(string username)
@@ -61,6 +70,12 @@ namespace Kasyno
         {
             Gapa gapa = new Gapa(this);
             gapa.Show();
+        }
+
+        private void pokerButton_Click(object sender, EventArgs e)
+        {
+            Poker poker = new Poker(this);
+            poker.Show();
         }
 
         private void roulette_button_Click(object sender, EventArgs e)
