@@ -30,7 +30,8 @@ namespace Kasyno
                 string[] split = line.Split(',');
                 username_list.Add(split[0]);
                 password_list.Add(split[1]);
-                balance_list.Add(int.Parse(split[2]));
+                //WAŁACH NAPRAW TO
+                //balance_list.Add(int.Parse(split[2]));
             }
             if (!username_list.Contains(username.Text))
             {
@@ -41,7 +42,9 @@ namespace Kasyno
             {
                 if(username.Text == username_list[i] && password.Text == password_list[i])
                 {
-                    Dashboard dashboard = new Dashboard(this, username.Text.ToLower(), balance_list[i]);
+                    //WAŁACH NAPRAW TO
+                    //Dashboard dashboard = new Dashboard(this, username.Text.ToLower(), balance_list[i]);
+                    Dashboard dashboard = new Dashboard(this, username.Text.ToLower(),0);
                     this.Hide();
                     dashboard.Show();
                     return;

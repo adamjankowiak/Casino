@@ -113,7 +113,7 @@
             // 
             this.hit_button.BackColor = System.Drawing.Color.LemonChiffon;
             this.hit_button.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hit_button.Location = new System.Drawing.Point(675, 361);
+            this.hit_button.Location = new System.Drawing.Point(675, 371);
             this.hit_button.Name = "hit_button";
             this.hit_button.Size = new System.Drawing.Size(164, 62);
             this.hit_button.TabIndex = 5;
@@ -165,7 +165,7 @@
             this.player_points_value_label.BackColor = System.Drawing.Color.Transparent;
             this.player_points_value_label.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player_points_value_label.ForeColor = System.Drawing.Color.White;
-            this.player_points_value_label.Location = new System.Drawing.Point(139, 478);
+            this.player_points_value_label.Location = new System.Drawing.Point(129, 478);
             this.player_points_value_label.Name = "player_points_value_label";
             this.player_points_value_label.Size = new System.Drawing.Size(28, 29);
             this.player_points_value_label.TabIndex = 9;
@@ -178,7 +178,7 @@
             this.dealer_points_value_label.BackColor = System.Drawing.Color.Transparent;
             this.dealer_points_value_label.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dealer_points_value_label.ForeColor = System.Drawing.Color.Black;
-            this.dealer_points_value_label.Location = new System.Drawing.Point(139, 16);
+            this.dealer_points_value_label.Location = new System.Drawing.Point(129, 16);
             this.dealer_points_value_label.Name = "dealer_points_value_label";
             this.dealer_points_value_label.Size = new System.Drawing.Size(28, 29);
             this.dealer_points_value_label.TabIndex = 10;

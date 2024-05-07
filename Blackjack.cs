@@ -28,7 +28,6 @@ namespace Kasyno
         {
             InitializeComponent();
             dashboard = dash;
-            newGame();
         }
         private void Blackjack_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -37,6 +36,7 @@ namespace Kasyno
 
         private void start_button_Click(object sender, EventArgs e)
         {
+            newGame();
             start_button.Enabled = false;
             start_button.Visible = false;
             playercards_label.Visible = true;
@@ -65,9 +65,11 @@ namespace Kasyno
             playerHand.Add(deck[0]);
             deck.Remove(deck[0]);
             playercardSum += cardsValue[playerHand[0].Substring(0, playerHand[0].Length-1)];
+            player_points_value_label.Text = playercardSum.ToString();
             dealersHand.Add(deck[0]);
             deck.Remove(deck[0]);
             dealercardSum += cardsValue[dealersHand[0].Substring(0, dealersHand[0].Length - 1)];
+            dealer_points_value_label.Text = dealercardSum.ToString();
             playercards_label.Text = playerHand[0];
             dealercards_label.Text = dealersHand[0];
 
@@ -104,6 +106,7 @@ namespace Kasyno
                     if (playerHand[i].Substring(0, playerHand[i].Length - 1) == "A")
                     {
                         playercardSum -= 10;
+                        player_points_value_label.Text = playercardSum.ToString();
                         playerHand.RemoveAt(i);
                         break;
                     }
@@ -138,6 +141,7 @@ namespace Kasyno
                         if (dealersHand[i].Substring(0, dealersHand[i].Length - 1) == "A")
                         {
                             dealercardSum -= 10;
+                            dealer_points_value_label.Text = dealercardSum.ToString();
                             dealersHand.RemoveAt(i);
                             break;
                         }
