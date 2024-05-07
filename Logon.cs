@@ -41,7 +41,7 @@ namespace Kasyno
             {
                 if(username.Text == username_list[i] && password.Text == password_list[i])
                 {
-                    Dashboard dashboard = new Dashboard(this, username.Text.ToLower());
+                    Dashboard dashboard = new Dashboard(this, username.Text.ToLower(), balance_list[i]);
                     this.Hide();
                     dashboard.Show();
                     return;
