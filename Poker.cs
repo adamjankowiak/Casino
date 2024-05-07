@@ -945,14 +945,35 @@ namespace Kasyno
                                     }
                                 }
                             }
+                            if(tmp == "Flush")
+                            {
+
+                            }
 
                         }
                     }
                     currentDeck = new List<string>(tableCards);
                 }
-
-                MessageBox.Show("Wygrał Gracz " + playerIndex.ToString());
-                this.Close();
+                List<string>winningLine = new List<string>(winner.getWinnerCards());
+                if (winningLine.Contains(player1Deck[0]))
+                {
+                    MessageBox.Show("Wygrałeś");
+                }
+                else if(winningLine.Contains(player2Deck[0]))
+                {
+                    MessageBox.Show("Wygrał Gracz 2");
+                    this.Close();
+                }
+                else if(winningLine.Contains(player3Deck[0]))
+                {
+                    MessageBox.Show("Wygrał Gracz 3");
+                    this.Close();
+                }
+                else if(winningLine.Contains(player4Deck[0]))
+                {
+                    MessageBox.Show("Wygrał Gracz 3");
+                    this.Close();
+                }
             }
             for(int i=0;i<allPlayersMoney.Length;i++)
             {
