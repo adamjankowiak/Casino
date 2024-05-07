@@ -77,7 +77,6 @@ namespace Kasyno
             this.bet_1st12 = new System.Windows.Forms.Button();
             this.bet_3rd12 = new System.Windows.Forms.Button();
             this.roulette_picture = new System.Windows.Forms.PictureBox();
-            this.current_bet = new System.Windows.Forms.Label();
             this.bet_red = new System.Windows.Forms.Button();
             this.bet_black = new System.Windows.Forms.Button();
             this.bet_odd = new System.Windows.Forms.Button();
@@ -97,7 +96,6 @@ namespace Kasyno
             this.Player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Player.OcxState")));
             this.Player.Size = new System.Drawing.Size(300, 300);
             this.Player.TabIndex = 0;
-            this.Player.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.Player_PlayStateChange);
             // 
             // Play
             // 
@@ -136,6 +134,7 @@ namespace Kasyno
             this.bet_1.UseVisualStyleBackColor = false;
             this.bet_1.Click += new System.EventHandler(this.bet_1_Click);
             this.bet_1.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_1.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_1.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_1.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -153,6 +152,7 @@ namespace Kasyno
             this.bet_2.UseVisualStyleBackColor = false;
             this.bet_2.Click += new System.EventHandler(this.bet_2_Click);
             this.bet_2.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_2.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_2.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_2.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -170,6 +170,7 @@ namespace Kasyno
             this.bet_3.UseVisualStyleBackColor = false;
             this.bet_3.Click += new System.EventHandler(this.bet_3_Click);
             this.bet_3.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_3.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_3.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_3.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -187,6 +188,7 @@ namespace Kasyno
             this.bet_4.UseVisualStyleBackColor = false;
             this.bet_4.Click += new System.EventHandler(this.bet_4_Click);
             this.bet_4.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_4.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_4.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_4.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -204,6 +206,7 @@ namespace Kasyno
             this.bet_5.UseVisualStyleBackColor = false;
             this.bet_5.Click += new System.EventHandler(this.bet_5_Click);
             this.bet_5.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_5.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_5.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_5.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -221,6 +224,7 @@ namespace Kasyno
             this.bet_6.UseVisualStyleBackColor = false;
             this.bet_6.Click += new System.EventHandler(this.bet_6_Click);
             this.bet_6.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_6.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_6.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_6.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -238,6 +242,7 @@ namespace Kasyno
             this.bet_7.UseVisualStyleBackColor = false;
             this.bet_7.Click += new System.EventHandler(this.bet_7_Click);
             this.bet_7.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_7.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_7.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_7.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -255,6 +260,7 @@ namespace Kasyno
             this.bet_8.UseVisualStyleBackColor = false;
             this.bet_8.Click += new System.EventHandler(this.bet_8_Click);
             this.bet_8.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_8.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_8.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_8.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -272,6 +278,7 @@ namespace Kasyno
             this.bet_9.UseVisualStyleBackColor = false;
             this.bet_9.Click += new System.EventHandler(this.bet_9_Click);
             this.bet_9.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_9.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_9.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_9.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -289,6 +296,7 @@ namespace Kasyno
             this.bet_10.UseVisualStyleBackColor = false;
             this.bet_10.Click += new System.EventHandler(this.bet_10_Click);
             this.bet_10.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_10.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_10.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_10.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -306,6 +314,7 @@ namespace Kasyno
             this.bet_11.UseVisualStyleBackColor = false;
             this.bet_11.Click += new System.EventHandler(this.bet_11_Click);
             this.bet_11.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_11.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_11.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_11.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -323,6 +332,7 @@ namespace Kasyno
             this.bet_12.UseVisualStyleBackColor = false;
             this.bet_12.Click += new System.EventHandler(this.bet_12_Click);
             this.bet_12.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_12.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_12.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_12.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -340,6 +350,7 @@ namespace Kasyno
             this.bet_13.UseVisualStyleBackColor = false;
             this.bet_13.Click += new System.EventHandler(this.bet_13_Click);
             this.bet_13.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_13.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_13.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_13.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -357,6 +368,7 @@ namespace Kasyno
             this.bet_14.UseVisualStyleBackColor = false;
             this.bet_14.Click += new System.EventHandler(this.bet_14_Click);
             this.bet_14.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_14.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_14.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_14.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -374,6 +386,7 @@ namespace Kasyno
             this.bet_15.UseVisualStyleBackColor = false;
             this.bet_15.Click += new System.EventHandler(this.bet_15_Click);
             this.bet_15.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_15.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_15.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_15.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -409,6 +422,7 @@ namespace Kasyno
             this.bet_17.UseVisualStyleBackColor = false;
             this.bet_17.Click += new System.EventHandler(this.bet_17_Click);
             this.bet_17.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_17.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_17.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_17.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -426,6 +440,7 @@ namespace Kasyno
             this.bet_18.UseVisualStyleBackColor = false;
             this.bet_18.Click += new System.EventHandler(this.bet_18_Click);
             this.bet_18.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_18.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_18.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_18.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -443,6 +458,7 @@ namespace Kasyno
             this.bet_19.UseVisualStyleBackColor = false;
             this.bet_19.Click += new System.EventHandler(this.bet_19_Click);
             this.bet_19.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_19.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_19.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_19.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -460,6 +476,7 @@ namespace Kasyno
             this.bet_20.UseVisualStyleBackColor = false;
             this.bet_20.Click += new System.EventHandler(this.bet_20_Click);
             this.bet_20.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_20.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_20.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_20.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -477,6 +494,7 @@ namespace Kasyno
             this.bet_21.UseVisualStyleBackColor = false;
             this.bet_21.Click += new System.EventHandler(this.bet_21_Click);
             this.bet_21.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_21.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_21.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_21.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -494,6 +512,7 @@ namespace Kasyno
             this.bet_22.UseVisualStyleBackColor = false;
             this.bet_22.Click += new System.EventHandler(this.bet_22_Click);
             this.bet_22.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_22.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_22.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_22.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -511,6 +530,7 @@ namespace Kasyno
             this.bet_23.UseVisualStyleBackColor = false;
             this.bet_23.Click += new System.EventHandler(this.bet_23_Click);
             this.bet_23.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_23.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_23.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_23.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -528,6 +548,7 @@ namespace Kasyno
             this.bet_24.UseVisualStyleBackColor = false;
             this.bet_24.Click += new System.EventHandler(this.bet_24_Click);
             this.bet_24.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_24.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_24.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_24.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -545,6 +566,7 @@ namespace Kasyno
             this.bet_25.UseVisualStyleBackColor = false;
             this.bet_25.Click += new System.EventHandler(this.bet_25_Click);
             this.bet_25.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_25.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_25.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_25.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -562,6 +584,7 @@ namespace Kasyno
             this.bet_26.UseVisualStyleBackColor = false;
             this.bet_26.Click += new System.EventHandler(this.bet_26_Click);
             this.bet_26.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_26.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_26.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_26.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -579,6 +602,7 @@ namespace Kasyno
             this.bet_27.UseVisualStyleBackColor = false;
             this.bet_27.Click += new System.EventHandler(this.bet_27_Click);
             this.bet_27.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_27.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_27.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_27.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -596,6 +620,7 @@ namespace Kasyno
             this.bet_28.UseVisualStyleBackColor = false;
             this.bet_28.Click += new System.EventHandler(this.bet_28_Click);
             this.bet_28.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_28.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_28.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_28.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -613,6 +638,7 @@ namespace Kasyno
             this.bet_29.UseVisualStyleBackColor = false;
             this.bet_29.Click += new System.EventHandler(this.bet_29_Click);
             this.bet_29.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_29.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_29.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_29.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -630,6 +656,7 @@ namespace Kasyno
             this.bet_30.UseVisualStyleBackColor = false;
             this.bet_30.Click += new System.EventHandler(this.bet_30_Click);
             this.bet_30.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_30.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_30.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_30.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -647,6 +674,7 @@ namespace Kasyno
             this.bet_31.UseVisualStyleBackColor = false;
             this.bet_31.Click += new System.EventHandler(this.bet_31_Click);
             this.bet_31.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_31.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_31.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_31.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -664,6 +692,7 @@ namespace Kasyno
             this.bet_32.UseVisualStyleBackColor = false;
             this.bet_32.Click += new System.EventHandler(this.bet_32_Click);
             this.bet_32.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_32.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_32.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_32.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -681,6 +710,7 @@ namespace Kasyno
             this.bet_33.UseVisualStyleBackColor = false;
             this.bet_33.Click += new System.EventHandler(this.bet_33_Click);
             this.bet_33.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_33.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_33.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_33.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -698,6 +728,7 @@ namespace Kasyno
             this.bet_34.UseVisualStyleBackColor = false;
             this.bet_34.Click += new System.EventHandler(this.bet_34_Click);
             this.bet_34.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_34.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_34.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_34.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -715,6 +746,7 @@ namespace Kasyno
             this.bet_35.UseVisualStyleBackColor = false;
             this.bet_35.Click += new System.EventHandler(this.bet_35_Click);
             this.bet_35.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_35.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_35.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_35.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -732,6 +764,7 @@ namespace Kasyno
             this.bet_36.UseVisualStyleBackColor = false;
             this.bet_36.Click += new System.EventHandler(this.bet_36_Click);
             this.bet_36.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_36.Leave += new System.EventHandler(this.bet_button_Leave);
             this.bet_36.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_36.MouseLeave += new System.EventHandler(this.bet_button_MouseLeave);
             // 
@@ -750,6 +783,7 @@ namespace Kasyno
             this.bet_2to1_bottom.UseVisualStyleBackColor = false;
             this.bet_2to1_bottom.Click += new System.EventHandler(this.bet_2to1_bottom_Click);
             this.bet_2to1_bottom.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_2to1_bottom.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_2to1_bottom.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_2to1_bottom.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -768,6 +802,7 @@ namespace Kasyno
             this.bet_2to1_middle.UseVisualStyleBackColor = false;
             this.bet_2to1_middle.Click += new System.EventHandler(this.bet_2to1_middle_Click);
             this.bet_2to1_middle.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_2to1_middle.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_2to1_middle.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_2to1_middle.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -786,6 +821,7 @@ namespace Kasyno
             this.bet_2to1_top.UseVisualStyleBackColor = false;
             this.bet_2to1_top.Click += new System.EventHandler(this.bet_2to1_top_Click);
             this.bet_2to1_top.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_2to1_top.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_2to1_top.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_2to1_top.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -804,6 +840,7 @@ namespace Kasyno
             this.bet_2nd12.UseVisualStyleBackColor = false;
             this.bet_2nd12.Click += new System.EventHandler(this.bet_2nd12_Click);
             this.bet_2nd12.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_2nd12.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_2nd12.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_2nd12.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -822,6 +859,7 @@ namespace Kasyno
             this.bet_1st12.UseVisualStyleBackColor = false;
             this.bet_1st12.Click += new System.EventHandler(this.bet_1st12_Click);
             this.bet_1st12.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_1st12.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_1st12.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_1st12.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -840,6 +878,7 @@ namespace Kasyno
             this.bet_3rd12.UseVisualStyleBackColor = false;
             this.bet_3rd12.Click += new System.EventHandler(this.bet_3rd12_Click);
             this.bet_3rd12.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_3rd12.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_3rd12.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_3rd12.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -852,17 +891,6 @@ namespace Kasyno
             this.roulette_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roulette_picture.TabIndex = 47;
             this.roulette_picture.TabStop = false;
-            // 
-            // current_bet
-            // 
-            this.current_bet.AutoSize = true;
-            this.current_bet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(112)))), ((int)(((byte)(34)))));
-            this.current_bet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.current_bet.Location = new System.Drawing.Point(458, 37);
-            this.current_bet.Name = "current_bet";
-            this.current_bet.Size = new System.Drawing.Size(90, 20);
-            this.current_bet.TabIndex = 48;
-            this.current_bet.Text = "current bet:";
             // 
             // bet_red
             // 
@@ -879,6 +907,7 @@ namespace Kasyno
             this.bet_red.UseVisualStyleBackColor = false;
             this.bet_red.Click += new System.EventHandler(this.bet_red_Click);
             this.bet_red.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_red.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_red.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_red.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -897,6 +926,7 @@ namespace Kasyno
             this.bet_black.UseVisualStyleBackColor = false;
             this.bet_black.Click += new System.EventHandler(this.bet_black_Click);
             this.bet_black.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_black.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_black.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_black.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -915,6 +945,7 @@ namespace Kasyno
             this.bet_odd.UseVisualStyleBackColor = false;
             this.bet_odd.Click += new System.EventHandler(this.bet_odd_Click);
             this.bet_odd.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_odd.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_odd.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_odd.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -933,6 +964,7 @@ namespace Kasyno
             this.bet_even.UseVisualStyleBackColor = false;
             this.bet_even.Click += new System.EventHandler(this.bet_even_Click);
             this.bet_even.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_even.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_even.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_even.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -951,6 +983,7 @@ namespace Kasyno
             this.bet_1to18.UseVisualStyleBackColor = false;
             this.bet_1to18.Click += new System.EventHandler(this.bet_1to18_Click);
             this.bet_1to18.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_1to18.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_1to18.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_1to18.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -969,6 +1002,7 @@ namespace Kasyno
             this.bet_19to36.UseVisualStyleBackColor = false;
             this.bet_19to36.Click += new System.EventHandler(this.bet_19to36_Click);
             this.bet_19to36.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_19to36.Leave += new System.EventHandler(this.bet_button_2_Leave);
             this.bet_19to36.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_19to36.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
@@ -985,7 +1019,6 @@ namespace Kasyno
             this.Controls.Add(this.bet_odd);
             this.Controls.Add(this.bet_black);
             this.Controls.Add(this.bet_red);
-            this.Controls.Add(this.current_bet);
             this.Controls.Add(this.roulette_picture);
             this.Controls.Add(this.bet_3rd12);
             this.Controls.Add(this.bet_1st12);
@@ -1035,11 +1068,11 @@ namespace Kasyno
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Roulette";
             this.Text = "Roulette";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Roulette_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.betting_table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roulette_picture)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1091,7 +1124,6 @@ namespace Kasyno
         private System.Windows.Forms.Button bet_1st12;
         private System.Windows.Forms.Button bet_3rd12;
         private System.Windows.Forms.PictureBox roulette_picture;
-        private System.Windows.Forms.Label current_bet;
         private System.Windows.Forms.Button bet_red;
         private System.Windows.Forms.Button bet_black;
         private System.Windows.Forms.Button bet_odd;
