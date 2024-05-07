@@ -34,6 +34,7 @@
             this.kasyno2_label = new System.Windows.Forms.Label();
             this.gapa_button = new System.Windows.Forms.Button();
             this.pokerButton = new System.Windows.Forms.Button();
+            this.roulette_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // wojna_button
@@ -103,12 +104,25 @@
             this.pokerButton.UseVisualStyleBackColor = true;
             this.pokerButton.Click += new System.EventHandler(this.pokerButton_Click);
             // 
+            // roulette_button
+            // 
+            this.roulette_button.Location = new System.Drawing.Point(165, 173);
+            this.roulette_button.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.roulette_button.Name = "roulette_button";
+            this.roulette_button.Size = new System.Drawing.Size(281, 74);
+            this.roulette_button.TabIndex = 5;
+            this.roulette_button.Text = "Ruleta";
+            this.roulette_button.UseVisualStyleBackColor = true;
+            this.roulette_button.Click += new System.EventHandler(this.roulette_button_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 443);
             this.Controls.Add(this.pokerButton);
+            this.ClientSize = new System.Drawing.Size(625, 443);
+            this.Controls.Add(this.roulette_button);
             this.Controls.Add(this.gapa_button);
             this.Controls.Add(this.kasyno2_label);
             this.Controls.Add(this.kasyno_label);
@@ -133,6 +147,7 @@
         private System.Windows.Forms.Label kasyno2_label;
         private System.Windows.Forms.Button gapa_button;
         private System.Windows.Forms.Button pokerButton;
+        private System.Windows.Forms.Button roulette_button;
     }
 }
 

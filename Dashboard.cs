@@ -81,3 +81,12 @@ namespace Kasyno
 
 
 }
+
+        private void roulette_button_Click(object sender, EventArgs e)
+        {
+            Roulette roulette = new Roulette(this);
+            this.Hide();
+            roulette.Show();
+        }
+    }
+}
