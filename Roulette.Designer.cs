@@ -31,7 +31,7 @@ namespace Kasyno
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Roulette));
-            this.Player = new AxWMPLib.AxWindowsMediaPlayer();
+            // this.Player = new AxWMPLib.AxWindowsMediaPlayer();
             this.Play = new System.Windows.Forms.Button();
             this.betting_table = new System.Windows.Forms.PictureBox();
             this.bet_1 = new System.Windows.Forms.Button();
@@ -83,19 +83,19 @@ namespace Kasyno
             this.bet_even = new System.Windows.Forms.Button();
             this.bet_1to18 = new System.Windows.Forms.Button();
             this.bet_19to36 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
+            // ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.betting_table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roulette_picture)).BeginInit();
             this.SuspendLayout();
             // 
             // Player
             // 
-            this.Player.Enabled = true;
+            /*this.Player.Enabled = true;
             this.Player.Location = new System.Drawing.Point(25, 28);
             this.Player.Name = "Player";
             this.Player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Player.OcxState")));
             this.Player.Size = new System.Drawing.Size(300, 300);
-            this.Player.TabIndex = 0;
+            this.Player.TabIndex = 0;*/
             // 
             // Play
             // 
@@ -1064,12 +1064,12 @@ namespace Kasyno
             this.Controls.Add(this.bet_1);
             this.Controls.Add(this.betting_table);
             this.Controls.Add(this.Play);
-            this.Controls.Add(this.Player);
+            // this.Controls.Add(this.Player);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Roulette";
             this.Text = "Roulette";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Roulette_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
+            // ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.betting_table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roulette_picture)).EndInit();
             this.ResumeLayout(false);
@@ -1078,7 +1078,7 @@ namespace Kasyno
 
         #endregion
 
-        private AxWMPLib.AxWindowsMediaPlayer Player;
+        // private AxWMPLib.AxWindowsMediaPlayer Player;
         private System.Windows.Forms.Button Play;
         private System.Windows.Forms.PictureBox betting_table;
         private System.Windows.Forms.Button bet_1;
