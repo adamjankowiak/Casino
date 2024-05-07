@@ -77,10 +77,6 @@ namespace Kasyno
             Poker poker = new Poker(this);
             poker.Show();
         }
-    }
-
-
-}
 
         private void roulette_button_Click(object sender, EventArgs e)
         {
