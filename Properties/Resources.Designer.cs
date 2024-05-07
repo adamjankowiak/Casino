@@ -83,6 +83,16 @@ namespace Kasyno.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dontgiveup {
+            get {
+                object obj = ResourceManager.GetObject("dontgiveup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login_backgroud2 {
             get {
                 object obj = ResourceManager.GetObject("login_backgroud2", resourceCulture);

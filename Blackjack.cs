@@ -80,6 +80,8 @@ namespace Kasyno
             shuffleDeck();
             playercardSum = 0;
             dealercardSum = 0;
+            player_points_value_label.Text = "0";
+            dealer_points_value_label.Text = "0";
             playercards_label.Text = null;
             dealercards_label.Text = null;
             playerHand.Clear();
@@ -93,6 +95,7 @@ namespace Kasyno
             playerHand.Add(deck[0]);
             deck.Remove(deck[0]);
             playercardSum += cardsValue[playerHand[playerHand.Count-1].Substring(0, playerHand[playerHand.Count-1].Length - 1)];
+            player_points_value_label.Text = playercardSum.ToString();
             playercards_label.Text += " " + playerHand[playerHand.Count - 1];
             if (playercardSum > 21)
             {
@@ -107,13 +110,13 @@ namespace Kasyno
                 }
                 if(playercardSum > 21)
                 {
-                    MessageBox.Show("Przegrana", "Przegrana", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     newGame();
                 }
             }
             if (playercardSum == 21)
             {
-                MessageBox.Show("Wygrana", "Wygrana", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 newGame();
             }
             
@@ -126,6 +129,7 @@ namespace Kasyno
                 dealersHand.Add(deck[0]);
                 deck.Remove(deck[0]);
                 dealercardSum += cardsValue[dealersHand[dealersHand.Count - 1].Substring(0, dealersHand[dealersHand.Count - 1].Length - 1)];
+                dealer_points_value_label.Text = dealercardSum.ToString();
                 dealercards_label.Text += " " + dealersHand[dealersHand.Count - 1];
                 if (dealercardSum > 21)
                 {
@@ -140,20 +144,20 @@ namespace Kasyno
                     }
                     if (dealercardSum > 21)
                     {
-                        MessageBox.Show("Wygrana", "Wygrana", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         newGame();
                         break;
                     }
                 }
                 if (dealercardSum == 21)
                 {
-                    MessageBox.Show("Przegrana", "Przegrana", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     newGame();
                     break;
                 }
                 if (dealercardSum < 21 && dealercardSum > playercardSum)
                 {
-                    MessageBox.Show("Przegrana", "Przegrana", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     newGame();
                     break;
                 }

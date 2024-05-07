@@ -52,6 +52,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DontGiveUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DontGiveUp.Designer.cs">
+      <DependentUpon>DontGiveUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gapa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="Roulette.Designer.cs">
       <DependentUpon>Roulette.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DontGiveUp.resx">
+      <DependentUpon>DontGiveUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gapa.resx">
       <DependentUpon>Gapa.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\spades-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dontgiveup.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
