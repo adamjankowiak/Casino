@@ -20,7 +20,8 @@ namespace Kasyno
             this.password_label.BringToFront();
         }
 
-        private void login_Click(object sender, EventArgs e)
+
+        private void login_label_Click(object sender, EventArgs e)
         {
             string[] data = File.ReadAllLines("..\\..\\userdata\\logon.csv");
             Collection<string> username_list = new Collection<string>(), password_list = new Collection<string>();
@@ -39,7 +40,7 @@ namespace Kasyno
             }
             for (int i = 0; i < username_list.Count; ++i)
             {
-                if(username.Text.ToLower() == username_list[i] && password.Text == password_list[i])
+                if (username.Text.ToLower() == username_list[i] && password.Text == password_list[i])
                 {
                     Dashboard dashboard = new Dashboard(this, username.Text.ToLower(), balance_list[i]);
                     this.Hide();
@@ -50,7 +51,7 @@ namespace Kasyno
             MessageBox.Show("password does not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void create_Click(object sender, EventArgs e)
+        private void create_label_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(username.Text))
             {
@@ -64,10 +65,10 @@ namespace Kasyno
             }
             File.AppendAllText("..\\..\\userdata\\logon.csv", username.Text.ToLower() + ',' + password.Text + ",500" + Environment.NewLine);
             MessageBox.Show("user added", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            login_Click(sender, e);
+            login_label_Click(sender, e);
         }
 
-        private void exit_Click(object sender, EventArgs e)
+        private void exit_label_Click(object sender, EventArgs e)
         {
             this.Close();
         }

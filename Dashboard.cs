@@ -109,10 +109,5 @@ namespace Kasyno
             this.Hide();
             dgu.Show();
         }
-
-        private void money_Click(object sender, EventArgs e)
-        {
-            balance = int.Parse(money.Text);
-        }
     }
 }
