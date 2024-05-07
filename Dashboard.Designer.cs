@@ -64,11 +64,11 @@
             // kasyno_label
             // 
             this.kasyno_label.AutoSize = true;
-            this.kasyno_label.Font = new System.Drawing.Font("Stencil", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kasyno_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kasyno_label.Location = new System.Drawing.Point(128, 60);
             this.kasyno_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kasyno_label.Name = "kasyno_label";
-            this.kasyno_label.Size = new System.Drawing.Size(403, 46);
+            this.kasyno_label.Size = new System.Drawing.Size(348, 44);
             this.kasyno_label.TabIndex = 2;
             this.kasyno_label.Text = "Tłuste Inc. Kasyno";
             // 

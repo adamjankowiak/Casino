@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +66,21 @@ namespace Kasyno
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
+            string[] data = File.ReadAllLines("..\\..\\userdata\\logon.csv");
+            string output = "";
+            foreach(string line in data)
+            {
+                string[] split = line.Split(',');
+                if(user == split[0])
+                {
+                    output += split[0] + ',' + split[1] + ',' + balance.ToString() + Environment.NewLine;
+                }
+                else
+                {
+                    output += line + Environment.NewLine;
+                }
+            }
+            File.WriteAllText("..\\..\\userdata\\logon.csv", output);
             logon.Close();
         }
 
@@ -92,6 +108,11 @@ namespace Kasyno
             DontGiveUp dgu = new DontGiveUp(this);
             this.Hide();
             dgu.Show();
+        }
+
+        private void money_Click(object sender, EventArgs e)
+        {
+            balance = int.Parse(money.Text);
         }
     }
 }

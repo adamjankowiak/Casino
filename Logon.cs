@@ -32,14 +32,14 @@ namespace Kasyno
                 password_list.Add(split[1]);
                 balance_list.Add(int.Parse(split[2]));
             }
-            if (!username_list.Contains(username.Text))
+            if (!username_list.Contains(username.Text.ToLower()))
             {
                 MessageBox.Show("username does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             for (int i = 0; i < username_list.Count; ++i)
             {
-                if(username.Text == username_list[i] && password.Text == password_list[i])
+                if(username.Text.ToLower() == username_list[i] && password.Text == password_list[i])
                 {
                     Dashboard dashboard = new Dashboard(this, username.Text.ToLower(), balance_list[i]);
                     this.Hide();
