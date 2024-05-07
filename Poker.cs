@@ -73,7 +73,7 @@ namespace Kasyno
             player2_money_label.Text = player2Money + "$";
             player3_money_label.Text = player3Money + "$";
             player4_money_label.Text = player4Money + "$";
-            deck=dashboard.deck;
+            this.deck = dashboard.getDeck();
             shuffleDeck();
             GetCards();
             CardOnTable();
