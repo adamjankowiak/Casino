@@ -30,8 +30,7 @@ namespace Kasyno
                 string[] split = line.Split(',');
                 username_list.Add(split[0]);
                 password_list.Add(split[1]);
-                //WAŁACH NAPRAW TO
-                //balance_list.Add(int.Parse(split[2]));
+                balance_list.Add(int.Parse(split[2]));
             }
             if (!username_list.Contains(username.Text))
             {
@@ -42,9 +41,7 @@ namespace Kasyno
             {
                 if(username.Text == username_list[i] && password.Text == password_list[i])
                 {
-                    //WAŁACH NAPRAW TO
-                    //Dashboard dashboard = new Dashboard(this, username.Text.ToLower(), balance_list[i]);
-                    Dashboard dashboard = new Dashboard(this, username.Text.ToLower(),0);
+                    Dashboard dashboard = new Dashboard(this, username.Text.ToLower(), balance_list[i]);
                     this.Hide();
                     dashboard.Show();
                     return;
@@ -66,7 +63,7 @@ namespace Kasyno
                 return;
             }
             File.AppendAllText("..\\..\\userdata\\logon.csv", username.Text.ToLower() + ',' + password.Text + ",500" + Environment.NewLine);
-            // MessageBox.Show("user added", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("user added", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
             login_Click(sender, e);
         }
 
