@@ -59,9 +59,17 @@ namespace Kasyno
             {"K",11},
             {"A",12}
         };
+        Dictionary<string, int> colorsValue = new Dictionary<string, int>()
+        {
+            {"♣",1},
+            {"♦",2},
+            {"♥",3},
+            {"♠",4}
+        };
         private int[] allPlayersMoney = { 0, 0, 0, 0 };
         private int pot = 0;
         int maxBet;
+        Winner winner = new Winner();
         public Poker(Dashboard dashboard)
         {
             InitializeComponent();
@@ -254,6 +262,7 @@ namespace Kasyno
                         betMoney = int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
                         MessageBox.Show("All in");
                         allPlayersMoney[0] += int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
+                        player1_bet_label.Text=betMoney.ToString() + "$";
                         player1_money_label.Text = "0$";
                     }
                     else
@@ -573,7 +582,7 @@ namespace Kasyno
             }
             if(counterPlayers == 1)
             {
-                MessageBox.Show("Wygrana "+ indexWinner.ToString());
+                MessageBox.Show("Wygrana Gracza "+ indexWinner.ToString());
                 this.Close();
             }
             if(round==0)
@@ -630,14 +639,86 @@ namespace Kasyno
                         {
                             max = value;
                             playerIndex = i;
+                            winner.setWinnerCards(currentDeck);
                         }
                         else if(value == max)
                         {
-                            //dsjnandjasadsjnsajdnasdjndjnasdjnsadjnjndasasd
+                            /*
+                                {"High Card",1},
+                                {"Pair",2},
+                                {"Two Pair",3},
+                                {"Three of a Kind",4},
+                                {"Straight",5},
+                                {"Flush",6},
+                                {"Full House",7},
+                                {"Four of a Kind",8},
+                                {"Straight Flush",9},
+                                {"Royal Flush",10}
+                             */
+                            List<string> currentWinnerCards = new List<string>(winner.getWinnerCards());
+                            if(tmp == "High Card")
+                            {
+                                string highestCard = "2♣";
+                                foreach (string currentCard in currentWinnerCards)
+                                {
+                                    string cardValue = currentCard.Substring(0, currentCard.Length - 1);
+                                    int currentCardValue = cardsValue[cardValue];
+                                    if (cardsValue[highestCard.Substring(0, highestCard.Length-1)] < currentCardValue)
+                                    {
+                                        highestCard = currentCard;
+                                    }
+                                    else if(cardsValue[highestCard.Substring(0, highestCard.Length - 1)] == currentCardValue)
+                                    { 
+                                        string color = currentCard.Substring(currentCard.Length - 1);
+                                        int colorCardValue = colorsValue[color];
+                                        if (colorsValue[highestCard.Substring(highestCard.Length-1)] < colorCardValue)
+                                        {
+                                            highestCard = currentCard;
+                                        }
+                                    }
+                                }
+                                string currenthighestCard = "2♣";
+                                foreach (string currentCard in currentDeck)
+                                {
+                                    string cardValue = currentCard.Substring(0, currentCard.Length - 1);
+                                    int currentCardValue = cardsValue[cardValue];
+                                    if (cardsValue[currenthighestCard.Substring(0, currenthighestCard.Length - 1)] < currentCardValue)
+                                    {
+                                        currenthighestCard = currentCard;
+                                    }
+                                    else if (cardsValue[currenthighestCard.Substring(0, currenthighestCard.Length - 1)] == currentCardValue)
+                                    {
+                                        string color = currentCard.Substring(currentCard.Length - 1);
+                                        int colorCardValue = colorsValue[color];
+                                        if (colorsValue[currenthighestCard.Substring(currenthighestCard.Length - 1)] < colorCardValue)
+                                        {
+                                            currenthighestCard = currentCard;
+                                        }
+                                    }
+                                }
+                                if (cardsValue[currenthighestCard.Substring(0, currenthighestCard.Length-1)] > cardsValue[highestCard.Substring(0, highestCard.Length - 1)])
+                                {
+                                    winner.setWinnerCards(currentDeck);
+                                }
+                                else if(cardsValue[currenthighestCard.Substring(0, currenthighestCard.Length - 1)] == cardsValue[highestCard.Substring(0, highestCard.Length - 1)])
+                                {
+                                    if (colorsValue[currenthighestCard.Substring(currenthighestCard.Length - 1)] > colorsValue[highestCard.Substring(highestCard.Length - 1)])
+                                    {
+                                        winner.setWinnerCards(currentDeck);
+                                    }
+                                }
+                            }
+                            if (tmp == "Pair")
+                            {
+                                //asdjiijbhodsabihoudsabhuosdabhousdajhbojsadubhosadubuhodasbohdasdsdasdaasdasd
+                                //njsadjnidsanjkosadnjiosadnjisdanjisdanjinjisadnjipsdanjisadnjinijsadanjissad
+                            }
                         }
                     }
                     
                 }
+                MessageBox.Show("Wygrał Gracz " + playerIndex.ToString());
+                this.Close();
             }
             for(int i=0;i<allPlayersMoney.Length;i++)
             {
@@ -719,6 +800,10 @@ namespace Kasyno
                 if (firstCard == secoundCard)
                 {
                     pairCounter++;
+                    if(pairCounter == 2)
+                    {
+                        break;
+                    }
                 }
             }
             return pairCounter == 2;
@@ -759,7 +844,7 @@ namespace Kasyno
             }
             for(int i=0;i<9;i++)
             {
-                if (cardsNumber[i]==1 && cardsNumber[i+1] == 1 && cardsNumber[i+2] == 1 && cardsNumber[i+3] == 1 && cardsNumber[i+4] == 1 && cardsNumber[i+5] == 1)
+                if (cardsNumber[i] >= 1 && cardsNumber[i+1] >= 1 && cardsNumber[i+2] >= 1 && cardsNumber[i+3] >= 1 && cardsNumber[i+4] >= 1 && cardsNumber[i+5] >= 1)
                 {
                     return true;
                 }
@@ -768,12 +853,36 @@ namespace Kasyno
         }
         private bool flush(List<string> hand)
         {
-            string color = hand[0].Substring(hand[0].Length-1);
+            int[] colors = { 0, 0, 0, 0 };
             for(int i=0;i<hand.Count;i++)
             {
-                if(color != hand[i].Substring(hand[i].Length-1))
+                string currentColor = hand[i].Substring(hand[i].Length-1);
+                if (currentColor == "♠")
                 {
-                    return false;
+                    colors[0] += 1;
+                    continue;
+                }
+                if (currentColor == "♦")
+                {
+                    colors[1] += 1;
+                    continue;
+                }
+                if (currentColor == "♥")
+                {
+                    colors[2] += 1;
+                    continue;
+                }
+                if (currentColor == "♣")
+                {
+                    colors[3] += 1;
+                    continue;
+                }
+            }
+            foreach (int counter in colors)
+            {
+                if (counter >= 5)
+                {
+                    return true;
                 }
             }
             return true;
@@ -811,53 +920,128 @@ namespace Kasyno
         }
         private bool fourOfaKind(List<string> hand)
         {
-            int counter = 1;
-            for(int i=0; i<hand.Count; i++)
+            string firstCard;
+            string secoundCard;
+            string thirdCard;
+            string fourthCard;
+            for(int i=0;i<hand.Count-4;i++)
             {
-                for(int j=0; j < hand.Count;j++)
-                {
-                    if(i==j)
-                    {
-                        continue;
-                    }
-                    if (hand[i].Substring(0,1) == hand[j].Substring(0,1))
-                    {
-                        counter++;
-                    }
-                }
-                if(counter==4)
+                firstCard = hand[i].Substring(0, hand[i].Length-1);
+                secoundCard = hand[i + 1].Substring(0, hand[i+1].Length-1);
+                thirdCard = hand[i + 2].Substring(0, hand[i+2].Length-1);
+                fourthCard = hand[i + 3].Substring(0, hand[i+3].Length-1);
+                if(firstCard == secoundCard && firstCard == thirdCard && firstCard==fourthCard)
                 {
                     return true;
                 }
-                counter = 1;
             }
             return false;
         }
         private bool straightFlush(List<string> hand)
         {
-            string[] tab = { "10", "7", "8", "9", "J"};
-            string color = hand[0].Substring(hand[0].Length - 1);
-            for (int i = 0; i < hand.Count; i++)
+            int[] colors = { 0, 0, 0, 0 };
+            if (flush(hand))
             {
-                if (!hand[i].Contains(tab[i]) || hand[i].Substring(hand[i].Length - 1) != color)
+                if(straight(hand))
+                {
+                    for(int i=0;i<hand.Count;i++)
+                    {
+                        string currentColor = hand[i].Substring(hand[i].Length - 1);
+                        if (currentColor == "♠")
+                        {
+                            colors[0] += 1;
+                            continue;
+                        }
+                        if (currentColor == "♦")
+                        {
+                            colors[1] += 1;
+                            continue;
+                        }
+                        if (currentColor == "♥")
+                        {
+                            colors[2] += 1;
+                            continue;
+                        }
+                        if (currentColor == "♣")
+                        {
+                            colors[3] += 1;
+                            continue;
+                        }
+                    }
+                    foreach(int counter in colors)
+                    {
+                        if(counter ==5)
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                else
                 {
                     return false;
                 }
             }
-            return true;
+            else
+            {
+                return false;
+            }
         }
         private bool royalFlush(List<string> hand)
         {
             string[] tab = { "10", "A", "J", "K", "Q" };
-            string color = hand[0].Substring(hand[0].Length - 1);
-            for (int i = 0; i < hand.Count; i++)
+            int[] colors = { 0, 0, 0, 0 };
+            if(hand.Contains("9") || hand.Contains("8") || hand.Contains("7") || hand.Contains("6") || hand.Contains("5") || hand.Contains("4") || hand.Contains("3") || hand.Contains("2"))
             {
-                if (!hand[i].Contains(tab[i]) || hand[i].Substring(hand[i].Length - 1) != color)
+                return false;
+            }
+            else
+            {
+                for(int i=0;i<hand.Count;i++)
                 {
-                    return false;
+                    if(hand[i].Substring(hand[i].Length - 1) == "♠")
+                    {
+                        colors[0] += 1;
+                        continue;
+                    }
+                    if(hand[i].Substring(hand[i].Length - 1) == "♦")
+                    {
+                        colors[1] += 1;
+                        continue;
+                    }
+                    if(hand[i].Substring(hand[i].Length - 1) == "♥")
+                    {
+                        colors[2] += 1;
+                        continue;
+                    }
+                    if(hand[i].Substring(hand[i].Length - 1) == "♣")
+                    {
+                        colors[3] += 1;
+                        continue;
+                    }
                 }
             }
-            return true;
+            foreach(int counter in colors)
+            {
+                if(counter == 5)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    class Winner
+    {
+        private List<string>winnerCards;
+        public void setWinnerCards(List<string>playerHand)
+        {
+            List<string>tmp = new List<string>(playerHand);
+            winnerCards = tmp;
+        }
+        public List<string> getWinnerCards()
+        {
+            return winnerCards;
         }
     }
 }
