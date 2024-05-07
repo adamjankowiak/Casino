@@ -84,5 +84,12 @@ namespace Kasyno
             this.Hide();
             roulette.Show();
         }
+
+        private void exit_button_Click(object sender, EventArgs e)
+        {
+            DontGiveUp dgu = new DontGiveUp(this);
+            this.Hide();
+            dgu.Show();
+        }
     }
 }

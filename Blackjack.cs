@@ -110,13 +110,13 @@ namespace Kasyno
                 }
                 if(playercardSum > 21)
                 {
-                    MessageBox.Show("Przegrana", "Przegrana", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     newGame();
                 }
             }
             if (playercardSum == 21)
             {
-                MessageBox.Show("Wygrana", "Wygrana", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 newGame();
             }
             
@@ -144,20 +144,20 @@ namespace Kasyno
                     }
                     if (dealercardSum > 21)
                     {
-                        MessageBox.Show("Wygrana", "Wygrana", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         newGame();
                         break;
                     }
                 }
                 if (dealercardSum == 21)
                 {
-                    MessageBox.Show("Przegrana", "Przegrana", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     newGame();
                     break;
                 }
                 if (dealercardSum < 21 && dealercardSum > playercardSum)
                 {
-                    MessageBox.Show("Przegrana", "Przegrana", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     newGame();
                     break;
                 }
