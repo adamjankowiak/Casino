@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,179 +16,190 @@ namespace Kasyno
 {
     public partial class gra1os : Form
     {
-        List<int> gracz_1 = new List<int>();
-        List<int> komputer = new List<int>();
-        public List<Karta> karty = new List<Karta>();
-
-        public class Karta
+        //Dashboard dashboard;
+        Wojna wojna;
+        private List<string> deck = new List<string>(/*dashboard.getDeck()*/);
+        private List<string> playerDeck = new List<string>();
+        private List<string> computerDeck = new List<string>();
+        private Dictionary<string, int> cardsValue = new Dictionary<string, int>()
         {
-            public int wartosc;
-            public string kolor;
-            public Karta(int wartosc, string kolor)
-            {
-                this.wartosc = wartosc;
-                this.kolor = kolor;
-            }
+            {"2",2},
+            {"3",3},
+            {"4",4},
+            {"5",5},
+            {"6",6},
+            {"7",7},
+            {"8",8},
+            {"9",9},
+            {"10",10},
+            {"J",11},
+            {"Q",12},
+            {"K",13},
+            {"A",14}
+        };
+        public gra1os(/*Dashboard dashboard*/ Wojna wojna)
+        {
+            InitializeComponent();
+            //this.dashboard = dashboard;
+            this.wojna = wojna;
+            createDeck();
+            shuffleDeck();
+            divisionDeck();
         }
-
-        public class Talia
+        private void createDeck()
         {
-            public List<Karta> karty = new List<Karta>();
-            public Talia()
+            List<string> suits = new List<string> { "♣", "♦", "♥", "♠" };
+            List<string> values = new List<string> { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
+            foreach (string s in suits)
             {
-                for (int i = 2; i < 16; i++)
+                foreach (string v in values)
                 {
-                    karty.Add(new Karta(i, "Kier"));
-                    karty.Add(new Karta(i, "Karo"));
-                    karty.Add(new Karta(i, "Trefl"));
-                    karty.Add(new Karta(i, "Pik"));
+                    string card = v + s;
+                    deck.Add(card);
                 }
             }
         }
-
-        public void Tasowanie()
+        private void divisionDeck()
         {
-            Random random = new Random();
-            int n = karty.Count;
-            while (n > 1)
+            for(int i = 0; i < deck.Count;i++)
             {
-                n--;
-                int k = random.Next(n + 1);
-                Karta value = karty[k];
-                karty[k] = karty[n];
-                karty[n] = value;
-            }
-        }
-
-        public gra1os()
-        {
-            InitializeComponent();
-        }
-
-        private void karty_gracza_1_TextChanged(object sender, EventArgs e)
-        {
-            karty_gracza_1.Text = gracz_1.Count.ToString();
-        }
-
-        private void talia_gracza_2_TextChanged(object sender, EventArgs e)
-        {
-            talia_gracza_2.Text = komputer.Count.ToString();
-        }
-
-        private void START_Click(object sender, EventArgs e)
-        {
-            InitializeComponent();
-            Talia talia = new Talia();
-            karty = talia.karty;
-            Tasowanie();
-            for (int i = 0; i < talia.karty.Count; i++)
-            {
-                if (i % 2 == 0)
+                if(i%2==0)
                 {
-                    gracz_1.Add(talia.karty[i].wartosc);
+                    playerDeck.Add(deck[i]);
                 }
                 else
                 {
-                    komputer.Add(talia.karty[i].wartosc);
+                    computerDeck.Add(deck[i]);
                 }
             }
-            AktualizujIloscKart();
-        }
 
-        private void aktualna_karta_gracza_TextChanged(object sender, EventArgs e)
-        {
-            if (gracz_1.Count > 0)
-            {
-                aktualna_karta_gracza.Text = gracz_1[0].ToString();
-            }
-            else
-            {
-                aktualna_karta_gracza.Text = "Brak kart";
-                MessageBox.Show("Przegrałeś wojne");
-            }
         }
-
-        private void aktualna_karta_komputera_TextChanged(object sender, EventArgs e)
+        private void shuffleDeck()
         {
-            if (komputer.Count > 0)
+            Random rnd = new Random();
+
+            int n = deck.Count;
+            while (n > 1)
             {
-                aktualna_karta_komputera.Text = komputer[0].ToString();
-            }
-            else
-            {
-                aktualna_karta_komputera.Text = "Brak kart";
-                MessageBox.Show("Wygrałeś wojne");
+                n--;
+                int k = rnd.Next(n + 1);
+                string value = deck[k];
+                deck[k] = deck[n];
+                deck[n] = value;
             }
         }
 
-        private void AktualizujIloscKart()
+        private void bitwa_Button_Click(object sender, EventArgs e)
         {
-            karty_gracza_1.Text = gracz_1.Count.ToString();
-            talia_gracza_2.Text = komputer.Count.ToString();
-        }
-
-        private void bitwa_Click(object sender, EventArgs e)
-        {
-            int karta_gracza = gracz_1[0];
-            int karta_komputera = komputer[0];
-            aktualna_karta_gracza.Text = karta_gracza.ToString();
-            aktualna_karta_komputera.Text = karta_komputera.ToString();
-            AktualizujIloscKart();
-            Timer timer = new Timer();
-            timer.Interval = 2000;
-            timer.Start();
-            timer.Tick += (s, a) =>
+            score_Player_textbox.Text = playerDeck.Count.ToString();
+            score_Computer_textBox.Text = computerDeck.Count.ToString();
+            if (playerDeck.Count == 0)
             {
-                timer.Stop();
-            };
-            if (karta_gracza > karta_komputera)
-            {
-                gracz_1.Add(karta_komputera);
-                gracz_1.Add(karta_gracza);
-                gracz_1.RemoveAt(0);
-                komputer.RemoveAt(0);
-                MessageBox.Show("Wygrałeś bitwe");
+                MessageBox.Show("Computer Win!");
+                this.Close();
             }
-            else if (karta_gracza < karta_komputera)
+            if (computerDeck.Count == 0)
             {
-                komputer.Add(karta_gracza);
-                komputer.Add(karta_komputera);
-                gracz_1.RemoveAt(0);
-                komputer.RemoveAt(0);
-                MessageBox.Show("Komputer wygrał bitwe");
+                MessageBox.Show("You Win!");
+                this.Close();
             }
-            else if (karta_gracza == karta_komputera)
+            List<string> list = new List<string>();
+            player_Card_textBox.Text = playerDeck[0];
+            computer_Card_textbox.Text = computerDeck[0];
+            list.Add(playerDeck[0]);
+            list.Add(computerDeck[0]);
+            playerDeck.Remove(playerDeck[0]);
+            computerDeck.Remove(computerDeck[0]);
+            if (cardsValue[list[0].Substring(0, list[0].Length-1)] > cardsValue[list[1].Substring(0, list[1].Length - 1)])
             {
-                if (gracz_1.Count >= 2 && komputer.Count >= 2)
+                MessageBox.Show("You Win!");
+                foreach(string card in list)
                 {
-                    int karta_gracza2 = gracz_1[1];
-                    int karta_komputera2 = komputer[1];
-                    if (karta_gracza2 > karta_komputera2)
-                    {
-                        gracz_1.Add(karta_komputera);
-                        gracz_1.Add(karta_gracza);
-                        gracz_1.Add(karta_komputera2);
-                        gracz_1.Add(karta_gracza2);
-                        gracz_1.RemoveAt(0);
-                        gracz_1.RemoveAt(0);
-                        komputer.RemoveAt(0);
-                        komputer.RemoveAt(0);
-                    }
-                    else if (karta_gracza2 < karta_komputera2)
-                    {
-                        komputer.Add(karta_gracza);
-                        komputer.Add(karta_komputera);
-                        komputer.Add(karta_gracza2);
-                        komputer.Add(karta_komputera2);
-                        gracz_1.RemoveAt(0);
-                        gracz_1.RemoveAt(0);
-                        komputer.RemoveAt(0);
-                        komputer.RemoveAt(0);
-                    }
-
+                    playerDeck.Add(card);
                 }
-
+                list.Clear();
             }
+            else if(cardsValue[list[0].Substring(0, list[0].Length - 1)] < cardsValue[list[1].Substring(0, list[1].Length - 1)])
+            {
+                MessageBox.Show("Computer Win!");
+                foreach (string card in list)
+                {
+                    computerDeck.Add(card);
+                }
+                list.Clear();
+            }
+            else if(cardsValue[list[0].Substring(0, list[0].Length - 1)] == cardsValue[list[1].Substring(0, list[1].Length - 1)])
+            {
+                if (playerDeck.Count == 0)
+                {
+                    MessageBox.Show("Computer Win!");
+                    this.Close();
+                }
+                if (computerDeck.Count == 0)
+                {
+                    MessageBox.Show("You Win!");
+                    this.Close();
+                }
+                MessageBox.Show("Remis");
+                int playerCounter = 0;
+                int computerCounter = 0;
+                while(playerCounter == computerCounter)
+                {
+                    list.Add(playerDeck[0]);
+                    list.Add(computerDeck[0]);
+                    if (playerDeck.Count == 0)
+                    {
+                        MessageBox.Show("Computer Win!");
+                        this.Close();
+                    }
+                    if (computerDeck.Count == 0)
+                    {
+                        MessageBox.Show("You Win!");
+                        this.Close();
+                    }
+                    playerDeck.Remove(playerDeck[0]);
+                    computerDeck.Remove(computerDeck[0]);
+                    if (playerDeck.Count == 0)
+                    {
+                        MessageBox.Show("Computer Win!");
+                        this.Close();
+                    }
+                    if (computerDeck.Count == 0)
+                    {
+                        MessageBox.Show("You Win!");
+                        this.Close();
+                    }
+                    list.Add(playerDeck[0]);
+                    list.Add(computerDeck[0]);
+                    player_Card_textBox.Text = list[list.Count-2];
+                    computer_Card_textbox.Text = list[list.Count-1];
+                    if (cardsValue[player_Card_textBox.Text.Substring(0, computer_Card_textbox.Text.Length-1)] > cardsValue[computer_Card_textbox.Text.Substring(0, player_Card_textBox.Text.Length - 1)])
+                    {
+                        MessageBox.Show("You Win!");
+                        playerCounter = 1;
+                        foreach (string card in list)
+                        {
+                            playerDeck.Add(card);
+                        }
+                    }
+                    if(cardsValue[player_Card_textBox.Text.Substring(0, computer_Card_textbox.Text.Length - 1)] < cardsValue[computer_Card_textbox.Text.Substring(0, player_Card_textBox.Text.Length - 1)])
+                    {
+                        MessageBox.Show("Computer Win!");
+                        computerCounter = 1;
+                        foreach (string card in list)
+                        {
+                            computerDeck.Add(card);
+                        }
+                    }
+                }
+            }
+            score_Player_textbox.Text = playerDeck.Count.ToString();
+            score_Computer_textBox.Text = computerDeck.Count.ToString();
+        }
+
+        private void gra1os_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            wojna.Show();
         }
     }
 }

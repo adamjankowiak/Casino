@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="gra2os.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gra2os.Designer.cs">
-      <DependentUpon>gra2os.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wojna.cs">
@@ -66,9 +60,6 @@
     <Compile Include="gra1os.Designer.cs">
       <DependentUpon>gra1os.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="gra2os.resx">
-      <DependentUpon>gra2os.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

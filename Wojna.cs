@@ -19,15 +19,8 @@ namespace Kasyno
 
         private void battle1_Click(object sender, EventArgs e)
         {
-            gra1os wojna1 = new gra1os();
+            gra1os wojna1 = new gra1os(this);
             wojna1.Show();
-            this.Hide();
-        }
-
-        private void battle2_Click(object sender, EventArgs e)
-        {
-            gra2os wojna2 = new gra2os();
-            wojna2.Show();
             this.Hide();
         }
 
