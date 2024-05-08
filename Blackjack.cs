@@ -15,6 +15,9 @@ namespace Kasyno
         Dashboard dashboard;
         int playercardSum = 0;
         int dealercardSum = 0;
+        int balance = 0;
+        string username;
+        int betValue = 0;
         private List<string> deck = new List<string>();
         private List<string> playerHand = new List<string>();
         private List<string> dealersHand = new List<string>();
@@ -24,7 +27,7 @@ namespace Kasyno
             {"J",10},{"Q",10},{"K",10},{"A",11}
         };
         
-        public Blackjack(Dashboard dash)
+        public Blackjack(Dashboard dash, int balance,string username)
         {
             InitializeComponent();
             dashboard = dash;
@@ -32,6 +35,7 @@ namespace Kasyno
             //this.username = username;
             //player_label.Text = username.ToString();
             //balance_value_label.Text = balance.ToString();
+
 
         }
         private void Blackjack_FormClosed(object sender, FormClosedEventArgs e)
@@ -127,12 +131,14 @@ namespace Kasyno
                 if(playercardSum > 21)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                 }
             }
             if (playercardSum == 21)
             {
                 MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                balance += betValue;
                 newGame();
             }
             
@@ -162,6 +168,7 @@ namespace Kasyno
                     if (dealercardSum > 21)
                     {
                         MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        balance += betValue;
                         newGame();
                         break;
                     }
@@ -169,12 +176,14 @@ namespace Kasyno
                 if (dealercardSum == 21)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                     break;
                 }
                 if (dealercardSum < 21 && dealercardSum > playercardSum)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                     break;
                 }
@@ -182,7 +191,7 @@ namespace Kasyno
             } while (dealercardSum<21);
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void bet_textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar)&&!char.IsControl(e.KeyChar))
             {
@@ -208,6 +217,11 @@ namespace Kasyno
                 return;
             }
             //no you havent
+            betValue = int.Parse(bet_textBox.Text);
+            bet_value_label.Text = betValue.ToString();
+            bet_textBox.Hide();
+            place_bet_label.Hide();
+            place_bet_button.Hide();
         }
         */
     }

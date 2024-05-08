@@ -58,7 +58,7 @@
             this.start_button.Name = "start_button";
             this.start_button.Size = new System.Drawing.Size(202, 73);
             this.start_button.TabIndex = 0;
-            this.start_button.Text = "play";
+            this.start_button.Text = "PLAY";
             this.start_button.UseVisualStyleBackColor = false;
             this.start_button.Click += new System.EventHandler(this.start_button_Click);
             // 
@@ -152,7 +152,7 @@
             this.player_points_label.Name = "player_points_label";
             this.player_points_label.Size = new System.Drawing.Size(111, 29);
             this.player_points_label.TabIndex = 7;
-            this.player_points_label.Text = "points:";
+            this.player_points_label.Text = "Points:";
             // 
             // dealer_points_label
             // 
@@ -164,7 +164,7 @@
             this.dealer_points_label.Name = "dealer_points_label";
             this.dealer_points_label.Size = new System.Drawing.Size(111, 29);
             this.dealer_points_label.TabIndex = 8;
-            this.dealer_points_label.Text = "points:";
+            this.dealer_points_label.Text = "Points:";
             // 
             // player_points_value_label
             // 
@@ -216,13 +216,13 @@
             this.balance_value_label.TabIndex = 12;
             this.balance_value_label.Text = "0";
             // 
-            // textBox1
+            // bet_textBox
             // 
             this.bet_textBox.Location = new System.Drawing.Point(710, 87);
-            this.bet_textBox.Name = "textBox1";
+            this.bet_textBox.Name = "bet_textBox";
             this.bet_textBox.Size = new System.Drawing.Size(129, 20);
             this.bet_textBox.TabIndex = 13;
-            this.bet_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.bet_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bet_textBox_KeyPress);
             // 
             // place_bet_label
             // 
@@ -272,8 +272,7 @@
             this.place_bet_button.TabIndex = 17;
             this.place_bet_button.Text = "PLACE BET";
             this.place_bet_button.UseVisualStyleBackColor = false;
-            this.place_bet_button.Visible = false;
-            //this.place_bet_button.Click += new System.EventHandler(this.place_bet_button_Click);
+            this.place_bet_button.Click += new System.EventHandler(this.place_bet_button_Click);
             // 
             // Blackjack
             // 
