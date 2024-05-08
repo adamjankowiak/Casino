@@ -717,6 +717,7 @@ namespace Kasyno
             {
                 bet_value.Text = "current balance: " + balance.ToString();
             }
+            clicked.Focus();
             balance -= int.Parse(bet_value.Text);
             current_balance.Text = "current balance: " + balance.ToString();
         }
