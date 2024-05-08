@@ -63,6 +63,18 @@ namespace Kasyno
                 MessageBox.Show("password cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            string[] data = File.ReadAllLines("..\\..\\userdata\\logon.csv");
+            Collection<string> username_list = new Collection<string>();
+            foreach (string line in data)
+            {
+                string[] split = line.Split(',');
+                username_list.Add(split[0]);
+            }
+            if (username_list.Contains(username.Text.ToLower()))
+            {
+                MessageBox.Show("username already taken", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             File.AppendAllText("..\\..\\userdata\\logon.csv", username.Text.ToLower() + ',' + password.Text + ",500" + Environment.NewLine);
             MessageBox.Show("user added", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
             login_label_Click(sender, e);
@@ -71,6 +83,15 @@ namespace Kasyno
         private void exit_label_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Logon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                login_label_Click(sender, e);
+                e.Handled = true;
+            }
         }
     }
 }

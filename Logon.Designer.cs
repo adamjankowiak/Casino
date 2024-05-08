@@ -42,21 +42,23 @@
             this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.Location = new System.Drawing.Point(186, 141);
             this.username.Margin = new System.Windows.Forms.Padding(2);
+            this.username.MaxLength = 20;
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(176, 26);
             this.username.TabIndex = 0;
             this.username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Logon_KeyPress);
             // 
             // username_label
             // 
             this.username_label.AutoSize = true;
             this.username_label.BackColor = System.Drawing.Color.Transparent;
-            this.username_label.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username_label.ForeColor = System.Drawing.Color.White;
             this.username_label.Location = new System.Drawing.Point(17, 141);
             this.username_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.username_label.Name = "username_label";
-            this.username_label.Size = new System.Drawing.Size(137, 29);
+            this.username_label.Size = new System.Drawing.Size(124, 29);
             this.username_label.TabIndex = 5;
             this.username_label.Text = "Username";
             // 
@@ -70,17 +72,18 @@
             this.password.TabIndex = 1;
             this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.password.UseSystemPasswordChar = true;
+            this.password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Logon_KeyPress);
             // 
             // password_label
             // 
             this.password_label.AutoSize = true;
             this.password_label.BackColor = System.Drawing.Color.Transparent;
-            this.password_label.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password_label.ForeColor = System.Drawing.Color.White;
             this.password_label.Location = new System.Drawing.Point(17, 193);
             this.password_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.password_label.Name = "password_label";
-            this.password_label.Size = new System.Drawing.Size(137, 29);
+            this.password_label.Size = new System.Drawing.Size(120, 29);
             this.password_label.TabIndex = 6;
             this.password_label.Text = "Password";
             // 
@@ -89,7 +92,7 @@
             this.login_label.AutoSize = true;
             this.login_label.BackColor = System.Drawing.Color.Transparent;
             this.login_label.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.login_label.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_label.ForeColor = System.Drawing.Color.White;
             this.login_label.Location = new System.Drawing.Point(123, 413);
             this.login_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -106,7 +109,7 @@
             this.create_label.AutoSize = true;
             this.create_label.BackColor = System.Drawing.Color.Transparent;
             this.create_label.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.create_label.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.create_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.create_label.ForeColor = System.Drawing.Color.White;
             this.create_label.Location = new System.Drawing.Point(123, 491);
             this.create_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -123,7 +126,7 @@
             this.exit_label.AutoSize = true;
             this.exit_label.BackColor = System.Drawing.Color.Transparent;
             this.exit_label.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exit_label.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exit_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_label.ForeColor = System.Drawing.Color.White;
             this.exit_label.Location = new System.Drawing.Point(123, 565);
             this.exit_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -158,6 +161,7 @@
             this.Name = "Logon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logon";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Logon_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

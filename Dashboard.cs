@@ -48,10 +48,11 @@ namespace Kasyno
             return tempDeck;
         }
 
-        public void SetUser(string username)
+        public void change_balance(int new_balance)
         {
-            user = username;
+            balance = new_balance;
         }
+
         private void wojna_button_Click(object sender, EventArgs e)
         {
 
@@ -98,7 +99,7 @@ namespace Kasyno
 
         private void roulette_button_Click(object sender, EventArgs e)
         {
-            Roulette roulette = new Roulette(this);
+            Roulette roulette = new Roulette(this, balance);
             this.Hide();
             roulette.Show();
         }
