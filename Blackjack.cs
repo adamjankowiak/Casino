@@ -15,6 +15,9 @@ namespace Kasyno
         Dashboard dashboard;
         int playercardSum = 0;
         int dealercardSum = 0;
+        int balance = 0;
+        string username;
+        int betValue = 0;
         private List<string> deck = new List<string>();
         private List<string> playerHand = new List<string>();
         private List<string> dealersHand = new List<string>();
@@ -24,10 +27,12 @@ namespace Kasyno
             {"J",10},{"Q",10},{"K",10},{"A",11}
         };
         
-        public Blackjack(Dashboard dash)
+        public Blackjack(Dashboard dash, int balance,string username)
         {
             InitializeComponent();
             dashboard = dash;
+            this.balance = balance;
+            this.username = username;
         }
         private void Blackjack_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -36,14 +41,21 @@ namespace Kasyno
 
         private void start_button_Click(object sender, EventArgs e)
         {
-            newGame();
-            start_button.Enabled = false;
-            start_button.Visible = false;
-            playercards_label.Visible = true;
-            dealercards_label.Visible = true;
-            hit_button.Visible = true;
-            stand_button.Visible = true;
-            
+            if(string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("Input bet amount", "Input bet amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                newGame();
+                player_label.Text = username.ToString();
+                start_button.Enabled = false;
+                start_button.Visible = false;
+                playercards_label.Visible = true;
+                dealercards_label.Visible = true;
+                hit_button.Visible = true;
+                stand_button.Visible = true;
+            }
         }
         private void shuffleDeck()
         {
@@ -77,7 +89,7 @@ namespace Kasyno
 
         private void newGame()
         {
-            
+            balance_value_label.Text = balance.ToString();
             this.deck = dashboard.getDeck();
             shuffleDeck();
             playercardSum = 0;
@@ -114,12 +126,14 @@ namespace Kasyno
                 if(playercardSum > 21)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                 }
             }
             if (playercardSum == 21)
             {
                 MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                balance += betValue;
                 newGame();
             }
             
@@ -149,6 +163,7 @@ namespace Kasyno
                     if (dealercardSum > 21)
                     {
                         MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        balance += betValue;
                         newGame();
                         break;
                     }
@@ -156,12 +171,14 @@ namespace Kasyno
                 if (dealercardSum == 21)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                     break;
                 }
                 if (dealercardSum < 21 && dealercardSum > playercardSum)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                     break;
                 }
@@ -169,6 +186,27 @@ namespace Kasyno
             } while (dealercardSum<21);
         }
 
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar)&&!char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                betValue = int.Parse(textBox1.Text);
+                bet_value_label.Text = betValue.ToString();
+            }
+            catch
+            {
+                betValue = 0;
+                bet_value_label.Text = betValue.ToString();
+            }
+        }
     }
 }
 

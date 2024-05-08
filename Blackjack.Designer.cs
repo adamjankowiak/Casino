@@ -40,6 +40,12 @@
             this.dealer_points_label = new System.Windows.Forms.Label();
             this.player_points_value_label = new System.Windows.Forms.Label();
             this.dealer_points_value_label = new System.Windows.Forms.Label();
+            this.balance_label = new System.Windows.Forms.Label();
+            this.balance_value_label = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.place_bet_label = new System.Windows.Forms.Label();
+            this.players_bet_label = new System.Windows.Forms.Label();
+            this.bet_value_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // start_button
@@ -51,7 +57,7 @@
             this.start_button.Name = "start_button";
             this.start_button.Size = new System.Drawing.Size(202, 73);
             this.start_button.TabIndex = 0;
-            this.start_button.Text = "play";
+            this.start_button.Text = "PLAY";
             this.start_button.UseVisualStyleBackColor = false;
             this.start_button.Click += new System.EventHandler(this.start_button_Click);
             // 
@@ -145,7 +151,7 @@
             this.player_points_label.Name = "player_points_label";
             this.player_points_label.Size = new System.Drawing.Size(111, 29);
             this.player_points_label.TabIndex = 7;
-            this.player_points_label.Text = "points:";
+            this.player_points_label.Text = "Points:";
             // 
             // dealer_points_label
             // 
@@ -157,7 +163,7 @@
             this.dealer_points_label.Name = "dealer_points_label";
             this.dealer_points_label.Size = new System.Drawing.Size(111, 29);
             this.dealer_points_label.TabIndex = 8;
-            this.dealer_points_label.Text = "points:";
+            this.dealer_points_label.Text = "Points:";
             // 
             // player_points_value_label
             // 
@@ -185,6 +191,77 @@
             this.dealer_points_value_label.Text = "0";
             this.dealer_points_value_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // balance_label
+            // 
+            this.balance_label.AutoSize = true;
+            this.balance_label.BackColor = System.Drawing.Color.Transparent;
+            this.balance_label.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balance_label.ForeColor = System.Drawing.Color.White;
+            this.balance_label.Location = new System.Drawing.Point(12, 446);
+            this.balance_label.Name = "balance_label";
+            this.balance_label.Size = new System.Drawing.Size(106, 22);
+            this.balance_label.TabIndex = 11;
+            this.balance_label.Text = "Balance:";
+            // 
+            // balance_value_label
+            // 
+            this.balance_value_label.AutoSize = true;
+            this.balance_value_label.BackColor = System.Drawing.Color.Transparent;
+            this.balance_value_label.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balance_value_label.ForeColor = System.Drawing.Color.White;
+            this.balance_value_label.Location = new System.Drawing.Point(124, 446);
+            this.balance_value_label.Name = "balance_value_label";
+            this.balance_value_label.Size = new System.Drawing.Size(22, 22);
+            this.balance_value_label.TabIndex = 12;
+            this.balance_value_label.Text = "0";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(710, 87);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(129, 20);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // place_bet_label
+            // 
+            this.place_bet_label.AutoSize = true;
+            this.place_bet_label.BackColor = System.Drawing.Color.Transparent;
+            this.place_bet_label.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.place_bet_label.ForeColor = System.Drawing.Color.White;
+            this.place_bet_label.Location = new System.Drawing.Point(685, 62);
+            this.place_bet_label.Name = "place_bet_label";
+            this.place_bet_label.Size = new System.Drawing.Size(174, 22);
+            this.place_bet_label.TabIndex = 14;
+            this.place_bet_label.Text = "Place your bet";
+            // 
+            // players_bet_label
+            // 
+            this.players_bet_label.AutoSize = true;
+            this.players_bet_label.BackColor = System.Drawing.Color.Transparent;
+            this.players_bet_label.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.players_bet_label.ForeColor = System.Drawing.Color.White;
+            this.players_bet_label.Location = new System.Drawing.Point(721, 140);
+            this.players_bet_label.Name = "players_bet_label";
+            this.players_bet_label.Size = new System.Drawing.Size(107, 22);
+            this.players_bet_label.TabIndex = 15;
+            this.players_bet_label.Text = "Your bet";
+            // 
+            // bet_value_label
+            // 
+            this.bet_value_label.AutoSize = true;
+            this.bet_value_label.BackColor = System.Drawing.Color.Transparent;
+            this.bet_value_label.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bet_value_label.ForeColor = System.Drawing.Color.White;
+            this.bet_value_label.Location = new System.Drawing.Point(700, 167);
+            this.bet_value_label.MinimumSize = new System.Drawing.Size(150, 0);
+            this.bet_value_label.Name = "bet_value_label";
+            this.bet_value_label.Size = new System.Drawing.Size(150, 22);
+            this.bet_value_label.TabIndex = 16;
+            this.bet_value_label.Text = "0";
+            this.bet_value_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Blackjack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +269,12 @@
             this.BackgroundImage = global::Kasyno.Properties.Resources.bj_backgroud1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(862, 525);
+            this.Controls.Add(this.bet_value_label);
+            this.Controls.Add(this.players_bet_label);
+            this.Controls.Add(this.place_bet_label);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.balance_value_label);
+            this.Controls.Add(this.balance_label);
             this.Controls.Add(this.dealer_points_value_label);
             this.Controls.Add(this.player_points_value_label);
             this.Controls.Add(this.dealer_points_label);
@@ -230,5 +313,11 @@
         private System.Windows.Forms.Label dealer_points_label;
         private System.Windows.Forms.Label player_points_value_label;
         private System.Windows.Forms.Label dealer_points_value_label;
+        private System.Windows.Forms.Label balance_label;
+        private System.Windows.Forms.Label balance_value_label;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label place_bet_label;
+        private System.Windows.Forms.Label players_bet_label;
+        private System.Windows.Forms.Label bet_value_label;
     }
 }

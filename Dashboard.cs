@@ -77,7 +77,7 @@ namespace Kasyno
 
         private void blackjack_label_Click(object sender, EventArgs e)
         {
-            Blackjack bj = new Blackjack(this);
+            Blackjack bj = new Blackjack(this,balance,user);
             this.Hide();
             bj.Show();
         }
