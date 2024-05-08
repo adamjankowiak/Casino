@@ -31,16 +31,16 @@ namespace Kasyno
         {
             InitializeComponent();
             dashboard = dash;
-            //this.balance = balance;
-            //this.username = username;
-            //player_label.Text = username.ToString();
-            //balance_value_label.Text = balance.ToString();
+            this.balance = balance;
+            this.username = username;
+            player_label.Text = username.ToString();
+            balance_value_label.Text = balance.ToString();
 
 
         }
         private void Blackjack_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //dashboard.change_balance(balance);
+            dashboard.change_balance(balance);
             dashboard.Show();
         }
 
@@ -93,8 +93,8 @@ namespace Kasyno
 
         private void newGame()
         {
-            //bet_value_label.Text = betValue.ToString();
-            //balance_value_label.Text = balance.ToString();
+            bet_value_label.Text = betValue.ToString();
+            balance_value_label.Text = balance.ToString();
             this.deck = dashboard.getDeck();
             shuffleDeck();
             playercardSum = 0;
@@ -198,7 +198,6 @@ namespace Kasyno
                 e.Handled = true;
             }
         }
-        /*
         private void place_bet_button_Click(object sender, EventArgs e)
         {
             if(int.Parse(bet_textBox.Text) > balance)
@@ -223,7 +222,6 @@ namespace Kasyno
             place_bet_label.Hide();
             place_bet_button.Hide();
         }
-        */
     }
 }
 

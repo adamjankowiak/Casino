@@ -97,7 +97,7 @@ namespace Kasyno
 
         private void poker_label_Click(object sender, EventArgs e)
         {
-            Poker poker = new Poker(this);
+            Poker poker = new Poker(this,balance);
             poker.Show();
         }
 
