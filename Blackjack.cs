@@ -28,22 +28,34 @@ namespace Kasyno
         {
             InitializeComponent();
             dashboard = dash;
+            this.balance = balance;
+            this.username = username;
+            player_label.Text = username.ToString();
+            balance_value_label.Text = balance.ToString();
+
         }
         private void Blackjack_FormClosed(object sender, FormClosedEventArgs e)
         {
+            dashboard.change_balance(balance);
             dashboard.Show();
         }
 
         private void start_button_Click(object sender, EventArgs e)
         {
-            newGame();
-            start_button.Enabled = false;
-            start_button.Visible = false;
-            playercards_label.Visible = true;
-            dealercards_label.Visible = true;
-            hit_button.Visible = true;
-            stand_button.Visible = true;
-            
+            if(string.IsNullOrEmpty(bet_textBox.Text))
+            {
+                MessageBox.Show("Input bet amount", "Input bet amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                newGame();
+                start_button.Enabled = false;
+                start_button.Visible = false;
+                playercards_label.Visible = true;
+                dealercards_label.Visible = true;
+                hit_button.Visible = true;
+                stand_button.Visible = true;
+            }
         }
         private void shuffleDeck()
         {
@@ -77,7 +89,8 @@ namespace Kasyno
 
         private void newGame()
         {
-            
+            bet_value_label.Text = betValue.ToString();
+            balance_value_label.Text = balance.ToString();
             this.deck = dashboard.getDeck();
             shuffleDeck();
             playercardSum = 0;
@@ -169,6 +182,33 @@ namespace Kasyno
             } while (dealercardSum<21);
         }
 
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar)&&!char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void place_bet_button_Click(object sender, EventArgs e)
+        {
+            if(int.Parse(bet_textBox.Text) > balance)
+            {
+                MessageBox.Show("You dont have enough money to bet", "You dont have enough money to bet", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //if you've managed too fool casino
+            if(int.Parse(bet_textBox.Text) < 0)
+            {
+                MessageBox.Show("You cant fool casino", "You cant fool casino", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(balance >= 100)
+                {
+                    MessageBox.Show("Penalty -100", "Penalty -100", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return;
+            }
+            //no you havent
+        }
     }
 }
 
