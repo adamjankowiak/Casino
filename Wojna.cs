@@ -12,9 +12,11 @@ namespace Kasyno
 {
     public partial class Wojna : Form
     {
-        public Wojna()
+        Dashboard dashboard;
+        public Wojna(Dashboard dash)
         {
             InitializeComponent();
+            dashboard = dash;
         }
 
         private void battle1_Click(object sender, EventArgs e)
@@ -27,6 +29,11 @@ namespace Kasyno
         private void Wojna_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Wojna_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dashboard.Show();
         }
     }
 }

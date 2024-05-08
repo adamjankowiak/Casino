@@ -110,7 +110,9 @@ namespace Kasyno
 
         private void wojna_label_Click(object sender, EventArgs e)
         {
-
+            Wojna wojna = new Wojna(this);
+            this.Hide();
+            wojna.Show();
         }
 
         private void info_label_Click(object sender, EventArgs e)

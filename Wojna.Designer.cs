@@ -46,7 +46,7 @@
             // battle1
             // 
             this.battle1.Location = new System.Drawing.Point(253, 200);
-            this.battle1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.battle1.Margin = new System.Windows.Forms.Padding(2);
             this.battle1.Name = "battle1";
             this.battle1.Size = new System.Drawing.Size(102, 36);
             this.battle1.TabIndex = 1;
@@ -61,9 +61,10 @@
             this.ClientSize = new System.Drawing.Size(662, 394);
             this.Controls.Add(this.battle1);
             this.Controls.Add(this.Ilosc_graczy);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Wojna";
             this.Text = "Wojna";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Wojna_FormClosed);
             this.Load += new System.EventHandler(this.Wojna_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

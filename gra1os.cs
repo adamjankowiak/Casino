@@ -173,7 +173,7 @@ namespace Kasyno
                     list.Add(computerDeck[0]);
                     player_Card_textBox.Text = list[list.Count-2];
                     computer_Card_textbox.Text = list[list.Count-1];
-                    if (cardsValue[player_Card_textBox.Text.Substring(0, computer_Card_textbox.Text.Length-1)] > cardsValue[computer_Card_textbox.Text.Substring(0, player_Card_textBox.Text.Length - 1)])
+                    if (cardsValue[player_Card_textBox.Text.Substring(0, player_Card_textBox.Text.Length-1)] > cardsValue[computer_Card_textbox.Text.Substring(0, computer_Card_textbox.Text.Length - 1)])
                     {
                         MessageBox.Show("You Win!");
                         playerCounter = 1;
