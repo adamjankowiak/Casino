@@ -273,7 +273,7 @@
             this.place_bet_button.Text = "PLACE BET";
             this.place_bet_button.UseVisualStyleBackColor = false;
             this.place_bet_button.Visible = false;
-            this.place_bet_button.Click += new System.EventHandler(this.place_bet_button_Click);
+            //this.place_bet_button.Click += new System.EventHandler(this.place_bet_button_Click);
             // 
             // Blackjack
             // 

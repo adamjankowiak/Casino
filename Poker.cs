@@ -18,6 +18,7 @@ namespace Kasyno
 {
     public partial class Poker : Form
     {
+        Dashboard dashboard;
         List<string> deck = new List<string>();
         List<string> player1Deck = new List<string>();
         List<string> player2Deck = new List<string>();
@@ -25,7 +26,7 @@ namespace Kasyno
         List<string> player4Deck = new List<string>();
         List<bool> inGame = new List<bool> { true, true, true, true };
         int current_players = 4;
-        string startingMoney = "500$";
+        string startingMoney;
         string player1Money;
         string player2Money;
         string player3Money;
@@ -71,9 +72,11 @@ namespace Kasyno
         private int pot = 0;
         int maxBet;
         Winner winner = new Winner();
-        public Poker(Dashboard dashboard)
+        public Poker(Dashboard dashboard,int money)
         {
             InitializeComponent();
+            this.dashboard = dashboard;
+            this.startingMoney = money.ToString() + "$";
             player1Money = startingMoney;
             player2Money = startingMoney;
             player3Money = startingMoney;
@@ -1529,6 +1532,12 @@ namespace Kasyno
             {
                 return this.winnerCards;
             }
+        }
+
+        private void Poker_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dashboard.change_balance(int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1) + pot));
+            dashboard.Show();
         }
     }
 }
