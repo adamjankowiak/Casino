@@ -618,7 +618,8 @@ namespace Kasyno
                 */
                 int max = 0;
                 //int playerIndex = 0;
-                List<string> currentDeck = new List<string> { "A♠", "K♠", "Q♠", "J♠", "10♠", "5♣", "4♥" };
+                //♠ ♥ ♦ ♣
+                List<string> currentDeck = new List<string> { "A♣", "K♣", "10♣", "9♣", "8♣", "7♣", "6♣" };
                 string WinnerHandCards = "";
                 for (int i = 0; i < 4; i++)
                 {
@@ -1436,7 +1437,7 @@ namespace Kasyno
         private bool straightFlush(List<string> hand)
         {
             string[] colors = { "♠", "♥", "♦", "♣" };
-            int[] cardsNumber = { 0, 0, 0, 0, 0, 0, 0, 0 };
+            int[] cardsNumber = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             Dictionary<string, List<string>> cards = new Dictionary<string, List<string>>
             {
                 { "♠", new List<string>() },
@@ -1446,7 +1447,10 @@ namespace Kasyno
             };
             foreach (string card in hand)
             {
-                cards[card.Substring(card.Length - 1)].Add(card);
+                if(!card.Contains("A"))
+                {
+                    cards[card.Substring(card.Length - 1)].Add(card);
+                }
             }
             List<string> straight = new List<string>();
             foreach (string color in colors)
@@ -1456,14 +1460,7 @@ namespace Kasyno
                 {
                     for (int i = 0; i < cards[color].Count; i++)
                     {
-                        if (cards[color][i].Contains("A") || cards[color][i].Contains("K") || cards[color][i].Contains("Q") || cards[color][i].Contains("J") || cards[color][i].Contains("10"))
-                        {
-                            continue;
-                        }
-                        else
-                        {
-                            straight.Add(cards[color][i]);
-                        }
+                        straight.Add(cards[color][i]);
                     }
                     if (straight.Count >= 5)
                     {
