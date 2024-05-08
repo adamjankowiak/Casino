@@ -63,6 +63,12 @@
     <Compile Include="gra1os.Designer.cs">
       <DependentUpon>gra1os.cs</DependentUpon>
     </Compile>
+    <Compile Include="DontGiveUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DontGiveUp.Designer.cs">
+      <DependentUpon>DontGiveUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gapa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,8 +87,28 @@
     <Compile Include="Blackjack.Designer.cs">
       <DependentUpon>Blackjack.cs</DependentUpon>
     </Compile>
+    <Compile Include="Poker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Poker.Designer.cs">
+      <DependentUpon>Poker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Roulette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Roulette.Designer.cs">
+      <DependentUpon>Roulette.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DontGiveUp.resx">
+      <DependentUpon>DontGiveUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gapa.resx">
       <DependentUpon>Gapa.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,20 +121,21 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Poker.resx">
+      <DependentUpon>Poker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Roulette.resx">
+      <DependentUpon>Roulette.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -139,6 +166,24 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bj_backgroud1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_backgroud2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roulette_Table\Roulette_table.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spades-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dontgiveup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard_background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
