@@ -279,7 +279,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(1,3);
+                    chooseBot = random.Next(0,4);
                     if (chooseBot == 0)
                     {
                         if (int.Parse(player2_money_label.Text.Substring(0, player2_money_label.Text.Length - 1)) > 0)
@@ -310,7 +310,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(1, 3);
+                    chooseBot = random.Next(0, 4);
                     if (chooseBot == 0)
                     {
                         if (int.Parse(player3_money_label.Text.Substring(0, player3_money_label.Text.Length - 1)) > 0)
@@ -341,7 +341,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(1, 3);
+                    chooseBot = random.Next(0, 4);
                     if (chooseBot == 0)
                     {
 
@@ -377,7 +377,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(1,3);
+                    chooseBot = random.Next(0, 4);
                     if (chooseBot == 0)
                     {
                         if (int.Parse(player2_money_label.Text.Substring(0, player2_money_label.Text.Length - 1)) > 0)
@@ -408,7 +408,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(1, 3);
+                    chooseBot = random.Next(0, 4);
                     if (chooseBot == 0)
                     {
                         if (int.Parse(player3_money_label.Text.Substring(0, player3_money_label.Text.Length - 1)) > 0)
@@ -439,7 +439,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(1, 3);
+                    chooseBot = random.Next(0, 4);
                     if (chooseBot == 0)
                     {
 
