@@ -30,8 +30,7 @@ namespace Kasyno
         string player2Money;
         string player3Money;
         string player4Money;
-        //int round = 0;
-        int round = 3;
+        int round = 0;
         Dictionary<string, int> handsValue = new Dictionary<string, int>()
         {
             {"High Card",1},
@@ -637,7 +636,6 @@ namespace Kasyno
                             currentDeck.Add(player4Deck[1]);
                         }
                         string tmp = pokerHands(currentDeck);
-                        MessageBox.Show(tmp);
                         int value = handsValue[tmp];
                         if (value > max)
                         {
