@@ -280,8 +280,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    //chooseBot = random.Next(1,3);
-                    chooseBot = 0;
+                    chooseBot = random.Next(1,3);
                     if (chooseBot == 0)
                     {
                         if (int.Parse(player2_money_label.Text.Substring(0, player2_money_label.Text.Length - 1)) > 0)
@@ -312,8 +311,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    //chooseBot = random.Next(1, 3);
-                    chooseBot = 0;
+                    chooseBot = random.Next(1, 3);
                     if (chooseBot == 0)
                     {
                         if (int.Parse(player3_money_label.Text.Substring(0, player3_money_label.Text.Length - 1)) > 0)
@@ -344,8 +342,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    //chooseBot = random.Next(1, 3);
-                    chooseBot = 0;
+                    chooseBot = random.Next(1, 3);
                     if (chooseBot == 0)
                     {
 
@@ -381,8 +378,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    //chooseBot = random.Next(1,3);
-                    chooseBot = 0;
+                    chooseBot = random.Next(1,3);
                     if (chooseBot == 0)
                     {
                         if (int.Parse(player2_money_label.Text.Substring(0, player2_money_label.Text.Length - 1)) > 0)
@@ -413,8 +409,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    //chooseBot = random.Next(1, 3);
-                    chooseBot = 0;
+                    chooseBot = random.Next(1, 3);
                     if (chooseBot == 0)
                     {
                         if (int.Parse(player3_money_label.Text.Substring(0, player3_money_label.Text.Length - 1)) > 0)
@@ -445,8 +440,7 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    //chooseBot = random.Next(1, 3);
-                    chooseBot = 0;
+                    chooseBot = random.Next(1, 3);
                     if (chooseBot == 0)
                     {
 
@@ -603,7 +597,7 @@ namespace Kasyno
             }
             if (round == 3)
             {
-                /*
+                
                 List<string> tableCards = new List<string>();
                 tableCards.Add(card1Label.Text);
                 tableCards.Add(card2Label.Text);
@@ -615,17 +609,13 @@ namespace Kasyno
                 {
                     currentDeck.Add(tableCards[i]);
                 }
-                */
                 int max = 0;
-                //int playerIndex = 0;
-                //♠ ♥ ♦ ♣
-                List<string> currentDeck = new List<string> { "A♣", "K♣", "10♣", "9♣", "8♣", "7♣", "6♣" };
+                int playerIndex = 0;
                 string WinnerHandCards = "";
                 for (int i = 0; i < 4; i++)
                 {
                     if (inGame[i])
                     {
-                        /*
                         if(i==0)
                         {
                             currentDeck.Add(player1Deck[0]);
@@ -646,7 +636,6 @@ namespace Kasyno
                             currentDeck.Add(player4Deck[0]);
                             currentDeck.Add(player4Deck[1]);
                         }
-                        */
                         string tmp = pokerHands(currentDeck);
                         MessageBox.Show(tmp);
                         int value = handsValue[tmp];
@@ -1189,11 +1178,11 @@ namespace Kasyno
 
                         }
                     }
-                    //currentDeck.Clear();
-                    //currentDeck = new List<string>(tableCards);
+                    currentDeck.Clear();
+                    currentDeck = new List<string>(tableCards);
                 }
                 List<string> winningLine = new List<string>(winner.getWinnerCards());
-                if (winningLine.Contains(currentDeck[0]))//player1Deck[0]))
+                if (winningLine.Contains(player1Deck[0]))
                 {
                     MessageBox.Show("Wygrałeś Przez " + WinnerHandCards);
                     this.Close();
