@@ -15,6 +15,9 @@ namespace Kasyno
         Dashboard dashboard;
         int playercardSum = 0;
         int dealercardSum = 0;
+        int balance = 0;
+        string username;
+        int betValue = 0;
         private List<string> deck = new List<string>();
         private List<string> playerHand = new List<string>();
         private List<string> dealersHand = new List<string>();
@@ -24,7 +27,7 @@ namespace Kasyno
             {"J",10},{"Q",10},{"K",10},{"A",11}
         };
         
-        public Blackjack(Dashboard dash)
+        public Blackjack(Dashboard dash, int balance,string username)
         {
             InitializeComponent();
             dashboard = dash;
@@ -127,12 +130,14 @@ namespace Kasyno
                 if(playercardSum > 21)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                 }
             }
             if (playercardSum == 21)
             {
                 MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                balance += betValue;
                 newGame();
             }
             
@@ -162,6 +167,7 @@ namespace Kasyno
                     if (dealercardSum > 21)
                     {
                         MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        balance += betValue;
                         newGame();
                         break;
                     }
@@ -169,12 +175,14 @@ namespace Kasyno
                 if (dealercardSum == 21)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                     break;
                 }
                 if (dealercardSum < 21 && dealercardSum > playercardSum)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                     break;
                 }
