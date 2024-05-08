@@ -199,7 +199,7 @@ namespace Kasyno
 
         private void gra1os_FormClosed(object sender, FormClosedEventArgs e)
         {
-            wojna.Show();
+            wojna.Close();
         }
     }
 }
