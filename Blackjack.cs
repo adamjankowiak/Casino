@@ -36,6 +36,7 @@ namespace Kasyno
             player_label.Text = username.ToString();
             balance_value_label.Text = balance.ToString();
 
+
         }
         private void Blackjack_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -190,7 +191,7 @@ namespace Kasyno
             } while (dealercardSum<21);
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void bet_textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar)&&!char.IsControl(e.KeyChar))
             {
@@ -216,6 +217,11 @@ namespace Kasyno
                 return;
             }
             //no you havent
+            betValue = int.Parse(bet_textBox.Text);
+            bet_value_label.Text = betValue.ToString();
+            bet_textBox.Hide();
+            place_bet_label.Hide();
+            place_bet_button.Hide();
         }
     }
 }

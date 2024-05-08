@@ -216,13 +216,13 @@
             this.balance_value_label.TabIndex = 12;
             this.balance_value_label.Text = "0";
             // 
-            // textBox1
+            // bet_textBox
             // 
             this.bet_textBox.Location = new System.Drawing.Point(710, 87);
-            this.bet_textBox.Name = "textBox1";
+            this.bet_textBox.Name = "bet_textBox";
             this.bet_textBox.Size = new System.Drawing.Size(129, 20);
             this.bet_textBox.TabIndex = 13;
-            this.bet_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.bet_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bet_textBox_KeyPress);
             // 
             // place_bet_label
             // 
@@ -272,7 +272,6 @@
             this.place_bet_button.TabIndex = 17;
             this.place_bet_button.Text = "PLACE BET";
             this.place_bet_button.UseVisualStyleBackColor = false;
-            this.place_bet_button.Visible = false;
             this.place_bet_button.Click += new System.EventHandler(this.place_bet_button_Click);
             // 
             // Blackjack
