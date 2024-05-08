@@ -30,99 +30,138 @@
         {
             this.username = new System.Windows.Forms.TextBox();
             this.username_label = new System.Windows.Forms.Label();
-            this.login = new System.Windows.Forms.Button();
             this.password = new System.Windows.Forms.TextBox();
             this.password_label = new System.Windows.Forms.Label();
-            this.exit = new System.Windows.Forms.Button();
-            this.create = new System.Windows.Forms.Button();
+            this.login_label = new System.Windows.Forms.Label();
+            this.create_label = new System.Windows.Forms.Label();
+            this.exit_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // username
             // 
             this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.Location = new System.Drawing.Point(314, 93);
+            this.username.Location = new System.Drawing.Point(186, 141);
+            this.username.Margin = new System.Windows.Forms.Padding(2);
+            this.username.MaxLength = 20;
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(233, 30);
+            this.username.Size = new System.Drawing.Size(176, 26);
             this.username.TabIndex = 0;
             this.username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Logon_KeyPress);
             // 
             // username_label
             // 
             this.username_label.AutoSize = true;
-            this.username_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username_label.Location = new System.Drawing.Point(158, 96);
+            this.username_label.BackColor = System.Drawing.Color.Transparent;
+            this.username_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username_label.ForeColor = System.Drawing.Color.White;
+            this.username_label.Location = new System.Drawing.Point(17, 141);
+            this.username_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.username_label.Name = "username_label";
-            this.username_label.Size = new System.Drawing.Size(102, 25);
+            this.username_label.Size = new System.Drawing.Size(124, 29);
             this.username_label.TabIndex = 5;
             this.username_label.Text = "Username";
-            // 
-            // login
-            // 
-            this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login.Location = new System.Drawing.Point(154, 264);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(130, 46);
-            this.login.TabIndex = 2;
-            this.login.Text = "Log in";
-            this.login.UseVisualStyleBackColor = true;
-            this.login.Click += new System.EventHandler(this.login_Click);
             // 
             // password
             // 
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.Location = new System.Drawing.Point(314, 160);
+            this.password.Location = new System.Drawing.Point(186, 196);
+            this.password.Margin = new System.Windows.Forms.Padding(2);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(233, 30);
+            this.password.Size = new System.Drawing.Size(176, 26);
             this.password.TabIndex = 1;
             this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.password.UseSystemPasswordChar = true;
+            this.password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Logon_KeyPress);
             // 
             // password_label
             // 
             this.password_label.AutoSize = true;
-            this.password_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password_label.Location = new System.Drawing.Point(158, 163);
+            this.password_label.BackColor = System.Drawing.Color.Transparent;
+            this.password_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password_label.ForeColor = System.Drawing.Color.White;
+            this.password_label.Location = new System.Drawing.Point(17, 193);
+            this.password_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.password_label.Name = "password_label";
-            this.password_label.Size = new System.Drawing.Size(98, 25);
+            this.password_label.Size = new System.Drawing.Size(120, 29);
             this.password_label.TabIndex = 6;
             this.password_label.Text = "Password";
             // 
-            // exit
+            // login_label
             // 
-            this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit.Location = new System.Drawing.Point(426, 264);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(130, 46);
-            this.exit.TabIndex = 4;
-            this.exit.Text = "Exit";
-            this.exit.UseVisualStyleBackColor = true;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
+            this.login_label.AutoSize = true;
+            this.login_label.BackColor = System.Drawing.Color.Transparent;
+            this.login_label.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.login_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_label.ForeColor = System.Drawing.Color.White;
+            this.login_label.Location = new System.Drawing.Point(123, 413);
+            this.login_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.login_label.MinimumSize = new System.Drawing.Size(170, 55);
+            this.login_label.Name = "login_label";
+            this.login_label.Size = new System.Drawing.Size(170, 55);
+            this.login_label.TabIndex = 7;
+            this.login_label.Text = "LOG IN";
+            this.login_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.login_label.Click += new System.EventHandler(this.login_label_Click);
             // 
-            // create
+            // create_label
             // 
-            this.create.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.create.Location = new System.Drawing.Point(290, 264);
-            this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(130, 46);
-            this.create.TabIndex = 3;
-            this.create.Text = "Create";
-            this.create.UseVisualStyleBackColor = true;
-            this.create.Click += new System.EventHandler(this.create_Click);
+            this.create_label.AutoSize = true;
+            this.create_label.BackColor = System.Drawing.Color.Transparent;
+            this.create_label.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.create_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.create_label.ForeColor = System.Drawing.Color.White;
+            this.create_label.Location = new System.Drawing.Point(123, 491);
+            this.create_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.create_label.MinimumSize = new System.Drawing.Size(170, 55);
+            this.create_label.Name = "create_label";
+            this.create_label.Size = new System.Drawing.Size(170, 55);
+            this.create_label.TabIndex = 8;
+            this.create_label.Text = "CREATE";
+            this.create_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.create_label.Click += new System.EventHandler(this.create_label_Click);
+            // 
+            // exit_label
+            // 
+            this.exit_label.AutoSize = true;
+            this.exit_label.BackColor = System.Drawing.Color.Transparent;
+            this.exit_label.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exit_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exit_label.ForeColor = System.Drawing.Color.White;
+            this.exit_label.Location = new System.Drawing.Point(123, 565);
+            this.exit_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.exit_label.MinimumSize = new System.Drawing.Size(170, 55);
+            this.exit_label.Name = "exit_label";
+            this.exit_label.Size = new System.Drawing.Size(170, 55);
+            this.exit_label.TabIndex = 9;
+            this.exit_label.Text = "EXIT";
+            this.exit_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.exit_label.Click += new System.EventHandler(this.exit_label_Click);
             // 
             // Logon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 404);
-            this.Controls.Add(this.create);
-            this.Controls.Add(this.exit);
+            this.BackgroundImage = global::Kasyno.Properties.Resources.login_backgroud2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(660, 653);
+            this.Controls.Add(this.exit_label);
+            this.Controls.Add(this.create_label);
+            this.Controls.Add(this.login_label);
             this.Controls.Add(this.password_label);
             this.Controls.Add(this.password);
-            this.Controls.Add(this.login);
             this.Controls.Add(this.username_label);
             this.Controls.Add(this.username);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = global::Kasyno.Properties.Resources.spades_icon;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(150, 55);
             this.Name = "Logon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logon";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Logon_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,10 +171,10 @@
 
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.Label username_label;
-        private System.Windows.Forms.Button login;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label password_label;
-        private System.Windows.Forms.Button exit;
-        private System.Windows.Forms.Button create;
+        private System.Windows.Forms.Label login_label;
+        private System.Windows.Forms.Label create_label;
+        private System.Windows.Forms.Label exit_label;
     }
 }

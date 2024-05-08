@@ -31,7 +31,7 @@ namespace Kasyno
             radioKierButton.BackColor = SystemColors.Control;
             radioKaroButton.BackColor = SystemColors.Control;
             radioTreflButton.BackColor = SystemColors.Control;
-            this.deck = dashboard.deck;
+            this.deck = dashboard.getDeck();
             modifyDeck();
             shuffleDeck();
             division_players();
@@ -124,49 +124,6 @@ namespace Kasyno
             }
             current_deck.Text = cards;
             current_deck.Location = new Point((this.ClientSize.Width - current_deck.Width) / 2-15, 382 - current_deck.Height / 2);
-            cards = "";
-            player2.Sort();
-            foreach (string card in player2)
-            {
-                if (card == player2.Last())
-                {
-                    cards += card;
-                }
-                else
-                {
-                    cards += card + " , ";
-                }
-            }
-            player2_Deck.Text = cards;
-            cards = "";
-            player3.Sort();
-            foreach (string card in player3)
-            {
-                if (card == player3.Last())
-                {
-                    cards += card;
-                }
-                else
-                {
-                    cards += card + " , ";
-                }
-            }
-            player3_deck.Text = cards;
-            cards = "";
-            player4.Sort();
-            foreach (string card in player4)
-            {
-                if (card == player4.Last())
-                {
-                    cards += card;
-                }
-                else
-                {
-                    cards += card + " , ";
-                }
-            }
-            player4_deck.Text = cards;
-
         }
 
         void gameplay()
