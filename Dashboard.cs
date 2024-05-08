@@ -122,7 +122,9 @@ namespace Kasyno
 
         private void add_credits_label_Click(object sender, EventArgs e)
         {
-
+            PayPal pp = new PayPal(this, balance);
+            this.Hide();
+            pp.Show();
         }
     }
 }

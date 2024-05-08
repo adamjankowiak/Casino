@@ -54,6 +54,7 @@
             this.buy_100.TabIndex = 0;
             this.buy_100.Text = "BUY";
             this.buy_100.UseVisualStyleBackColor = true;
+            this.buy_100.Click += new System.EventHandler(this.buy_100_Click);
             // 
             // buy_500
             // 
@@ -64,6 +65,7 @@
             this.buy_500.TabIndex = 1;
             this.buy_500.Text = "BUY";
             this.buy_500.UseVisualStyleBackColor = true;
+            this.buy_500.Click += new System.EventHandler(this.buy_500_Click);
             // 
             // buy_1000
             // 
@@ -74,6 +76,7 @@
             this.buy_1000.TabIndex = 2;
             this.buy_1000.Text = "BUY";
             this.buy_1000.UseVisualStyleBackColor = true;
+            this.buy_1000.Click += new System.EventHandler(this.buy_1000_Click);
             // 
             // buy_5000
             // 
@@ -84,6 +87,7 @@
             this.buy_5000.TabIndex = 3;
             this.buy_5000.Text = "BUY";
             this.buy_5000.UseVisualStyleBackColor = true;
+            this.buy_5000.Click += new System.EventHandler(this.buy_5000_Click);
             // 
             // buy_10000
             // 
@@ -94,6 +98,7 @@
             this.buy_10000.TabIndex = 4;
             this.buy_10000.Text = "BUY";
             this.buy_10000.UseVisualStyleBackColor = true;
+            this.buy_10000.Click += new System.EventHandler(this.buy_10000_Click);
             // 
             // label_100
             // 
@@ -207,6 +212,7 @@
             this.Controls.Add(this.buy_100);
             this.Name = "PayPal";
             this.Text = "PayPal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PayPal_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
