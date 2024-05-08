@@ -49,9 +49,9 @@ namespace Kasyno
             return tempDeck;
         }
 
-        public void SetUser(string username)
+        public void change_balance(int new_balance)
         {
-            user = username;
+            balance = new_balance;
         }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -103,7 +103,7 @@ namespace Kasyno
 
         private void ruletka_label_Click(object sender, EventArgs e)
         {
-            Roulette roulette = new Roulette(this);
+            Roulette roulette = new Roulette(this, balance);
             this.Hide();
             roulette.Show();
         }

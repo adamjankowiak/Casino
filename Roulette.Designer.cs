@@ -82,15 +82,20 @@ namespace Kasyno
             this.bet_even = new System.Windows.Forms.Button();
             this.bet_1to18 = new System.Windows.Forms.Button();
             this.bet_19to36 = new System.Windows.Forms.Button();
+            this.bet_0 = new System.Windows.Forms.Button();
+            this.current_balance = new System.Windows.Forms.Label();
+            this.bet_value = new System.Windows.Forms.TextBox();
+            this.bet_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.betting_table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roulette_picture)).BeginInit();
             this.SuspendLayout();
             // 
             // Play
             // 
-            this.Play.Location = new System.Drawing.Point(130, 334);
+            this.Play.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Play.Location = new System.Drawing.Point(102, 334);
             this.Play.Name = "Play";
-            this.Play.Size = new System.Drawing.Size(75, 23);
+            this.Play.Size = new System.Drawing.Size(150, 45);
             this.Play.TabIndex = 1;
             this.Play.Text = "Play";
             this.Play.UseVisualStyleBackColor = true;
@@ -995,13 +1000,75 @@ namespace Kasyno
             this.bet_19to36.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
             this.bet_19to36.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
             // 
+            // bet_0
+            // 
+            this.bet_0.BackColor = System.Drawing.Color.Transparent;
+            this.bet_0.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bet_0.BackgroundImage")));
+            this.bet_0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bet_0.FlatAppearance.BorderSize = 0;
+            this.bet_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bet_0.ForeColor = System.Drawing.Color.Transparent;
+            this.bet_0.Location = new System.Drawing.Point(348, 118);
+            this.bet_0.Name = "bet_0";
+            this.bet_0.Size = new System.Drawing.Size(50, 51);
+            this.bet_0.TabIndex = 55;
+            this.bet_0.UseVisualStyleBackColor = false;
+            this.bet_0.Click += new System.EventHandler(this.bet_0_Click);
+            this.bet_0.Enter += new System.EventHandler(this.bet_button_Enter);
+            this.bet_0.Leave += new System.EventHandler(this.bet_button_2_Leave);
+            this.bet_0.MouseEnter += new System.EventHandler(this.bet_button_MouseEnter);
+            this.bet_0.MouseLeave += new System.EventHandler(this.bet_button_2_MouseLeave);
+            // 
+            // current_balance
+            // 
+            this.current_balance.AutoSize = true;
+            this.current_balance.BackColor = System.Drawing.Color.Transparent;
+            this.current_balance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.current_balance.ForeColor = System.Drawing.Color.White;
+            this.current_balance.Location = new System.Drawing.Point(652, 346);
+            this.current_balance.Name = "current_balance";
+            this.current_balance.Size = new System.Drawing.Size(51, 20);
+            this.current_balance.TabIndex = 56;
+            this.current_balance.Text = "label1";
+            // 
+            // bet_value
+            // 
+            this.bet_value.BackColor = System.Drawing.Color.Green;
+            this.bet_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bet_value.ForeColor = System.Drawing.Color.White;
+            this.bet_value.Location = new System.Drawing.Point(494, 343);
+            this.bet_value.Name = "bet_value";
+            this.bet_value.Size = new System.Drawing.Size(132, 26);
+            this.bet_value.TabIndex = 57;
+            this.bet_value.Text = "0";
+            this.bet_value.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.bet_value.Enter += new System.EventHandler(this.bet_value_Enter);
+            this.bet_value.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bet_value_KeyPress);
+            this.bet_value.Leave += new System.EventHandler(this.bet_value_Leave);
+            // 
+            // bet_label
+            // 
+            this.bet_label.AutoSize = true;
+            this.bet_label.BackColor = System.Drawing.Color.Transparent;
+            this.bet_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bet_label.ForeColor = System.Drawing.Color.White;
+            this.bet_label.Location = new System.Drawing.Point(393, 346);
+            this.bet_label.Name = "bet_label";
+            this.bet_label.Size = new System.Drawing.Size(93, 20);
+            this.bet_label.TabIndex = 58;
+            this.bet_label.Text = "Current bet:";
+            // 
             // Roulette
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(871, 377);
+            this.ClientSize = new System.Drawing.Size(868, 403);
+            this.Controls.Add(this.bet_label);
+            this.Controls.Add(this.bet_value);
+            this.Controls.Add(this.current_balance);
+            this.Controls.Add(this.bet_0);
             this.Controls.Add(this.bet_19to36);
             this.Controls.Add(this.bet_1to18);
             this.Controls.Add(this.bet_even);
@@ -1064,6 +1131,7 @@ namespace Kasyno
             ((System.ComponentModel.ISupportInitialize)(this.betting_table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roulette_picture)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1121,5 +1189,9 @@ namespace Kasyno
         private System.Windows.Forms.Button bet_even;
         private System.Windows.Forms.Button bet_1to18;
         private System.Windows.Forms.Button bet_19to36;
+        private System.Windows.Forms.Button bet_0;
+        private System.Windows.Forms.Label current_balance;
+        private System.Windows.Forms.TextBox bet_value;
+        private System.Windows.Forms.Label bet_label;
     }
 }
