@@ -25,6 +25,7 @@ namespace Kasyno
             user = username;
             balance = money;
         }
+        
         private void createDeck()
         {
             List<string> suits = new List<string> { "♣", "♦", "♥", "♠" };
@@ -52,20 +53,10 @@ namespace Kasyno
         {
             user = username;
         }
-        private void wojna_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void blackjack_button_Click(object sender, EventArgs e)
-        {
-            Blackjack bj = new Blackjack(this);
-            this.Hide();
-            bj.Show();
-        }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
+            
             string[] data = File.ReadAllLines("..\\..\\userdata\\logon.csv");
             string output = "";
             foreach(string line in data)
@@ -84,30 +75,52 @@ namespace Kasyno
             logon.Close();
         }
 
-        private void gapa_button_Click(object sender, EventArgs e)
+        private void blackjack_label_Click(object sender, EventArgs e)
+        {
+            Blackjack bj = new Blackjack(this);
+            this.Hide();
+            bj.Show();
+        }
+
+        private void exit_label_Click(object sender, EventArgs e)
+        {
+            DontGiveUp dgu = new DontGiveUp(this);
+            this.Hide();
+            dgu.Show();
+        }
+
+        private void gapa_label_Click(object sender, EventArgs e)
         {
             Gapa gapa = new Gapa(this);
             gapa.Show();
         }
 
-        private void pokerButton_Click(object sender, EventArgs e)
+        private void poker_label_Click(object sender, EventArgs e)
         {
             Poker poker = new Poker(this);
             poker.Show();
         }
 
-        private void roulette_button_Click(object sender, EventArgs e)
+        private void ruletka_label_Click(object sender, EventArgs e)
         {
             Roulette roulette = new Roulette(this);
             this.Hide();
             roulette.Show();
         }
 
-        private void exit_button_Click(object sender, EventArgs e)
+        private void wojna_label_Click(object sender, EventArgs e)
         {
-            DontGiveUp dgu = new DontGiveUp(this);
-            this.Hide();
-            dgu.Show();
+
+        }
+
+        private void info_label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void add_credits_label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
