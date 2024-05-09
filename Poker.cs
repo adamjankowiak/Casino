@@ -260,12 +260,17 @@ namespace Kasyno
                         MessageBox.Show("zla cena");
                         return;
                     }
+                    if(betMoney < 0) 
+                    {
+                        return;
+                    }
                     betPrice.Text = "";
                     if (betMoney >= int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1)))
                     {
                         betMoney = int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
                         MessageBox.Show("All in");
                         allPlayersMoney[0] += int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
+                        player1_bet_label.Visible = true;
                         player1_bet_label.Text = betMoney.ToString() + "$";
                         player1_money_label.Text = "0$";
                     }
@@ -282,8 +287,8 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(0,4);
-                    if (chooseBot == 0)
+                    chooseBot = random.Next(0,9);
+                    if (chooseBot <= 7)
                     {
                         if (int.Parse(player2_money_label.Text.Substring(0, player2_money_label.Text.Length - 1)) > 0)
                         {
@@ -313,8 +318,8 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(0, 4);
-                    if (chooseBot == 0)
+                    chooseBot = random.Next(0, 9);
+                    if (chooseBot <= 7)
                     {
                         if (int.Parse(player3_money_label.Text.Substring(0, player3_money_label.Text.Length - 1)) > 0)
                         {
@@ -344,8 +349,8 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(0, 4);
-                    if (chooseBot == 0)
+                    chooseBot = random.Next(0, 9);
+                    if (chooseBot <= 7)
                     {
 
                         if (int.Parse(player4_money_label.Text.Substring(0, player4_money_label.Text.Length - 1)) > 0)
@@ -365,7 +370,7 @@ namespace Kasyno
                             pass_player4_label.Visible = true;
                         }
                     }
-                    else if (chooseBot == 3)
+                    else
                     {
                         inGame[3] = false;
                         pass_player4_label.Visible = true;
@@ -380,8 +385,8 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(0, 4);
-                    if (chooseBot == 0)
+                    chooseBot = random.Next(0, 9);
+                    if (chooseBot <= 7)
                     {
                         if (int.Parse(player2_money_label.Text.Substring(0, player2_money_label.Text.Length - 1)) > 0)
                         {
@@ -411,8 +416,8 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(0, 4);
-                    if (chooseBot == 0)
+                    chooseBot = random.Next(0, 9);
+                    if (chooseBot <= 7)
                     {
                         if (int.Parse(player3_money_label.Text.Substring(0, player3_money_label.Text.Length - 1)) > 0)
                         {
@@ -432,7 +437,7 @@ namespace Kasyno
                         }
 
                     }
-                    else if (chooseBot == 3)
+                    else
                     {
                         inGame[2] = false;
                         pass_player3_label.Visible = true;
@@ -442,8 +447,8 @@ namespace Kasyno
                 {
                     int chooseBot;
                     Random random = new Random();
-                    chooseBot = random.Next(0, 4);
-                    if (chooseBot == 0)
+                    chooseBot = random.Next(0, 9);
+                    if (chooseBot <= 7)
                     {
 
                         if (int.Parse(player4_money_label.Text.Substring(0, player4_money_label.Text.Length - 1)) > 0)
@@ -510,8 +515,8 @@ namespace Kasyno
                 if (maxBet > allPlayersMoney[1])
                 {
                     Random rand = new Random();
-                    int choose = rand.Next(0, 2);
-                    if (choose == 0)
+                    int choose = rand.Next(0,9);
+                    if (choose <= 7)
                     {
                         int price = int.Parse(player2_money_label.Text.Substring(0, player2_money_label.Text.Length - 1));
                         price += allPlayersMoney[1];
@@ -531,8 +536,8 @@ namespace Kasyno
                 if (maxBet > allPlayersMoney[2])
                 {
                     Random rand = new Random();
-                    int choose = rand.Next(0, 2);
-                    if (choose == 0)
+                    int choose = rand.Next(0, 9);
+                    if (choose <= 7)
                     {
                         int price = int.Parse(player3_money_label.Text.Substring(0, player3_money_label.Text.Length - 1));
                         price += allPlayersMoney[2];
@@ -552,8 +557,8 @@ namespace Kasyno
                 if (maxBet > allPlayersMoney[3])
                 {
                     Random rand = new Random();
-                    int choose = rand.Next(0, 2);
-                    if (choose == 0)
+                    int choose = rand.Next(0, 9);
+                    if (choose <= 7)
                     {
                         int price = int.Parse(player4_money_label.Text.Substring(0, player4_money_label.Text.Length - 1));
                         price += allPlayersMoney[3];
@@ -1536,7 +1541,18 @@ namespace Kasyno
 
         private void Poker_FormClosed(object sender, FormClosedEventArgs e)
         {
-            dashboard.change_balance(int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1) + pot));
+            List<string> winningLine = new List<string>(winner.getWinnerCards());
+            if (winningLine.Contains(player1Deck[0]))
+            {
+
+                int price = int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
+                dashboard.change_balance(price + pot);
+            }
+            else
+            {
+                int price  = int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1));
+                dashboard.change_balance(price);
+            }
             dashboard.Show();
         }
     }
