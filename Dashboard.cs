@@ -117,7 +117,7 @@ namespace Kasyno
 
         private void info_label_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start("https://github.com/adamjankowiak/Kasyno");
         }
 
         private void add_credits_label_Click(object sender, EventArgs e)
