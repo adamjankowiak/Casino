@@ -76,15 +76,15 @@ namespace Kasyno
         {
             InitializeComponent();
             this.dashboard = dashboard;
-            this.startingMoney = money.ToString();
+            this.startingMoney = money.ToString() + "$";
             player1Money = startingMoney;
             player2Money = startingMoney;
             player3Money = startingMoney;
             player4Money = startingMoney;
-            player1_money_label.Text = player1Money + "$";
-            player2_money_label.Text = player2Money + "$";
-            player3_money_label.Text = player3Money + "$";
-            player4_money_label.Text = player4Money + "$";
+            player1_money_label.Text = player1Money;
+            player2_money_label.Text = player2Money;
+            player3_money_label.Text = player3Money;
+            player4_money_label.Text = player4Money;
             this.deck = dashboard.getDeck();
             shuffleDeck();
             GetCards();
