@@ -76,7 +76,7 @@ namespace Kasyno
         {
             InitializeComponent();
             this.dashboard = dashboard;
-            this.startingMoney = money.ToString() + "$";
+            this.startingMoney = money.ToString();
             player1Money = startingMoney;
             player2Money = startingMoney;
             player3Money = startingMoney;

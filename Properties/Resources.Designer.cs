@@ -113,6 +113,16 @@ namespace Kasyno.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Paypal_background {
+            get {
+                object obj = ResourceManager.GetObject("Paypal_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Roulette_table {
             get {
                 object obj = ResourceManager.GetObject("Roulette_table", resourceCulture);
@@ -137,6 +147,16 @@ namespace Kasyno.Properties {
             get {
                 object obj = ResourceManager.GetObject("spades_icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Table {
+            get {
+                object obj = ResourceManager.GetObject("Table", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

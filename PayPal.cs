@@ -51,5 +51,6 @@ namespace Kasyno
         {
             balance += 10000;
         }
+
     }
 }

@@ -14,11 +14,10 @@ using System.Xml;
 
 namespace Kasyno
 {
-    public partial class gra1os : Form
+    public partial class Gra1os : Form
     {
-        //Dashboard dashboard;
-        Wojna wojna;
-        private List<string> deck = new List<string>(/*dashboard.getDeck()*/);
+        Dashboard dashboard;
+        private List<string> deck = new List<string>();
         private List<string> playerDeck = new List<string>();
         private List<string> computerDeck = new List<string>();
         private Dictionary<string, int> cardsValue = new Dictionary<string, int>()
@@ -37,33 +36,19 @@ namespace Kasyno
             {"K",13},
             {"A",14}
         };
-        public gra1os(/*Dashboard dashboard*/ Wojna wojna)
+        public Gra1os(Dashboard dashboard)
         {
             InitializeComponent();
-            //this.dashboard = dashboard;
-            this.wojna = wojna;
-            createDeck();
+            this.dashboard = dashboard;
+            this.deck = dashboard.getDeck();
             shuffleDeck();
             divisionDeck();
         }
-        private void createDeck()
-        {
-            List<string> suits = new List<string> { "♣", "♦", "♥", "♠" };
-            List<string> values = new List<string> { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
-            foreach (string s in suits)
-            {
-                foreach (string v in values)
-                {
-                    string card = v + s;
-                    deck.Add(card);
-                }
-            }
-        }
         private void divisionDeck()
         {
-            for(int i = 0; i < deck.Count;i++)
+            for (int i = 0; i < deck.Count; i++)
             {
-                if(i%2==0)
+                if (i % 2 == 0)
                 {
                     playerDeck.Add(deck[i]);
                 }
@@ -91,8 +76,8 @@ namespace Kasyno
 
         private void bitwa_Button_Click(object sender, EventArgs e)
         {
-            score_Player_textbox.Text = playerDeck.Count.ToString();
-            score_Computer_textBox.Text = computerDeck.Count.ToString();
+            score_player_label.Text = playerDeck.Count.ToString();
+            score_computer_label.Text = computerDeck.Count.ToString();
             if (playerDeck.Count == 0)
             {
                 MessageBox.Show("Computer Win!");
@@ -104,8 +89,24 @@ namespace Kasyno
                 this.Close();
             }
             List<string> list = new List<string>();
-            player_Card_textBox.Text = playerDeck[0];
-            computer_Card_textbox.Text = computerDeck[0];
+            player_card_label.Text = playerDeck[0];
+            computer_card_label.Text = computerDeck[0];
+            if (playerDeck[0].Contains("♦")|| playerDeck[0].Contains("♥"))
+            {
+                player_card_label.ForeColor = Color.Red;
+            }
+            else
+            {
+                player_card_label.ForeColor = Color.Black;
+            }
+            if (computerDeck[0].Contains("♦") || computerDeck[0].Contains("♥"))
+            {
+                computer_card_label.ForeColor = Color.Red;
+            }
+            else
+            {
+                computer_card_label.ForeColor = Color.Black;
+            }
             list.Add(playerDeck[0]);
             list.Add(computerDeck[0]);
             playerDeck.Remove(playerDeck[0]);
@@ -171,9 +172,9 @@ namespace Kasyno
                     }
                     list.Add(playerDeck[0]);
                     list.Add(computerDeck[0]);
-                    player_Card_textBox.Text = list[list.Count-2];
-                    computer_Card_textbox.Text = list[list.Count-1];
-                    if (cardsValue[player_Card_textBox.Text.Substring(0, player_Card_textBox.Text.Length-1)] > cardsValue[computer_Card_textbox.Text.Substring(0, computer_Card_textbox.Text.Length - 1)])
+                    player_card_label.Text = list[list.Count-2];
+                    computer_card_label.Text = list[list.Count-1];
+                    if (cardsValue[player_card_label.Text.Substring(0, player_card_label.Text.Length-1)] > cardsValue[computer_card_label.Text.Substring(0, computer_card_label.Text.Length - 1)])
                     {
                         MessageBox.Show("You Win!");
                         playerCounter = 1;
@@ -182,7 +183,7 @@ namespace Kasyno
                             playerDeck.Add(card);
                         }
                     }
-                    if(cardsValue[player_Card_textBox.Text.Substring(0, computer_Card_textbox.Text.Length - 1)] < cardsValue[computer_Card_textbox.Text.Substring(0, player_Card_textBox.Text.Length - 1)])
+                    if(cardsValue[player_card_label.Text.Substring(0, player_card_label.Text.Length - 1)] < cardsValue[computer_card_label.Text.Substring(0, computer_card_label.Text.Length - 1)])
                     {
                         MessageBox.Show("Computer Win!");
                         computerCounter = 1;
@@ -193,13 +194,13 @@ namespace Kasyno
                     }
                 }
             }
-            score_Player_textbox.Text = playerDeck.Count.ToString();
-            score_Computer_textBox.Text = computerDeck.Count.ToString();
+            score_player_label.Text = playerDeck.Count.ToString();
+            score_computer_label.Text = computerDeck.Count.ToString();
         }
 
         private void gra1os_FormClosed(object sender, FormClosedEventArgs e)
         {
-            wojna.Close();
+            dashboard.Show();
         }
     }
 }

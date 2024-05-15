@@ -24,8 +24,6 @@ namespace Kasyno
         public Gapa(Dashboard dashboard)
         {
             InitializeComponent();
-            Image image = Image.FromFile("..\\..\\Resources\\Table.jpg");
-            this.BackgroundImage = image;
             playerTop.Location = new Point(365, 26);
             radioPikButton.BackColor= SystemColors.Control;
             radioKierButton.BackColor = SystemColors.Control;
@@ -279,16 +277,5 @@ namespace Kasyno
             }
             selected_card.Text = "";
         }
-        /*
-
-        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
-        {
-            VideoWin.Visible = true;
-            string filepath = "C:\\Users\\mjwoj\\Desktop\\FIlm.mp4";
-            VideoWin.URL=filepath;
-            VideoWin.Size = new System.Drawing.Size(853, 521);
-            VideoWin.Location = new System.Drawing.Point(-16, -1);
-        }
-        */
-    }
+ 
 }

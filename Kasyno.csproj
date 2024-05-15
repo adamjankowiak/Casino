@@ -79,17 +79,11 @@
     <Compile Include="PayPal.Designer.cs">
       <DependentUpon>PayPal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Wojna.cs">
+    <Compile Include="Gra1os.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Wojna.Designer.cs">
-      <DependentUpon>Wojna.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gra1os.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gra1os.Designer.cs">
-      <DependentUpon>gra1os.cs</DependentUpon>
+    <Compile Include="Gra1os.Designer.cs">
+      <DependentUpon>Gra1os.cs</DependentUpon>
     </Compile>
     <Compile Include="Blackjack.Designer.cs">
       <DependentUpon>Blackjack.cs</DependentUpon>
@@ -122,11 +116,8 @@
     <EmbeddedResource Include="PayPal.resx">
       <DependentUpon>PayPal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Wojna.resx">
-      <DependentUpon>Wojna.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gra1os.resx">
-      <DependentUpon>gra1os.cs</DependentUpon>
+    <EmbeddedResource Include="Gra1os.resx">
+      <DependentUpon>Gra1os.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logon.resx">
       <DependentUpon>Logon.cs</DependentUpon>
@@ -200,6 +191,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dashboard_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paypal_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
