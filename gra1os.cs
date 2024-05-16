@@ -201,5 +201,10 @@ namespace Kasyno
         {
             wojna.Show();
         }
+
+        private void gra1os_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
