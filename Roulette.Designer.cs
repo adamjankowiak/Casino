@@ -94,7 +94,7 @@ namespace Kasyno
             // 
             this.Play.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Play.Location = new System.Drawing.Point(136, 411);
-            this.Play.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Play.Margin = new System.Windows.Forms.Padding(4);
             this.Play.Name = "Play";
             this.Play.Size = new System.Drawing.Size(200, 55);
             this.Play.TabIndex = 1;
@@ -109,7 +109,7 @@ namespace Kasyno
             this.betting_table.ImageLocation = "";
             this.betting_table.InitialImage = null;
             this.betting_table.Location = new System.Drawing.Point(441, 34);
-            this.betting_table.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.betting_table.Margin = new System.Windows.Forms.Padding(4);
             this.betting_table.Name = "betting_table";
             this.betting_table.Size = new System.Drawing.Size(675, 369);
             this.betting_table.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -124,7 +124,7 @@ namespace Kasyno
             this.bet_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_1.ForeColor = System.Drawing.Color.Transparent;
             this.bet_1.Location = new System.Drawing.Point(529, 207);
-            this.bet_1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_1.Margin = new System.Windows.Forms.Padding(4);
             this.bet_1.Name = "bet_1";
             this.bet_1.Size = new System.Drawing.Size(47, 63);
             this.bet_1.TabIndex = 5;
@@ -143,7 +143,7 @@ namespace Kasyno
             this.bet_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_2.ForeColor = System.Drawing.Color.Transparent;
             this.bet_2.Location = new System.Drawing.Point(529, 145);
-            this.bet_2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_2.Margin = new System.Windows.Forms.Padding(4);
             this.bet_2.Name = "bet_2";
             this.bet_2.Size = new System.Drawing.Size(47, 63);
             this.bet_2.TabIndex = 6;
@@ -162,7 +162,7 @@ namespace Kasyno
             this.bet_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_3.ForeColor = System.Drawing.Color.Transparent;
             this.bet_3.Location = new System.Drawing.Point(529, 85);
-            this.bet_3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_3.Margin = new System.Windows.Forms.Padding(4);
             this.bet_3.Name = "bet_3";
             this.bet_3.Size = new System.Drawing.Size(47, 63);
             this.bet_3.TabIndex = 7;
@@ -181,7 +181,7 @@ namespace Kasyno
             this.bet_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_4.ForeColor = System.Drawing.Color.Transparent;
             this.bet_4.Location = new System.Drawing.Point(573, 207);
-            this.bet_4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_4.Margin = new System.Windows.Forms.Padding(4);
             this.bet_4.Name = "bet_4";
             this.bet_4.Size = new System.Drawing.Size(45, 63);
             this.bet_4.TabIndex = 8;
@@ -200,7 +200,7 @@ namespace Kasyno
             this.bet_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_5.ForeColor = System.Drawing.Color.Transparent;
             this.bet_5.Location = new System.Drawing.Point(573, 145);
-            this.bet_5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_5.Margin = new System.Windows.Forms.Padding(4);
             this.bet_5.Name = "bet_5";
             this.bet_5.Size = new System.Drawing.Size(45, 63);
             this.bet_5.TabIndex = 9;
@@ -219,7 +219,7 @@ namespace Kasyno
             this.bet_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_6.ForeColor = System.Drawing.Color.Transparent;
             this.bet_6.Location = new System.Drawing.Point(573, 85);
-            this.bet_6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_6.Margin = new System.Windows.Forms.Padding(4);
             this.bet_6.Name = "bet_6";
             this.bet_6.Size = new System.Drawing.Size(45, 63);
             this.bet_6.TabIndex = 10;
@@ -238,7 +238,7 @@ namespace Kasyno
             this.bet_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_7.ForeColor = System.Drawing.Color.Transparent;
             this.bet_7.Location = new System.Drawing.Point(616, 207);
-            this.bet_7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_7.Margin = new System.Windows.Forms.Padding(4);
             this.bet_7.Name = "bet_7";
             this.bet_7.Size = new System.Drawing.Size(45, 63);
             this.bet_7.TabIndex = 11;
@@ -257,7 +257,7 @@ namespace Kasyno
             this.bet_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_8.ForeColor = System.Drawing.Color.Transparent;
             this.bet_8.Location = new System.Drawing.Point(616, 145);
-            this.bet_8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_8.Margin = new System.Windows.Forms.Padding(4);
             this.bet_8.Name = "bet_8";
             this.bet_8.Size = new System.Drawing.Size(45, 63);
             this.bet_8.TabIndex = 12;
@@ -276,7 +276,7 @@ namespace Kasyno
             this.bet_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_9.ForeColor = System.Drawing.Color.Transparent;
             this.bet_9.Location = new System.Drawing.Point(616, 85);
-            this.bet_9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_9.Margin = new System.Windows.Forms.Padding(4);
             this.bet_9.Name = "bet_9";
             this.bet_9.Size = new System.Drawing.Size(45, 63);
             this.bet_9.TabIndex = 13;
@@ -295,7 +295,7 @@ namespace Kasyno
             this.bet_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_10.ForeColor = System.Drawing.Color.Transparent;
             this.bet_10.Location = new System.Drawing.Point(659, 207);
-            this.bet_10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_10.Margin = new System.Windows.Forms.Padding(4);
             this.bet_10.Name = "bet_10";
             this.bet_10.Size = new System.Drawing.Size(47, 63);
             this.bet_10.TabIndex = 14;
@@ -314,7 +314,7 @@ namespace Kasyno
             this.bet_11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_11.ForeColor = System.Drawing.Color.Transparent;
             this.bet_11.Location = new System.Drawing.Point(659, 145);
-            this.bet_11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_11.Margin = new System.Windows.Forms.Padding(4);
             this.bet_11.Name = "bet_11";
             this.bet_11.Size = new System.Drawing.Size(47, 63);
             this.bet_11.TabIndex = 15;
@@ -333,7 +333,7 @@ namespace Kasyno
             this.bet_12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_12.ForeColor = System.Drawing.Color.Transparent;
             this.bet_12.Location = new System.Drawing.Point(659, 85);
-            this.bet_12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_12.Margin = new System.Windows.Forms.Padding(4);
             this.bet_12.Name = "bet_12";
             this.bet_12.Size = new System.Drawing.Size(47, 63);
             this.bet_12.TabIndex = 16;
@@ -352,7 +352,7 @@ namespace Kasyno
             this.bet_13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_13.ForeColor = System.Drawing.Color.Transparent;
             this.bet_13.Location = new System.Drawing.Point(703, 207);
-            this.bet_13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_13.Margin = new System.Windows.Forms.Padding(4);
             this.bet_13.Name = "bet_13";
             this.bet_13.Size = new System.Drawing.Size(45, 63);
             this.bet_13.TabIndex = 17;
@@ -371,7 +371,7 @@ namespace Kasyno
             this.bet_14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_14.ForeColor = System.Drawing.Color.Transparent;
             this.bet_14.Location = new System.Drawing.Point(703, 145);
-            this.bet_14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_14.Margin = new System.Windows.Forms.Padding(4);
             this.bet_14.Name = "bet_14";
             this.bet_14.Size = new System.Drawing.Size(45, 63);
             this.bet_14.TabIndex = 18;
@@ -390,7 +390,7 @@ namespace Kasyno
             this.bet_15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_15.ForeColor = System.Drawing.Color.Transparent;
             this.bet_15.Location = new System.Drawing.Point(703, 85);
-            this.bet_15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_15.Margin = new System.Windows.Forms.Padding(4);
             this.bet_15.Name = "bet_15";
             this.bet_15.Size = new System.Drawing.Size(45, 63);
             this.bet_15.TabIndex = 19;
@@ -409,7 +409,7 @@ namespace Kasyno
             this.bet_16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_16.ForeColor = System.Drawing.Color.Transparent;
             this.bet_16.Location = new System.Drawing.Point(745, 207);
-            this.bet_16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_16.Margin = new System.Windows.Forms.Padding(4);
             this.bet_16.Name = "bet_16";
             this.bet_16.Size = new System.Drawing.Size(45, 63);
             this.bet_16.TabIndex = 20;
@@ -428,7 +428,7 @@ namespace Kasyno
             this.bet_17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_17.ForeColor = System.Drawing.Color.Transparent;
             this.bet_17.Location = new System.Drawing.Point(745, 145);
-            this.bet_17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_17.Margin = new System.Windows.Forms.Padding(4);
             this.bet_17.Name = "bet_17";
             this.bet_17.Size = new System.Drawing.Size(45, 63);
             this.bet_17.TabIndex = 21;
@@ -447,7 +447,7 @@ namespace Kasyno
             this.bet_18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_18.ForeColor = System.Drawing.Color.Transparent;
             this.bet_18.Location = new System.Drawing.Point(745, 85);
-            this.bet_18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_18.Margin = new System.Windows.Forms.Padding(4);
             this.bet_18.Name = "bet_18";
             this.bet_18.Size = new System.Drawing.Size(45, 63);
             this.bet_18.TabIndex = 22;
@@ -466,7 +466,7 @@ namespace Kasyno
             this.bet_19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_19.ForeColor = System.Drawing.Color.Transparent;
             this.bet_19.Location = new System.Drawing.Point(789, 207);
-            this.bet_19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_19.Margin = new System.Windows.Forms.Padding(4);
             this.bet_19.Name = "bet_19";
             this.bet_19.Size = new System.Drawing.Size(45, 63);
             this.bet_19.TabIndex = 23;
@@ -485,7 +485,7 @@ namespace Kasyno
             this.bet_20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_20.ForeColor = System.Drawing.Color.Transparent;
             this.bet_20.Location = new System.Drawing.Point(789, 145);
-            this.bet_20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_20.Margin = new System.Windows.Forms.Padding(4);
             this.bet_20.Name = "bet_20";
             this.bet_20.Size = new System.Drawing.Size(45, 63);
             this.bet_20.TabIndex = 24;
@@ -504,7 +504,7 @@ namespace Kasyno
             this.bet_21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_21.ForeColor = System.Drawing.Color.Transparent;
             this.bet_21.Location = new System.Drawing.Point(789, 85);
-            this.bet_21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_21.Margin = new System.Windows.Forms.Padding(4);
             this.bet_21.Name = "bet_21";
             this.bet_21.Size = new System.Drawing.Size(45, 63);
             this.bet_21.TabIndex = 25;
@@ -523,7 +523,7 @@ namespace Kasyno
             this.bet_22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_22.ForeColor = System.Drawing.Color.Transparent;
             this.bet_22.Location = new System.Drawing.Point(832, 207);
-            this.bet_22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_22.Margin = new System.Windows.Forms.Padding(4);
             this.bet_22.Name = "bet_22";
             this.bet_22.Size = new System.Drawing.Size(45, 63);
             this.bet_22.TabIndex = 26;
@@ -542,7 +542,7 @@ namespace Kasyno
             this.bet_23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_23.ForeColor = System.Drawing.Color.Transparent;
             this.bet_23.Location = new System.Drawing.Point(832, 145);
-            this.bet_23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_23.Margin = new System.Windows.Forms.Padding(4);
             this.bet_23.Name = "bet_23";
             this.bet_23.Size = new System.Drawing.Size(45, 63);
             this.bet_23.TabIndex = 27;
@@ -561,7 +561,7 @@ namespace Kasyno
             this.bet_24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_24.ForeColor = System.Drawing.Color.Transparent;
             this.bet_24.Location = new System.Drawing.Point(832, 85);
-            this.bet_24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_24.Margin = new System.Windows.Forms.Padding(4);
             this.bet_24.Name = "bet_24";
             this.bet_24.Size = new System.Drawing.Size(45, 63);
             this.bet_24.TabIndex = 28;
@@ -580,7 +580,7 @@ namespace Kasyno
             this.bet_25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_25.ForeColor = System.Drawing.Color.Transparent;
             this.bet_25.Location = new System.Drawing.Point(875, 207);
-            this.bet_25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_25.Margin = new System.Windows.Forms.Padding(4);
             this.bet_25.Name = "bet_25";
             this.bet_25.Size = new System.Drawing.Size(45, 63);
             this.bet_25.TabIndex = 29;
@@ -599,7 +599,7 @@ namespace Kasyno
             this.bet_26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_26.ForeColor = System.Drawing.Color.Transparent;
             this.bet_26.Location = new System.Drawing.Point(875, 145);
-            this.bet_26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_26.Margin = new System.Windows.Forms.Padding(4);
             this.bet_26.Name = "bet_26";
             this.bet_26.Size = new System.Drawing.Size(45, 63);
             this.bet_26.TabIndex = 30;
@@ -618,7 +618,7 @@ namespace Kasyno
             this.bet_27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_27.ForeColor = System.Drawing.Color.Transparent;
             this.bet_27.Location = new System.Drawing.Point(875, 85);
-            this.bet_27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_27.Margin = new System.Windows.Forms.Padding(4);
             this.bet_27.Name = "bet_27";
             this.bet_27.Size = new System.Drawing.Size(45, 63);
             this.bet_27.TabIndex = 31;
@@ -637,7 +637,7 @@ namespace Kasyno
             this.bet_28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_28.ForeColor = System.Drawing.Color.Transparent;
             this.bet_28.Location = new System.Drawing.Point(917, 207);
-            this.bet_28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_28.Margin = new System.Windows.Forms.Padding(4);
             this.bet_28.Name = "bet_28";
             this.bet_28.Size = new System.Drawing.Size(47, 63);
             this.bet_28.TabIndex = 32;
@@ -656,7 +656,7 @@ namespace Kasyno
             this.bet_29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_29.ForeColor = System.Drawing.Color.Transparent;
             this.bet_29.Location = new System.Drawing.Point(917, 145);
-            this.bet_29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_29.Margin = new System.Windows.Forms.Padding(4);
             this.bet_29.Name = "bet_29";
             this.bet_29.Size = new System.Drawing.Size(47, 63);
             this.bet_29.TabIndex = 33;
@@ -675,7 +675,7 @@ namespace Kasyno
             this.bet_30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_30.ForeColor = System.Drawing.Color.Transparent;
             this.bet_30.Location = new System.Drawing.Point(917, 85);
-            this.bet_30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_30.Margin = new System.Windows.Forms.Padding(4);
             this.bet_30.Name = "bet_30";
             this.bet_30.Size = new System.Drawing.Size(47, 63);
             this.bet_30.TabIndex = 34;
@@ -694,7 +694,7 @@ namespace Kasyno
             this.bet_31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_31.ForeColor = System.Drawing.Color.Transparent;
             this.bet_31.Location = new System.Drawing.Point(961, 207);
-            this.bet_31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_31.Margin = new System.Windows.Forms.Padding(4);
             this.bet_31.Name = "bet_31";
             this.bet_31.Size = new System.Drawing.Size(45, 63);
             this.bet_31.TabIndex = 35;
@@ -713,7 +713,7 @@ namespace Kasyno
             this.bet_32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_32.ForeColor = System.Drawing.Color.Transparent;
             this.bet_32.Location = new System.Drawing.Point(961, 145);
-            this.bet_32.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_32.Margin = new System.Windows.Forms.Padding(4);
             this.bet_32.Name = "bet_32";
             this.bet_32.Size = new System.Drawing.Size(45, 63);
             this.bet_32.TabIndex = 36;
@@ -732,7 +732,7 @@ namespace Kasyno
             this.bet_33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_33.ForeColor = System.Drawing.Color.Transparent;
             this.bet_33.Location = new System.Drawing.Point(961, 85);
-            this.bet_33.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_33.Margin = new System.Windows.Forms.Padding(4);
             this.bet_33.Name = "bet_33";
             this.bet_33.Size = new System.Drawing.Size(45, 63);
             this.bet_33.TabIndex = 37;
@@ -751,7 +751,7 @@ namespace Kasyno
             this.bet_34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_34.ForeColor = System.Drawing.Color.Transparent;
             this.bet_34.Location = new System.Drawing.Point(1004, 207);
-            this.bet_34.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_34.Margin = new System.Windows.Forms.Padding(4);
             this.bet_34.Name = "bet_34";
             this.bet_34.Size = new System.Drawing.Size(45, 63);
             this.bet_34.TabIndex = 38;
@@ -770,7 +770,7 @@ namespace Kasyno
             this.bet_35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_35.ForeColor = System.Drawing.Color.Transparent;
             this.bet_35.Location = new System.Drawing.Point(1004, 145);
-            this.bet_35.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_35.Margin = new System.Windows.Forms.Padding(4);
             this.bet_35.Name = "bet_35";
             this.bet_35.Size = new System.Drawing.Size(45, 63);
             this.bet_35.TabIndex = 39;
@@ -789,7 +789,7 @@ namespace Kasyno
             this.bet_36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_36.ForeColor = System.Drawing.Color.Transparent;
             this.bet_36.Location = new System.Drawing.Point(1004, 85);
-            this.bet_36.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_36.Margin = new System.Windows.Forms.Padding(4);
             this.bet_36.Name = "bet_36";
             this.bet_36.Size = new System.Drawing.Size(45, 63);
             this.bet_36.TabIndex = 40;
@@ -809,7 +809,7 @@ namespace Kasyno
             this.bet_2to1_bottom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_2to1_bottom.ForeColor = System.Drawing.Color.Transparent;
             this.bet_2to1_bottom.Location = new System.Drawing.Point(1048, 208);
-            this.bet_2to1_bottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_2to1_bottom.Margin = new System.Windows.Forms.Padding(4);
             this.bet_2to1_bottom.Name = "bet_2to1_bottom";
             this.bet_2to1_bottom.Size = new System.Drawing.Size(44, 60);
             this.bet_2to1_bottom.TabIndex = 41;
@@ -829,7 +829,7 @@ namespace Kasyno
             this.bet_2to1_middle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_2to1_middle.ForeColor = System.Drawing.Color.Transparent;
             this.bet_2to1_middle.Location = new System.Drawing.Point(1048, 146);
-            this.bet_2to1_middle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_2to1_middle.Margin = new System.Windows.Forms.Padding(4);
             this.bet_2to1_middle.Name = "bet_2to1_middle";
             this.bet_2to1_middle.Size = new System.Drawing.Size(44, 60);
             this.bet_2to1_middle.TabIndex = 42;
@@ -849,7 +849,7 @@ namespace Kasyno
             this.bet_2to1_top.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_2to1_top.ForeColor = System.Drawing.Color.Transparent;
             this.bet_2to1_top.Location = new System.Drawing.Point(1048, 86);
-            this.bet_2to1_top.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_2to1_top.Margin = new System.Windows.Forms.Padding(4);
             this.bet_2to1_top.Name = "bet_2to1_top";
             this.bet_2to1_top.Size = new System.Drawing.Size(44, 60);
             this.bet_2to1_top.TabIndex = 43;
@@ -869,7 +869,7 @@ namespace Kasyno
             this.bet_2nd12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_2nd12.ForeColor = System.Drawing.Color.Transparent;
             this.bet_2nd12.Location = new System.Drawing.Point(704, 268);
-            this.bet_2nd12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_2nd12.Margin = new System.Windows.Forms.Padding(4);
             this.bet_2nd12.Name = "bet_2nd12";
             this.bet_2nd12.Size = new System.Drawing.Size(171, 42);
             this.bet_2nd12.TabIndex = 44;
@@ -889,7 +889,7 @@ namespace Kasyno
             this.bet_1st12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_1st12.ForeColor = System.Drawing.Color.Transparent;
             this.bet_1st12.Location = new System.Drawing.Point(531, 268);
-            this.bet_1st12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_1st12.Margin = new System.Windows.Forms.Padding(4);
             this.bet_1st12.Name = "bet_1st12";
             this.bet_1st12.Size = new System.Drawing.Size(173, 42);
             this.bet_1st12.TabIndex = 45;
@@ -909,7 +909,7 @@ namespace Kasyno
             this.bet_3rd12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_3rd12.ForeColor = System.Drawing.Color.Transparent;
             this.bet_3rd12.Location = new System.Drawing.Point(876, 268);
-            this.bet_3rd12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_3rd12.Margin = new System.Windows.Forms.Padding(4);
             this.bet_3rd12.Name = "bet_3rd12";
             this.bet_3rd12.Size = new System.Drawing.Size(172, 42);
             this.bet_3rd12.TabIndex = 46;
@@ -924,12 +924,13 @@ namespace Kasyno
             // 
             this.roulette_picture.BackColor = System.Drawing.Color.Transparent;
             this.roulette_picture.Location = new System.Drawing.Point(33, 34);
-            this.roulette_picture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.roulette_picture.Margin = new System.Windows.Forms.Padding(4);
             this.roulette_picture.Name = "roulette_picture";
             this.roulette_picture.Size = new System.Drawing.Size(400, 369);
             this.roulette_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roulette_picture.TabIndex = 47;
             this.roulette_picture.TabStop = false;
+            this.roulette_picture.Click += new System.EventHandler(this.roulette_picture_Click);
             // 
             // bet_red
             // 
@@ -940,7 +941,7 @@ namespace Kasyno
             this.bet_red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_red.ForeColor = System.Drawing.Color.Transparent;
             this.bet_red.Location = new System.Drawing.Point(704, 310);
-            this.bet_red.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_red.Margin = new System.Windows.Forms.Padding(4);
             this.bet_red.Name = "bet_red";
             this.bet_red.Size = new System.Drawing.Size(85, 42);
             this.bet_red.TabIndex = 49;
@@ -960,7 +961,7 @@ namespace Kasyno
             this.bet_black.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_black.ForeColor = System.Drawing.Color.Transparent;
             this.bet_black.Location = new System.Drawing.Point(789, 310);
-            this.bet_black.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_black.Margin = new System.Windows.Forms.Padding(4);
             this.bet_black.Name = "bet_black";
             this.bet_black.Size = new System.Drawing.Size(85, 42);
             this.bet_black.TabIndex = 50;
@@ -980,7 +981,7 @@ namespace Kasyno
             this.bet_odd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_odd.ForeColor = System.Drawing.Color.Transparent;
             this.bet_odd.Location = new System.Drawing.Point(876, 310);
-            this.bet_odd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_odd.Margin = new System.Windows.Forms.Padding(4);
             this.bet_odd.Name = "bet_odd";
             this.bet_odd.Size = new System.Drawing.Size(85, 42);
             this.bet_odd.TabIndex = 51;
@@ -1000,7 +1001,7 @@ namespace Kasyno
             this.bet_even.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_even.ForeColor = System.Drawing.Color.Transparent;
             this.bet_even.Location = new System.Drawing.Point(617, 310);
-            this.bet_even.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_even.Margin = new System.Windows.Forms.Padding(4);
             this.bet_even.Name = "bet_even";
             this.bet_even.Size = new System.Drawing.Size(85, 42);
             this.bet_even.TabIndex = 52;
@@ -1020,7 +1021,7 @@ namespace Kasyno
             this.bet_1to18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_1to18.ForeColor = System.Drawing.Color.Transparent;
             this.bet_1to18.Location = new System.Drawing.Point(531, 310);
-            this.bet_1to18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_1to18.Margin = new System.Windows.Forms.Padding(4);
             this.bet_1to18.Name = "bet_1to18";
             this.bet_1to18.Size = new System.Drawing.Size(85, 42);
             this.bet_1to18.TabIndex = 53;
@@ -1040,7 +1041,7 @@ namespace Kasyno
             this.bet_19to36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_19to36.ForeColor = System.Drawing.Color.Transparent;
             this.bet_19to36.Location = new System.Drawing.Point(961, 310);
-            this.bet_19to36.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_19to36.Margin = new System.Windows.Forms.Padding(4);
             this.bet_19to36.Name = "bet_19to36";
             this.bet_19to36.Size = new System.Drawing.Size(85, 42);
             this.bet_19to36.TabIndex = 54;
@@ -1060,7 +1061,7 @@ namespace Kasyno
             this.bet_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bet_0.ForeColor = System.Drawing.Color.Transparent;
             this.bet_0.Location = new System.Drawing.Point(464, 145);
-            this.bet_0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_0.Margin = new System.Windows.Forms.Padding(4);
             this.bet_0.Name = "bet_0";
             this.bet_0.Size = new System.Drawing.Size(67, 63);
             this.bet_0.TabIndex = 55;
@@ -1090,7 +1091,7 @@ namespace Kasyno
             this.bet_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bet_value.ForeColor = System.Drawing.Color.White;
             this.bet_value.Location = new System.Drawing.Point(659, 422);
-            this.bet_value.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bet_value.Margin = new System.Windows.Forms.Padding(4);
             this.bet_value.Name = "bet_value";
             this.bet_value.Size = new System.Drawing.Size(175, 30);
             this.bet_value.TabIndex = 57;
@@ -1177,7 +1178,7 @@ namespace Kasyno
             this.Controls.Add(this.Play);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Roulette";
