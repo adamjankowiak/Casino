@@ -695,7 +695,7 @@ namespace Kasyno
 
         private void bet_value_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '-')
             {
                 e.Handled = true;
             }
