@@ -144,6 +144,12 @@ namespace Kasyno
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
+            if(Oszust.Checked)
+            {
+                MessageBox.Show("Oszust");
+                this.Close();
+                return;
+            }
             string selectedCardFromDeck = selected_card.Text.ToUpper();
             if (selectedCardFromDeck == "WIN")
             {
