@@ -24,10 +24,8 @@ namespace Kasyno
         public Gapa(Dashboard dashboard)
         {
             InitializeComponent();
-            Image image = Image.FromFile("..\\..\\Resources\\Table.jpg");
-            this.BackgroundImage = image;
             playerTop.Location = new Point(365, 26);
-            radioPikButton.BackColor= SystemColors.Control;
+            radioPikButton.BackColor = SystemColors.Control;
             radioKierButton.BackColor = SystemColors.Control;
             radioKaroButton.BackColor = SystemColors.Control;
             radioTreflButton.BackColor = SystemColors.Control;
@@ -39,20 +37,20 @@ namespace Kasyno
 
         private void modifyDeck()
         {
-            List<string>tempdeck = new List<string>();
-            for(int i = 0;i<this.deck.Count;i++)
+            List<string> tempdeck = new List<string>();
+            for (int i = 0; i < this.deck.Count; i++)
             {
-                if (this.deck[i].Substring(0,1)=="A" || this.deck[i].Substring(0, 1) == "K" || this.deck[i].Substring(0, 1) == "Q" || this.deck[i].Substring(0, 1) == "J")
+                if (this.deck[i].Substring(0, 1) == "A" || this.deck[i].Substring(0, 1) == "K" || this.deck[i].Substring(0, 1) == "Q" || this.deck[i].Substring(0, 1) == "J")
                 {
                     tempdeck.Add(this.deck[i]);
                 }
             }
-            this.deck=tempdeck;
+            this.deck = tempdeck;
         }
 
         private void EndGame(string playerName)
         {
-            if(win)
+            if (win)
             {
                 //axWindowsMediaPlayer1_Enter(this, EventArgs.Empty);
                 MessageBox.Show(playerName + " Win!");
@@ -111,29 +109,29 @@ namespace Kasyno
         {
             string cards = "";
             player1.Sort();
-            foreach(string card in player1)
+            foreach (string card in player1)
             {
-                if(card == player1.Last())
+                if (card == player1.Last())
                 {
                     cards += card;
                 }
                 else
                 {
                     cards += card + " , ";
-                }      
+                }
             }
             current_deck.Text = cards;
-            current_deck.Location = new Point((this.ClientSize.Width - current_deck.Width) / 2-15, 382 - current_deck.Height / 2);
+            current_deck.Location = new Point((this.ClientSize.Width - current_deck.Width) / 2 - 15, 382 - current_deck.Height / 2);
         }
 
         void gameplay()
         {
             showDeck();
-            Select_card_text.Visible=true;
+            Select_card_text.Visible = true;
             selected_card.Visible = true;
             radioPikButton.Visible = true;
             radioKierButton.Visible = true;
-            radioKaroButton.Visible=true;
+            radioKaroButton.Visible = true;
             radioTreflButton.Visible = true;
             button_Start.Visible = false;
             acceptButton.Visible = true;
@@ -147,12 +145,12 @@ namespace Kasyno
         private void acceptButton_Click(object sender, EventArgs e)
         {
             string selectedCardFromDeck = selected_card.Text.ToUpper();
-            if(selectedCardFromDeck == "WIN")
+            if (selectedCardFromDeck == "WIN")
             {
                 win = true;
                 EndGame("Test");
             }
-            if (radioPikButton.Checked && selectedCardFromDeck!="")
+            if (radioPikButton.Checked && selectedCardFromDeck != "")
             {
                 selectedCardFromDeck += "♠";
             }
@@ -167,14 +165,14 @@ namespace Kasyno
             else if (radioTreflButton.Checked && selectedCardFromDeck != "")
             {
                 selectedCardFromDeck += "♣";
-                
+
             }
-            else if(radioPikButton.Checked == false && radioKierButton.Checked==false && radioKaroButton.Checked==false && radioTreflButton.Checked==false)
+            else if (radioPikButton.Checked == false && radioKierButton.Checked == false && radioKaroButton.Checked == false && radioTreflButton.Checked == false)
             {
                 MessageBox.Show("Nie wybrano koloru");
                 return;
             }
-            else if(selectedCardFromDeck == "")
+            else if (selectedCardFromDeck == "")
             {
                 MessageBox.Show("Nie wybrano karty");
                 return;
@@ -183,7 +181,7 @@ namespace Kasyno
             if (selected_card.Text != "")
             {
                 MessageBox.Show("Wybrano " + selected_card.Text);
-                if(player1.Contains(selected_card.Text))
+                if (player1.Contains(selected_card.Text))
                 {
                     string currplayerCard = selected_card.Text;
                     player1.Remove(currplayerCard);
@@ -191,7 +189,7 @@ namespace Kasyno
                     string player3Card = "";
                     string player4Card = "";
                     Random random = new Random();
-                    int card_chosen = random.Next(0,player2.Count);
+                    int card_chosen = random.Next(0, player2.Count);
                     player2Card = player2[card_chosen];
                     player2.Remove(player2Card);
                     card_chosen = random.Next(0, player3.Count);
@@ -207,15 +205,15 @@ namespace Kasyno
                     showDeck();
                     string playerCards = "";
                     string combination = "";
-                    for (int i = 0;i<player1.Count;i++)
+                    for (int i = 0; i < player1.Count; i++)
                     {
                         playerCards += player1[i].Substring(0, 1);
-                        if(playerCards.Length == 1)
+                        if (playerCards.Length == 1)
                         {
                             combination = winningLine[playerCards];
                         }
                     }
-                    if(playerCards == combination)
+                    if (playerCards == combination)
                     {
                         win = true;
                         EndGame(current_player.Text);
@@ -279,16 +277,6 @@ namespace Kasyno
             }
             selected_card.Text = "";
         }
-        /*
 
-        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
-        {
-            VideoWin.Visible = true;
-            string filepath = "C:\\Users\\mjwoj\\Desktop\\FIlm.mp4";
-            VideoWin.URL=filepath;
-            VideoWin.Size = new System.Drawing.Size(853, 521);
-            VideoWin.Location = new System.Drawing.Point(-16, -1);
-        }
-        */
     }
 }

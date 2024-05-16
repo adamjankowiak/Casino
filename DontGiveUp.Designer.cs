@@ -57,7 +57,7 @@
             this.back_to_the_game_label.Name = "back_to_the_game_label";
             this.back_to_the_game_label.Size = new System.Drawing.Size(174, 50);
             this.back_to_the_game_label.TabIndex = 1;
-            this.back_to_the_game_label.Text = "gram dalej";
+            this.back_to_the_game_label.Text = "GRAM DALEJ";
             this.back_to_the_game_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.back_to_the_game_label.Click += new System.EventHandler(this.back_to_the_game_label_Click);
             // 
@@ -73,7 +73,7 @@
             this.i_quit_label.Name = "i_quit_label";
             this.i_quit_label.Size = new System.Drawing.Size(180, 50);
             this.i_quit_label.TabIndex = 2;
-            this.i_quit_label.Text = "rezygnuje";
+            this.i_quit_label.Text = "REZYGNUJE";
             this.i_quit_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.i_quit_label.Click += new System.EventHandler(this.i_quit_label_Click);
             // 

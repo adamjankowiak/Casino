@@ -9,20 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.ObjectModel;
-using WMPLib;
 
 namespace Kasyno
 {
     public partial class Roulette : Form
     {
         string roulette_path;
-        int bet = 0, roll;
+        int bet = 0, roll, balance;
         int[] red = {1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36};
         Dashboard dashboard;
         Button clicked;
         // Collection<string> bets = new Collection<string>();
         // Collection<int> bet_values = new Collection<int>();
-        public Roulette(Dashboard dash)
+        public Roulette(Dashboard dash, int _balance)
         {
             InitializeComponent();
             string executablePath = Path.GetDirectoryName(Application.ExecutablePath);
@@ -30,27 +29,224 @@ namespace Kasyno
             /*Player.stretchToFit = true;
             Player.uiMode = "none";
             Player.Visible = false;*/
+            clicked = this.bet_0;
             roulette_picture.Image = Image.FromFile(roulette_path + "Roulette_0.jpg");
             roulette_picture.Refresh();
             betting_table.Image = Image.FromFile("..\\..\\Resources\\Roulette_Table\\Roulette_table.jpg");
             dashboard = dash;
+            balance = _balance;
+            current_balance.Text = "current balance: " + balance.ToString();
         }
 
         private void Play_Click(object sender, EventArgs e)
         {
             /*Player.Ctlcontrols.stop();*/
+            clicked.Focus() ;
             Random rng = new Random();
-            roll = rng.Next(0, 36);
-            string path = roulette_path + "Roulette_" + roll.ToString() + ".mp4";
-            /*Player.URL = path;
+            roll = rng.Next(0, 37);
+            /*string path = roulette_path + "Roulette_" + roll.ToString() + ".mp4";
+            Player.URL = path;
             roulette_picture.Visible = false;
             Player.Visible = true;
             Player.Ctlcontrols.play();*/
             roulette_picture.Image = Image.FromFile(roulette_path + "Roulette_" + roll.ToString() + ".jpg");
             roulette_picture.Refresh();
+            if (bet >= 0)
+            {
+                if (bet == roll)
+                {
+                    balance += int.Parse(bet_value.Text) * 35;
+                    current_balance.Text = "current balance: " + balance.ToString();
+                    MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    balance -= int.Parse(bet_value.Text);
+                    current_balance.Text = "current balance: " + balance.ToString();
+                    MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                switch (bet)
+                {
+                    case -3:
+                        if (roll % 3 == 0)
+                        {
+                            balance += int.Parse(bet_value.Text) * 2;
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case -1:
+                        if (roll % 3 == 1)
+                        {
+                            balance += int.Parse(bet_value.Text) * 2;
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case -2:
+                        if (roll % 3 == 2)
+                        {
+                            balance += int.Parse(bet_value.Text) * 2;
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case -4:
+                        if (roll % 2 == 0)
+                        {
+                            balance += int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case -5:
+                        if (roll % 2 == 1)
+                        {
+                            balance += int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case -12:
+                        if (roll > 0 && roll <= 12)
+                        {
+                            balance += int.Parse(bet_value.Text) * 2;
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case -24:
+                        if (roll > 12 && roll <= 24)
+                        {
+                            balance += int.Parse(bet_value.Text) * 2;
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case -36:
+                        if (roll > 24 && roll <= 36)
+                        {
+                            balance += int.Parse(bet_value.Text) * 2;
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case -18:
+                        if (roll > 0 && roll <= 18)
+                        {
+                            balance += int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case -19:
+                        if (roll > 18 && roll <= 36)
+                        {
+                            balance += int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case -6:
+                        if (red.Contains(roll))
+                        {
+                            balance += int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case -7:
+                        if (!red.Contains(roll))
+                        {
+                            balance += int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have won", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            balance -= int.Parse(bet_value.Text);
+                            current_balance.Text = "current balance: " + balance.ToString();
+                            MessageBox.Show("You have lost", "Loss", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
-        /*private void Player_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        /* naprawde chcialem dodac media player z animacja, ale do jasnej ciasnej sie wywala biblioteka do tego playera niewazne co bym nie zrobil
+        
+        private void Player_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
             if (Player.playState == WMPLib.WMPPlayState.wmppsMediaEnded)
             {
@@ -199,6 +395,11 @@ namespace Kasyno
                 roulette_picture.Refresh();
             }
         }*/
+
+        private void bet_0_Click(object sender, EventArgs e)
+        {
+            bet = 0;
+        }
 
         private void bet_1_Click(object sender, EventArgs e)
         {
@@ -487,7 +688,38 @@ namespace Kasyno
 
         private void Roulette_FormClosed(object sender, FormClosedEventArgs e)
         {
+            balance += int.Parse(bet_value.Text);
+            dashboard.change_balance(balance);
             dashboard.Show();
+        }
+
+        private void bet_value_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                clicked.Focus();
+            }
+        }
+
+        private void bet_value_Enter(object sender, EventArgs e)
+        {
+            balance += int.Parse(bet_value.Text);
+            bet_value.Text = "0";
+        }
+
+        private void bet_value_Leave(object sender, EventArgs e)
+        {
+            if(int.Parse(bet_value.Text) > balance)
+            {
+                bet_value.Text = "current balance: " + balance.ToString();
+            }
+            clicked.Focus();
+            balance -= int.Parse(bet_value.Text);
+            current_balance.Text = "current balance: " + balance.ToString();
         }
 
         private void bet_button_2_Leave(object sender, EventArgs e)

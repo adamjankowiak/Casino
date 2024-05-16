@@ -475,6 +475,7 @@
             this.MinimizeBox = false;
             this.Name = "Poker";
             this.Text = "Poker";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Poker_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

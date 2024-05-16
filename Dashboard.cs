@@ -49,9 +49,9 @@ namespace Kasyno
             return tempDeck;
         }
 
-        public void SetUser(string username)
+        public void change_balance(int new_balance)
         {
-            user = username;
+            balance = new_balance;
         }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -77,7 +77,7 @@ namespace Kasyno
 
         private void blackjack_label_Click(object sender, EventArgs e)
         {
-            Blackjack bj = new Blackjack(this);
+            Blackjack bj = new Blackjack(this,balance,user);
             this.Hide();
             bj.Show();
         }
@@ -97,32 +97,34 @@ namespace Kasyno
 
         private void poker_label_Click(object sender, EventArgs e)
         {
-            Poker poker = new Poker(this);
+            Poker poker = new Poker(this,balance);
             poker.Show();
         }
 
         private void ruletka_label_Click(object sender, EventArgs e)
         {
-            Roulette roulette = new Roulette(this);
+            Roulette roulette = new Roulette(this, balance);
             this.Hide();
             roulette.Show();
         }
 
         private void wojna_label_Click(object sender, EventArgs e)
         {
-            Wojna wojna = new Wojna(this);
+            Gra1os gra1os = new Gra1os(this);
             this.Hide();
-            wojna.Show();
+            gra1os.Show();
         }
 
         private void info_label_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start("https://github.com/adamjankowiak/Kasyno");
         }
 
         private void add_credits_label_Click(object sender, EventArgs e)
         {
-
+            PayPal pp = new PayPal(this, balance);
+            this.Hide();
+            pp.Show();
         }
     }
 }

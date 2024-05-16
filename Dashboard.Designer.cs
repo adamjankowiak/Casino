@@ -157,7 +157,7 @@
             this.info_label.Name = "info_label";
             this.info_label.Size = new System.Drawing.Size(120, 50);
             this.info_label.TabIndex = 14;
-            this.info_label.Text = "info";
+            this.info_label.Text = "Info";
             this.info_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.info_label.Click += new System.EventHandler(this.info_label_Click);
             // 

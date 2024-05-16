@@ -50,56 +50,67 @@
             // current_player
             // 
             this.current_player.AutoSize = true;
-            this.current_player.BackColor = System.Drawing.Color.Beige;
-            this.current_player.Location = new System.Drawing.Point(365, 341);
+            this.current_player.BackColor = System.Drawing.Color.Transparent;
+            this.current_player.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.current_player.ForeColor = System.Drawing.Color.White;
+            this.current_player.Location = new System.Drawing.Point(348, 337);
             this.current_player.Name = "current_player";
-            this.current_player.Size = new System.Drawing.Size(42, 13);
+            this.current_player.Size = new System.Drawing.Size(101, 25);
             this.current_player.TabIndex = 0;
             this.current_player.Text = "Player1";
             // 
             // current_deck
             // 
             this.current_deck.AutoSize = true;
-            this.current_deck.BackColor = System.Drawing.Color.Beige;
-            this.current_deck.Location = new System.Drawing.Point(365, 385);
+            this.current_deck.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.current_deck.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.current_deck.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.current_deck.Location = new System.Drawing.Point(363, 381);
             this.current_deck.Name = "current_deck";
-            this.current_deck.Size = new System.Drawing.Size(33, 13);
+            this.current_deck.Size = new System.Drawing.Size(65, 25);
             this.current_deck.TabIndex = 1;
             this.current_deck.Text = "Deck";
             // 
             // playerLeft
             // 
             this.playerLeft.AutoSize = true;
-            this.playerLeft.BackColor = System.Drawing.Color.Yellow;
-            this.playerLeft.Location = new System.Drawing.Point(40, 165);
+            this.playerLeft.BackColor = System.Drawing.Color.Transparent;
+            this.playerLeft.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerLeft.ForeColor = System.Drawing.Color.White;
+            this.playerLeft.Location = new System.Drawing.Point(663, 198);
             this.playerLeft.Name = "playerLeft";
-            this.playerLeft.Size = new System.Drawing.Size(45, 13);
+            this.playerLeft.Size = new System.Drawing.Size(106, 25);
             this.playerLeft.TabIndex = 2;
             this.playerLeft.Text = "Player 4";
             // 
             // playerTop
             // 
             this.playerTop.AutoSize = true;
-            this.playerTop.BackColor = System.Drawing.Color.Yellow;
-            this.playerTop.Location = new System.Drawing.Point(365, 26);
+            this.playerTop.BackColor = System.Drawing.Color.Transparent;
+            this.playerTop.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerTop.ForeColor = System.Drawing.Color.White;
+            this.playerTop.Location = new System.Drawing.Point(343, 41);
             this.playerTop.Name = "playerTop";
-            this.playerTop.Size = new System.Drawing.Size(45, 13);
+            this.playerTop.Size = new System.Drawing.Size(106, 25);
             this.playerTop.TabIndex = 3;
             this.playerTop.Text = "Player 3";
             // 
             // playerRight
             // 
             this.playerRight.AutoSize = true;
-            this.playerRight.BackColor = System.Drawing.Color.Yellow;
-            this.playerRight.Location = new System.Drawing.Point(698, 165);
+            this.playerRight.BackColor = System.Drawing.Color.Transparent;
+            this.playerRight.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerRight.ForeColor = System.Drawing.Color.White;
+            this.playerRight.Location = new System.Drawing.Point(56, 190);
             this.playerRight.Name = "playerRight";
-            this.playerRight.Size = new System.Drawing.Size(45, 13);
+            this.playerRight.Size = new System.Drawing.Size(106, 25);
             this.playerRight.TabIndex = 4;
             this.playerRight.Text = "Player 2";
             // 
             // button_Start
             // 
-            this.button_Start.Location = new System.Drawing.Point(322, 144);
+            this.button_Start.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Start.Location = new System.Drawing.Point(322, 143);
             this.button_Start.Name = "button_Start";
             this.button_Start.Size = new System.Drawing.Size(147, 54);
             this.button_Start.TabIndex = 5;
@@ -109,10 +120,12 @@
             // 
             // selected_card
             // 
-            this.selected_card.BackColor = System.Drawing.Color.Beige;
-            this.selected_card.Location = new System.Drawing.Point(284, 266);
+            this.selected_card.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.selected_card.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.selected_card.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selected_card.Location = new System.Drawing.Point(353, 282);
             this.selected_card.Name = "selected_card";
-            this.selected_card.Size = new System.Drawing.Size(221, 20);
+            this.selected_card.Size = new System.Drawing.Size(81, 19);
             this.selected_card.TabIndex = 6;
             this.selected_card.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.selected_card.Visible = false;
@@ -120,10 +133,12 @@
             // Select_card_text
             // 
             this.Select_card_text.AutoSize = true;
-            this.Select_card_text.BackColor = System.Drawing.Color.Beige;
-            this.Select_card_text.Location = new System.Drawing.Point(355, 250);
+            this.Select_card_text.BackColor = System.Drawing.Color.Transparent;
+            this.Select_card_text.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Select_card_text.ForeColor = System.Drawing.Color.White;
+            this.Select_card_text.Location = new System.Drawing.Point(327, 256);
             this.Select_card_text.Name = "Select_card_text";
-            this.Select_card_text.Size = new System.Drawing.Size(72, 13);
+            this.Select_card_text.Size = new System.Drawing.Size(133, 19);
             this.Select_card_text.TabIndex = 7;
             this.Select_card_text.Text = "Wybierz karte";
             this.Select_card_text.Visible = false;
@@ -131,7 +146,7 @@
             // radioPikButton
             // 
             this.radioPikButton.AutoSize = true;
-            this.radioPikButton.BackColor = System.Drawing.Color.Teal;
+            this.radioPikButton.BackColor = System.Drawing.Color.Transparent;
             this.radioPikButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioPikButton.Location = new System.Drawing.Point(553, 233);
             this.radioPikButton.Name = "radioPikButton";
@@ -145,7 +160,7 @@
             // radioKierButton
             // 
             this.radioKierButton.AutoSize = true;
-            this.radioKierButton.BackColor = System.Drawing.Color.Teal;
+            this.radioKierButton.BackColor = System.Drawing.Color.Transparent;
             this.radioKierButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioKierButton.ForeColor = System.Drawing.Color.Red;
             this.radioKierButton.Location = new System.Drawing.Point(553, 256);
@@ -160,7 +175,7 @@
             // radioKaroButton
             // 
             this.radioKaroButton.AutoSize = true;
-            this.radioKaroButton.BackColor = System.Drawing.Color.Teal;
+            this.radioKaroButton.BackColor = System.Drawing.Color.Transparent;
             this.radioKaroButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioKaroButton.ForeColor = System.Drawing.Color.Red;
             this.radioKaroButton.Location = new System.Drawing.Point(553, 279);
@@ -175,7 +190,7 @@
             // radioTreflButton
             // 
             this.radioTreflButton.AutoSize = true;
-            this.radioTreflButton.BackColor = System.Drawing.Color.Teal;
+            this.radioTreflButton.BackColor = System.Drawing.Color.Transparent;
             this.radioTreflButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioTreflButton.Location = new System.Drawing.Point(553, 302);
             this.radioTreflButton.Name = "radioTreflButton";
@@ -188,6 +203,7 @@
             // 
             // acceptButton
             // 
+            this.acceptButton.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acceptButton.Location = new System.Drawing.Point(546, 349);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(87, 36);
@@ -229,6 +245,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
+            this.BackgroundImage = global::Kasyno.Properties.Resources.Table;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(834, 461);
             this.Controls.Add(this.player2_Deck);

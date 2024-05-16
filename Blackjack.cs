@@ -15,6 +15,9 @@ namespace Kasyno
         Dashboard dashboard;
         int playercardSum = 0;
         int dealercardSum = 0;
+        int balance = 0;
+        string username;
+        int betValue = 0;
         private List<string> deck = new List<string>();
         private List<string> playerHand = new List<string>();
         private List<string> dealersHand = new List<string>();
@@ -24,26 +27,39 @@ namespace Kasyno
             {"J",10},{"Q",10},{"K",10},{"A",11}
         };
         
-        public Blackjack(Dashboard dash)
+        public Blackjack(Dashboard dash, int balance,string username)
         {
             InitializeComponent();
             dashboard = dash;
+            this.balance = balance;
+            this.username = username;
+            player_label.Text = username.ToString();
+            balance_value_label.Text = balance.ToString();
+
+
         }
         private void Blackjack_FormClosed(object sender, FormClosedEventArgs e)
         {
+            dashboard.change_balance(balance);
             dashboard.Show();
         }
 
         private void start_button_Click(object sender, EventArgs e)
         {
-            newGame();
-            start_button.Enabled = false;
-            start_button.Visible = false;
-            playercards_label.Visible = true;
-            dealercards_label.Visible = true;
-            hit_button.Visible = true;
-            stand_button.Visible = true;
-            
+            if(string.IsNullOrEmpty(bet_textBox.Text))
+            {
+                MessageBox.Show("Input bet amount", "Input bet amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                newGame();
+                start_button.Enabled = false;
+                start_button.Visible = false;
+                playercards_label.Visible = true;
+                dealercards_label.Visible = true;
+                hit_button.Visible = true;
+                stand_button.Visible = true;
+            }
         }
         private void shuffleDeck()
         {
@@ -77,7 +93,8 @@ namespace Kasyno
 
         private void newGame()
         {
-            
+            bet_value_label.Text = betValue.ToString();
+            balance_value_label.Text = balance.ToString();
             this.deck = dashboard.getDeck();
             shuffleDeck();
             playercardSum = 0;
@@ -114,12 +131,14 @@ namespace Kasyno
                 if(playercardSum > 21)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                 }
             }
             if (playercardSum == 21)
             {
                 MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                balance += betValue;
                 newGame();
             }
             
@@ -149,6 +168,7 @@ namespace Kasyno
                     if (dealercardSum > 21)
                     {
                         MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        balance += betValue;
                         newGame();
                         break;
                     }
@@ -156,12 +176,14 @@ namespace Kasyno
                 if (dealercardSum == 21)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                     break;
                 }
                 if (dealercardSum < 21 && dealercardSum > playercardSum)
                 {
                     MessageBox.Show("You lost", "You lost", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    balance -= betValue;
                     newGame();
                     break;
                 }
@@ -169,6 +191,37 @@ namespace Kasyno
             } while (dealercardSum<21);
         }
 
+        private void bet_textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar)&&!char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void place_bet_button_Click(object sender, EventArgs e)
+        {
+            if(int.Parse(bet_textBox.Text) > balance)
+            {
+                MessageBox.Show("You dont have enough money to bet", "You dont have enough money to bet", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //if you've managed too fool casino
+            if(int.Parse(bet_textBox.Text) < 0)
+            {
+                MessageBox.Show("You cant fool casino", "You cant fool casino", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(balance >= 100)
+                {
+                    MessageBox.Show("Penalty -100", "Penalty -100", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return;
+            }
+            //no you havent
+            betValue = int.Parse(bet_textBox.Text);
+            bet_value_label.Text = betValue.ToString();
+            bet_textBox.Hide();
+            place_bet_label.Hide();
+            place_bet_button.Hide();
+        }
     }
 }
 
