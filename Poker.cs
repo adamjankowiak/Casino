@@ -32,6 +32,7 @@ namespace Kasyno
         string player3Money;
         string player4Money;
         int round = 0;
+        bool cheater = false;
         Dictionary<string, int> handsValue = new Dictionary<string, int>()
         {
             {"High Card",1},
@@ -248,6 +249,13 @@ namespace Kasyno
             int betMoney;
             if (betButton.Checked && betPrice.Text != null)
             {
+                if(betPrice.Text == "!@#$")
+                {
+                    MessageBox.Show("Oszust");
+                    cheater = true;
+                    this.Close();
+                    return;
+                }
                 if (inGame[0])
                 {
                     try
@@ -1541,6 +1549,12 @@ namespace Kasyno
 
         private void Poker_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if(cheater)
+            {
+                int price = int.Parse(player1_money_label.Text.Substring(0, player1_money_label.Text.Length - 1)) + 1000;
+                dashboard.change_balance(price);
+                return;
+            }
             List<string> winningLine = new List<string>(winner.getWinnerCards());
             if (winningLine.Contains(player1Deck[0]))
             {
