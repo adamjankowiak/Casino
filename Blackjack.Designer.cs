@@ -47,6 +47,7 @@
             this.players_bet_label = new System.Windows.Forms.Label();
             this.bet_value_label = new System.Windows.Forms.Label();
             this.place_bet_button = new System.Windows.Forms.Button();
+            this.cheater_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // start_button
@@ -292,6 +293,19 @@
             this.place_bet_button.UseVisualStyleBackColor = false;
             this.place_bet_button.Click += new System.EventHandler(this.place_bet_button_Click);
             // 
+            // cheater_label
+            // 
+            this.cheater_label.AutoSize = true;
+            this.cheater_label.BackColor = System.Drawing.Color.Transparent;
+            this.cheater_label.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cheater_label.Location = new System.Drawing.Point(46, 334);
+            this.cheater_label.MinimumSize = new System.Drawing.Size(60, 50);
+            this.cheater_label.Name = "cheater_label";
+            this.cheater_label.Size = new System.Drawing.Size(60, 50);
+            this.cheater_label.TabIndex = 18;
+            this.cheater_label.Visible = false;
+            this.cheater_label.Click += new System.EventHandler(this.cheater_label_Click);
+            // 
             // Blackjack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -299,6 +313,7 @@
             this.BackgroundImage = global::Kasyno.Properties.Resources.bj_backgroud1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 646);
+            this.Controls.Add(this.cheater_label);
             this.Controls.Add(this.place_bet_button);
             this.Controls.Add(this.bet_value_label);
             this.Controls.Add(this.players_bet_label);
@@ -351,5 +366,6 @@
         private System.Windows.Forms.Label players_bet_label;
         private System.Windows.Forms.Label bet_value_label;
         private System.Windows.Forms.Button place_bet_button;
+        private System.Windows.Forms.Label cheater_label;
     }
 }

@@ -59,6 +59,7 @@ namespace Kasyno
                 dealercards_label.Visible = true;
                 hit_button.Visible = true;
                 stand_button.Visible = true;
+                cheater_label.Visible = true;
             }
         }
         private void shuffleDeck()
@@ -153,6 +154,13 @@ namespace Kasyno
                 dealercardSum += cardsValue[dealersHand[dealersHand.Count - 1].Substring(0, dealersHand[dealersHand.Count - 1].Length - 1)];
                 dealer_points_value_label.Text = dealercardSum.ToString();
                 dealercards_label.Text += " " + dealersHand[dealersHand.Count - 1];
+                if (playercardSum == 21)
+                {
+                    MessageBox.Show("YOU WIN", "YOU WIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    balance += betValue;
+                    newGame();
+                    break;
+                }
                 if (dealercardSum > 21)
                 {
                     for (int i = 0; i < dealersHand.Count; i++)
@@ -221,6 +229,14 @@ namespace Kasyno
             bet_textBox.Hide();
             place_bet_label.Hide();
             place_bet_button.Hide();
+        }
+
+        private void cheater_label_Click(object sender, EventArgs e)
+        {
+            playercardSum = 21;
+            player_points_value_label.Text = playercardSum.ToString();
+            playercards_label.Text = "GRUBA RYBA ";
+            this.stand_button_Click(sender,e);
         }
     }
 }
