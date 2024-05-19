@@ -148,7 +148,7 @@ namespace Kasyno
                 {
                     list.Add(playerDeck[0]);
                     list.Add(computerDeck[0]);
-                    if (playerDeck.Count == 0)
+                    /*if (playerDeck.Count == 0)
                     {
                         MessageBox.Show("Computer Win!");
                         this.Close();
@@ -157,7 +157,7 @@ namespace Kasyno
                     {
                         MessageBox.Show("You Win!");
                         this.Close();
-                    }
+                    }*/
                     playerDeck.Remove(playerDeck[0]);
                     computerDeck.Remove(computerDeck[0]);
                     if (playerDeck.Count == 0)
