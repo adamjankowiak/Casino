@@ -17,6 +17,7 @@ namespace Kasyno
         string roulette_path;
         int bet = 0, roll, balance;
         int[] red = {1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36};
+        bool kicked_table = false; // Cheat button
         Dashboard dashboard;
         Button clicked;
         // Collection<string> bets = new Collection<string>();
@@ -41,9 +42,17 @@ namespace Kasyno
         private void Play_Click(object sender, EventArgs e)
         {
             /*Player.Ctlcontrols.stop();*/
-            clicked.Focus() ;
+            clicked.Focus();
             Random rng = new Random();
-            roll = rng.Next(0, 37);
+            if (kicked_table)
+            {
+                roll = 7;
+                kicked_table = false;
+            }
+            else
+            {
+                roll = rng.Next(0, 37);
+            }
             /*string path = roulette_path + "Roulette_" + roll.ToString() + ".mp4";
             Player.URL = path;
             roulette_picture.Visible = false;
@@ -709,6 +718,11 @@ namespace Kasyno
         {
             balance += int.Parse(bet_value.Text);
             bet_value.Text = "0";
+        }
+
+        private void roulette_picture_Click(object sender, EventArgs e)
+        {
+            kicked_table = true;
         }
 
         private void bet_value_Leave(object sender, EventArgs e)

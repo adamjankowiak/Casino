@@ -15,7 +15,7 @@ namespace Kasyno
     {
         string user = "";
         Logon logon = new Logon();
-        int balance;
+        int balance, starting_balance;
         private List<string>deck = new List<string>();
         public Dashboard(Logon log, string username, int money)
         {
@@ -24,6 +24,7 @@ namespace Kasyno
             logon = log;
             user = username;
             balance = money;
+            starting_balance = balance;
         }
         
         private void createDeck()
@@ -72,6 +73,17 @@ namespace Kasyno
                 }
             }
             File.WriteAllText("..\\..\\userdata\\logon.csv", output);
+            string balance_change = DateTime.Now + ": started with " + starting_balance.ToString() + " ";
+            if(starting_balance > balance)
+            {
+                balance_change += "lost ";
+            }
+            else
+            {
+                balance_change += "gained ";
+            }
+            balance_change += Math.Abs(starting_balance - balance).ToString() + Environment.NewLine;
+            File.AppendAllText("..\\..\\userdata\\" + user + ".csv", balance_change);
             logon.Close();
         }
 
@@ -117,7 +129,17 @@ namespace Kasyno
 
         private void info_label_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/adamjankowiak/Kasyno");
+            // System.Diagnostics.Process.Start("https://github.com/adamjankowiak/Kasyno");
+            string history;
+            try
+            {
+                history = File.ReadAllText("..\\..\\userdata\\" + user + ".csv");
+                MessageBox.Show(history, "history", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("could not find game history", "history", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void add_credits_label_Click(object sender, EventArgs e)
