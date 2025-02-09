@@ -26,7 +26,7 @@ Our Games:
 ## Authors
 
 - [@AdamJankowiak](https://github.com/adamjankowiak)
-- [@MichałWałach](https://github.com/ShadowTheThird)
+- [@MichałWałach](https://github.com/MichalWalach)
 - [@MaciejWojdyło](https://github.com/MaciejWojdylo)
 - [@AlexKapłon](https://github.com/al3x79)
 
