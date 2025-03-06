@@ -1568,6 +1568,7 @@ namespace Kasyno
                 dashboard.change_balance(price);
             }
             dashboard.Show();
+            //
         }
     }
 }
